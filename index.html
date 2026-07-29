@@ -6,9 +6,11 @@
 <meta name="theme-color" content="#050810">
 <title>Giorgio Bufalino · Founder who builds</title>
 <meta name="description" content="Portfolio of Giorgio Bufalino. Founder and CEO of Grug's Lair, game designer and builder of products across sports tech, games, data and AI.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050810'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='%2345c4ff' text-anchor='middle'%3EGB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <style>
 :root{
   --bg:#050810;
@@ -46,7 +48,7 @@ h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif}
 @keyframes grain{0%,100%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-2%)}80%{transform:translate(3%,3%)}}
 
 /* progress bar */
-#progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0;z-index:100}
+#progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:100%;transform:scaleX(0);transform-origin:0 0;z-index:100}
 
 /* nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;justify-content:space-between;align-items:center;
@@ -451,11 +453,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 </div>
 
 <script>
-// scroll progress
+// scroll progress, compositor-only via transform + rAF
 const progress=document.getElementById('progress');
+let progressQueued=false;
 addEventListener('scroll',()=>{
-  const h=document.documentElement;
-  progress.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+  if(progressQueued)return;
+  progressQueued=true;
+  requestAnimationFrame(()=>{
+    const h=document.documentElement;
+    progress.style.transform=`scaleX(${h.scrollTop/(h.scrollHeight-h.clientHeight)})`;
+    progressQueued=false;
+  });
 },{passive:true});
 
 // reveal on scroll
