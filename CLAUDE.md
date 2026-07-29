@@ -10,9 +10,9 @@ Personal portfolio site for **Giorgio Bufalino**. He is job hunting: the site ta
 
 - **Design: "fighter select".** Chosen by Giorgio 29 Jul 2026 after he said the previous version screamed "made by Claude". The concept borrows the *structure* of a fighting-game character-select screen (his flagship is Blob Arena, his degree is Games Technology) while keeping the copy professional. Roster grid of projects, HUD readouts, targeting brackets on hover, honest spec blocks instead of invented power bars.
   - **Palette (flat, no effects):** bg `#0b1220`, panel `#111a2b`, hairline `#1e2a3d`, warm off-white text `#e8e4dc`, muted `#8494ad`, single signal blue `#4a7fe8`. One accent only, used sparingly, never as a glow.
-  - **Type:** Archivo Black (display, uppercase), Archivo (body), Martian Mono (HUD labels, spec rows, numbers).
+  - **Type:** Space Grotesk 700 (display, uppercase), Inter (body), JetBrains Mono (HUD labels, spec rows, numbers). Giorgio asked for this trio back on 29 Jul 2026 after trying Archivo Black / Archivo / Martian Mono. It is a common AI-portfolio stack, but the tell was always the *whole package*, and the layout now carries the originality. Do not swap these without asking him.
   - **Hard rule: `border-radius: 0` everywhere.** No pills, no rounded cards.
-  - **Banned (these are the AI-portfolio tells):** Space Grotesk / Inter / JetBrains Mono, grain overlays, blueprint grids, radial glow blobs, gradient-filled text, scrolling keyword marquees, blinking terminal cursors, pill buttons, cards that lift on hover.
+  - **Banned (these are the AI-portfolio tells):** grain overlays, blueprint grids, radial glow blobs, gradient-filled text, scrolling keyword marquees, blinking terminal cursors, pill buttons, cards that lift on hover.
 - **Hosting:** Vercel or Netlify (static).
 - **Curation:** all projects included, but FartGram/OnlyFarts is presented neutrally as "Short-video social app" with no crude branding.
 - **Contact:** giorgiobufalino@gmail.com, linkedin.com/in/giorgiobufalino, github.com/GrugLikesRocks, profile photo included.

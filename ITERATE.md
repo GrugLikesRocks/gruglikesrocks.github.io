@@ -91,7 +91,7 @@ Screenshots for detail pages: each app runs locally, `..\LOCAL_SETUP.md` has the
 
 ## 3. Design and copy rules
 
-- **"Fighter select" direction** (Giorgio's pick, 29 Jul 2026, replacing a generic dark-portfolio look he said screamed "made by Claude"). Flat navy: bg `#0b1220`, panel `#111a2b`, hairline `#1e2a3d`, text `#e8e4dc`, muted `#8494ad`, one signal blue `#4a7fe8`. Archivo Black display, Archivo body, Martian Mono HUD. `border-radius: 0` everywhere. No grain, glow, gradients, marquees or pill buttons. See CLAUDE.md for the full banned list.
+- **"Fighter select" direction** (Giorgio's pick, 29 Jul 2026, replacing a generic dark-portfolio look he said screamed "made by Claude"). Flat navy: bg `#0b1220`, panel `#111a2b`, hairline `#1e2a3d`, text `#e8e4dc`, muted `#8494ad`, one signal blue `#4a7fe8`. Space Grotesk 700 display, Inter body, JetBrains Mono HUD (his stated preference, do not change without asking). `border-radius: 0` everywhere. No grain, glow, gradients, marquees or pill buttons. See CLAUDE.md for the full banned list.
 - Mobile-first. Disable hover tilt on touch devices. Respect `prefers-reduced-motion`.
 - Copy voice: founder tone, confident and direct. Never use oxford commas. Never use em dashes anywhere in site copy. Short sentences beat long ones. If a sentence works without a word, cut the word.
 - Less verbose everywhere: project card blurbs max ~30 words, detail pages carry the depth instead.
