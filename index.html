@@ -235,6 +235,17 @@ footer{border-top:1px solid var(--line);padding:26px 32px;display:flex;justify-c
 .ov-features{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
 .ov-features li{color:var(--muted);font-size:.92rem;padding-left:20px;position:relative}
 .ov-features li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;background:var(--accent);border-radius:2px;transform:rotate(45deg)}
+.ov-arch{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ov-arch span{font-family:'JetBrains Mono';font-size:.74rem;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:7px 12px;background:rgba(148,184,255,.04)}
+.ov-arch i{color:var(--accent);font-style:normal;font-family:'JetBrains Mono'}
+.ov-bench{display:flex;flex-direction:column;gap:12px;max-width:560px}
+.ov-bench .row{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:center}
+.ov-bench .row .label{font-family:'JetBrains Mono';font-size:.7rem;color:var(--muted)}
+.ov-bench .track{height:22px;background:rgba(148,184,255,.06);border-radius:6px;overflow:hidden}
+.ov-bench .bar{height:100%;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;
+  font-family:'JetBrains Mono';font-size:.66rem;color:#021018;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:6px}
+.ov-bench .note{font-family:'JetBrains Mono';font-size:.68rem;color:var(--muted);margin-top:2px}
+@media(max-width:520px){.ov-bench .row{grid-template-columns:1fr;gap:4px}}
 .ov-shots{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .ov-shot{aspect-ratio:16/10;border:1px dashed rgba(255,255,255,.18);border-radius:12px;display:flex;align-items:center;justify-content:center;
   color:var(--muted);font-family:'JetBrains Mono';font-size:.72rem;letter-spacing:.08em;text-align:center;padding:10px;background:rgba(255,255,255,.015)}
@@ -560,6 +571,7 @@ const PROJECTS={
     ],
     features:['Turn based combat with arcade pacing','Classic mode plus an AMMA Edition on the combat sports IP','Leagues, weekly leaderboards and seasonal challenges','Live event tie-ins at AMMA shows across the USA','On-chain referral and revenue split on Starknet','In-game purchases live','Runs on web, iOS and Android'],
     stack:['Unity','C#','Starknet','iOS + Android','Web','Live ops'],
+    arch:['Unity + C#','iOS · Android · Web','On-chain revenue on Starknet'],
     shots:['Combat view','Leaderboards'],
     links:'The studio lives at <a href="https://grugslair.com" target="_blank" rel="noopener">grugslair.com</a>. App store links land here next.'
   },
@@ -575,6 +587,7 @@ const PROJECTS={
     ],
     features:['QR activation network with a public mobile capture page','Automatic segmentation into Whales, Engaged, Dormant and Discovery','CSV ticket ingestion with identity resolution and dedupe','Ask Grug AI copilot for next best campaign recommendations','Raffle Engine that converts crowds into registered profiles','Creative Kit auto-generated QR promo assets','Dashboard KPIs with per event stats and city level fan mapping','Consent first exports'],
     stack:['React','TypeScript','Express','Postgres + Drizzle','Vitest','pnpm monorepo'],
+    arch:['QR capture page','Express API','Postgres + Drizzle','Segmentation','Ask Grug'],
     shots:['Dashboard','Fan map'],
     links:'The company site is <a href="https://grugslair.com" target="_blank" rel="noopener">grugslair.com</a>.'
   },
@@ -591,6 +604,8 @@ const PROJECTS={
     ],
     features:['Voting ensemble plus Dixon-Coles and Elo-logit models','Blend of model, de-vigged market and Polymarket prices','Rolling-origin walk-forward evaluation harness','Automated leakage tests on every feature','Model drift monitoring across training runs','Claude written match analysis','TypeScript fallback ensemble with cross language parity tests','Append-only odds history from an hourly sync'],
     stack:['Python','FastAPI','scikit-learn','XGBoost','TypeScript','Express 5','React + Vite','Postgres + Drizzle'],
+    bench:{rows:[['QUANTGRUG calibrated','0.9936',99.36],['Pinnacle closing odds','0.9857',98.57]],note:'Log loss, lower is better. 0.008 nats apart over 18,577 out-of-sample predictions.'},
+    arch:['React + Vite','Express 5 API','Python FastAPI ML','Postgres'],
     shots:['Prediction view','Analytics']
   },
   'blob-padel':{
@@ -605,6 +620,7 @@ const PROJECTS={
     ],
     features:['Browser web game client','Expo mobile client sharing the same contract','Shared Express 5 API','OpenAPI spec-driven codegen for hooks and schemas','Postgres persistence via Drizzle','UI mockup playground package'],
     stack:['TypeScript','Expo','Express 5','Postgres + Drizzle','Orval','pnpm monorepo'],
+    arch:['Web client + Expo mobile','Generated API client','Express 5','Postgres'],
     shots:['Gameplay','Mobile client']
   },
   'slick-cv':{
@@ -618,6 +634,7 @@ const PROJECTS={
     ],
     features:['Role tailored CV variants from one structured profile','Real committed outputs: founder, PM, finance and gaming CVs','HTML and PDF output','Spec first API with Orval codegen','Postgres persistence with Drizzle','pnpm monorepo with project references'],
     stack:['TypeScript','Express 5','Postgres + Drizzle','Orval','Zod','esbuild'],
+    arch:['Structured profile','Express 5 API','Role tailored variants','HTML + PDF'],
     shots:['CV output','Variant gallery']
   },
   'puzzlevault':{
@@ -632,6 +649,7 @@ const PROJECTS={
     ],
     features:['Community curated catalog with barcode search','Collection tracking, wishlists and puzzle journals','Marketplace with listings, offers and trade ratings','XP, levels, badges, streaks and leaderboards','Frame shop with a frame size finder wizard','Support tickets and analytics modeled in the schema'],
     stack:['React + Vite','TypeScript','Express','Postgres + Drizzle','Tailwind + shadcn','Google Cloud Storage'],
+    arch:['React','Express','Postgres · 21 tables','Object storage'],
     shots:['Catalog','Collection view']
   },
   'cozypans':{
@@ -646,6 +664,7 @@ const PROJECTS={
     ],
     features:['English and Polish toggle across the site','Photography first recipe pages and category browsing','Admin dashboard for recipes, contact and newsletter','Newsletter broadcasts via Resend','Recipe comments and contact forms','Mobile first UI with 44px touch targets'],
     stack:['React + Vite','TypeScript','Express','Postgres + Drizzle','Tailwind + shadcn','Resend'],
+    arch:['React EN/PL','Express','Postgres','Object storage + Resend'],
     shots:['Recipe page','Admin dashboard']
   },
   'shortvideo':{
@@ -660,6 +679,7 @@ const PROJECTS={
     ],
     features:['Vertical video feed','Auth with OIDC sessions','Client side uploads via Uppy to object storage','AI assisted upload verification','Likes, comments, follows and profiles','Swappable storage behind a repository interface'],
     stack:['React 18','TypeScript','Express','Postgres + Drizzle','Uppy.js','Google Cloud Storage'],
+    arch:['React feed','Express','IStorage interface','Postgres + GCS'],
     shots:['Feed','Upload flow']
   },
   'dice-roller':{
@@ -673,6 +693,7 @@ const PROJECTS={
     ],
     features:['D20 and multi dice rolling','Smooth roll animations with framer-motion','Confetti celebration on crits','Roll history UI','Shared typed API contract between client and server','Postgres wiring via Drizzle'],
     stack:['React + Vite','TypeScript','Express','Drizzle','framer-motion','canvas-confetti'],
+    arch:['React','Shared typed contract','Express','Postgres'],
     shots:['Roller','Roll history']
   }
 };
@@ -690,6 +711,8 @@ function renderProject(p){
   ${p.metrics.length?`<div class="ov-metrics">${p.metrics.map(m=>`<div><b>${m[0]}</b><span>${m[1]}</span></div>`).join('')}</div>`:''}
   <div class="ov-h">The story</div>
   <div class="ov-story">${p.story.map(s=>`<p>${s}</p>`).join('')}</div>
+  ${p.bench?`<div class="ov-h">The benchmark</div><div class="ov-bench">${p.bench.rows.map(r=>`<div class="row"><span class="label">${r[0]}</span><div class="track"><div class="bar" style="width:${r[2]}%">${r[1]}</div></div></div>`).join('')}<div class="note">${p.bench.note}</div></div>`:''}
+  ${p.arch?`<div class="ov-h">How it fits together</div><div class="ov-arch">${p.arch.map((n,i)=>(i?'<i>→</i>':'')+`<span>${n}</span>`).join('')}</div>`:''}
   <div class="ov-h">What's inside</div>
   <ul class="ov-features">${p.features.map(f=>`<li>${f}</li>`).join('')}</ul>
   <div class="ov-h">Stack</div>
