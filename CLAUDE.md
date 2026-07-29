@@ -49,8 +49,9 @@ Real screenshots live in `screens/` and are wired into each project overlay via 
 
 ## Facts to keep accurate
 
-- Founder & CEO, Grug's Lair, Nov 2022 to present (CV date; use it consistently)
-- Co-founder & Head of Research, Agrippa Capital, Apr 2019 to Nov 2022
+- Founder & CEO, Grug's Lair, **Nov 2022 to present**. Date conflict resolved by Giorgio 29 Jul 2026: the company was **officially founded in 2023**, but he had been working on it since **Nov 2022**, which is the date the CV and the site use. Both sources were right about different things, so do not "correct" this to 2023.
+- Grug's Lair: **raised around $1M** (pre-seed, Starkware lead plus Tim Ricci and Cartridge) and **built and led an 11 person team**. Both confirmed by Giorgio 29 Jul 2026 and shown on the site.
+- Co-founder & Head of Research, Agrippa Capital, Apr 2019 to Nov 2022. It was a **crypto hedge fund** (confirmed by Giorgio 29 Jul 2026), not a generic "capital research firm".
 - Co-founder & Head of Product, Volunteer Space, Jul 2017 to Mar 2018
 - Tech Leader, The Alacrity Foundation, Aug 2016 to Jul 2017
 - BSc Games Technology, UWE Bristol, 2013 to 2016

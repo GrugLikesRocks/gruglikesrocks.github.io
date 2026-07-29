@@ -57,8 +57,8 @@ When you stop, list what was done, current scores and the exact things you need 
 - Photo: embedded in current index.html, original at `..\Slick-CV-Maker\giorgio-profile.jpeg`
 
 ### Career (dates from his CV, use these exactly)
-- **Founder & CEO, Grug's Lair** · Nov 2022 to present · Bristol/London. Leads strategy, product vision and fundraising for a fan intelligence and engagement platform for sports organisations. Closed pre-seed backing from Starkware (lead), Tim Ricci and Cartridge. Raising a seed round. BFI certified UK studio. Team of ~10.
-- **Co-founder & Head of Research, Agrippa Capital** · Apr 2019 to Nov 2022. Built the research function from scratch, led market analysis and investment research, produced insight reports for internal stakeholders and external partners.
+- **Founder & CEO, Grug's Lair** · Nov 2022 to present · Bristol/London. Officially founded 2023 but he had been working on it since Nov 2022, which is the date to use. Leads strategy, product vision and fundraising. **Raised around $1M** pre-seed from Starkware (lead), Tim Ricci and Cartridge. **Built and led an 11 person team.** Raising a seed round. BFI certified UK studio.
+- **Co-founder & Head of Research, Agrippa Capital** · Apr 2019 to Nov 2022. A **crypto hedge fund** (confirmed by Giorgio 29 Jul 2026). Built the research function from scratch, led a research team across gaming, AI and digital consumer markets, produced investment grade reports that shaped portfolio direction.
 - **Co-founder & Head of Product, Volunteer Space** · Jul 2017 to Mar 2018 · Newport, UK. Marketplace connecting volunteers with organisations. Contributed to raising pre-seed funding from UK investors.
 - **Tech Leader, The Alacrity Foundation** · Aug 2016 to Jul 2017 · Newport, UK. Graduate entrepreneurship programme: customer discovery, challenge-led innovation.
 - **BSc Games Technology, University of the West of England** · Sep 2013 to May 2016. Computer games and programming.
