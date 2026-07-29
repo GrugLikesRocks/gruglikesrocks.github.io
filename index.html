@@ -249,6 +249,18 @@ footer{border-top:1px solid var(--line);padding:20px 28px;display:flex;justify-c
   margin-top:34px;padding-top:20px;border-top:1px solid var(--line)}
 .ov-links a{color:var(--sig);text-decoration:none;border-bottom:1px solid var(--line-hi)}
 .ov-links a:hover{border-bottom-color:var(--sig)}
+.ov-live{display:inline-flex;align-items:center;gap:9px;margin-bottom:30px;padding:12px 20px;
+  border:1px solid var(--sig);background:rgba(74,127,232,.08);color:var(--sig);text-decoration:none;
+  font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;transition:background .15s}
+.ov-live:hover{background:var(--sig);color:#0b1220}
+.ov-live::after{content:"\2197"}
+.p-live,.f-live{position:absolute;top:0;right:0;display:flex;align-items:center;gap:5px;
+  padding:5px 9px;background:var(--sig);color:#0b1220;font-family:'JetBrains Mono',monospace;
+  font-size:.52rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.p-live::before,.f-live::before{content:"";width:5px;height:5px;border-radius:50%;background:#0b1220;
+  animation:livepulse 1.6s ease infinite}
+@keyframes livepulse{50%{opacity:.35}}
+@media(prefers-reduced-motion:reduce){.p-live::before,.f-live::before{animation:none}}
 
 .reveal{opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s ease}
 .reveal.visible{opacity:1;transform:none}
@@ -663,6 +675,7 @@ const PROJECTS={
     kicker:'Flagship · B2B SaaS',
     title:'Solco',
     pitch:'Audience and impact intelligence for festivals and live events.',
+    live:'https://solco.live',liveLabel:'Visit solco.live',
     metrics:[['<10s','QR to consented profile'],['1,095','backend tests'],['100k','fans in load test'],['5','product modules']],
     story:[
       'Festivals fill fields and still cannot say who turned up. Solco is built for the mid to large scale events that need to understand their audience and prove its worth. The line on the tin is simple: your audience is alive, watch it move.',
@@ -680,6 +693,7 @@ const PROJECTS={
     kicker:'The lab · 01',
     title:'QUANTGRUG',
     pitch:'A football prediction engine judged the hard way, against Pinnacle closing odds on 18,577 unseen predictions.',
+    live:'https://quantgrug.vercel.app',liveLabel:'Open the live demo',
     metrics:[['18,577','out-of-sample predictions'],['0.008','nats behind Pinnacle close'],['9/9','leagues improved by calibration'],['23','features served']],
     story:[
       'QUANTGRUG fuses three layers into one prediction. A Python ensemble of logistic regression, random forest and XGBoost alongside a Dixon-Coles goals model and an Elo-logit, blended with de-vigged bookmaker odds and Polymarket prices. Claude writes the match analysis.',
@@ -697,6 +711,7 @@ const PROJECTS={
     kicker:'The lab · 02',
     title:'Blob Padel',
     pitch:'A free to play padel game with a real progression economy, running on web and mobile from one API contract.',
+    live:'https://blob-padel.vercel.app',liveLabel:'Play it live',
     metrics:[],
     story:[
       'Blob Padel is a swipe based padel game, but the interesting part is everything wrapped around the match. A six tournament ladder gates progression on trophies. Blobs are characters with a class and six stats, levelled by collecting duplicate cards. On top sit a season pass, timed events, loot bags and two currencies.',
@@ -712,6 +727,7 @@ const PROJECTS={
     kicker:'The lab · 03',
     title:'Slick CV Maker',
     pitch:'One structured profile in, role tailored CVs out. The tool behind my own founder, PM, finance and gaming CVs.',
+    live:'https://slick-cv.vercel.app',liveLabel:'See the CV outputs',
     metrics:[],
     story:[
       'Every application wants a different story from the same career. Slick CV Maker keeps one structured profile as the source of truth and renders role tailored variants from it. The founder, PM, finance and gaming versions of my own CV all come out of this tool, committed in the repo as HTML and PDF.',
@@ -754,6 +770,7 @@ const PROJECTS={
     kicker:'The lab · 06',
     title:'Short-video social app',
     pitch:'A vertical video feed with the full social loop, built mobile first.',
+    live:'https://shortvideo-social.vercel.app',liveLabel:'Open it live',
     metrics:[],
     story:[
       'A short-video platform where users sign in, upload clips, scroll a vertical feed, like, comment and follow.',
@@ -786,6 +803,7 @@ const PROJECTS={
     kicker:'The lab · 08',
     title:'Dice Roller',
     pitch:'A D20 roller built for feel. My testbed for end to end patterns before they reach bigger codebases.',
+    live:'https://dice-roller-one-alpha.vercel.app',liveLabel:'Roll it live',
     metrics:[],
     story:[
       'Small on purpose. Animated rolls with framer-motion, a confetti burst on critical hits and a roll history that remembers your session.',
@@ -807,6 +825,7 @@ function renderProject(p){
   return `<div class="ov-kicker">${p.kicker}</div>
   <h2 id="ov-title">${p.title}</h2>
   <p class="ov-pitch">${p.pitch}</p>
+  ${p.live?`<a class="ov-live" href="${p.live}" target="_blank" rel="noopener">${p.liveLabel||'View it live'}</a>`:''}
   ${p.metrics.length?`<div class="ov-metrics">${p.metrics.map(m=>`<div><b>${m[0]}</b><span>${m[1]}</span></div>`).join('')}</div>`:''}
   <div class="ov-h">The story</div>
   <div class="ov-story">${p.story.map(s=>`<p>${s}</p>`).join('')}</div>
@@ -851,6 +870,13 @@ function uiClose(){
 }
 
 document.querySelectorAll('[data-project]').forEach(card=>{
+  const proj=PROJECTS[card.dataset.project];
+  if(proj&&proj.live){
+    const badge=document.createElement('span');
+    badge.className=card.classList.contains('f-card')?'f-live':'p-live';
+    badge.textContent='Live';
+    card.appendChild(badge);
+  }
   card.addEventListener('click',()=>openProject(card.dataset.project));
   card.addEventListener('keydown',e=>{
     if(e.key==='Enter'||e.key===' '){e.preventDefault();openProject(card.dataset.project);}
