@@ -45,6 +45,7 @@ Real screenshots live in `screens/` and are wired into each project overlay via 
 - Grug's Lair company facts, Blob Arena metrics (20,000+ users per Giorgio Jul 2026, the file's 12,204+ is stale; 1,645 peak MAU, 2.1M transactions, AMMA partnership, Starkware pre-seed): `..\Grug's Lair\CLAUDE.md`
 - Platform description (fan intelligence, QR capture, segments, Ask Grug): `..\Platform\grugslair-platform-overview.md`
 - Dev projects (each has its own README.md + CLAUDE.md): `..\Football-Predictor` (QUANTGRUG), `..\Browser-Bloons-TD` (Blob Padel), `..\Slick-CV-Maker`, `..\Puzzle-Frame-AI` (PuzzleVault), `..\RecipeQuest` (Cozypans), `..\Dice-Roller`, `..\FartGram` (present neutrally)
+- **Dungeon Master Codex lives OUTSIDE the Projects folder**, at `C:\Users\Giorgio\Documents\GitHub\dungeon-master-codex`. Giorgio flagged it as missing on 29 Jul 2026. Do not assume the Projects folder is the full inventory. If a project seems absent, ask or search wider before concluding it does not exist.
 - How to run any project locally for screenshots: `..\LOCAL_SETUP.md`
 
 ## Facts to keep accurate

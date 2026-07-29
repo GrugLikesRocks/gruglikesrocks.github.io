@@ -75,7 +75,8 @@ When you stop, list what was done, current scores and the exact things you need 
 4. **PuzzleVault** (`..\Puzzle-Frame-AI`): the Discogs for jigsaw puzzles. Catalog, collection, journaling, trading, gamification and frame shop, 21 database tables. React, Express, Drizzle.
 5. **Cozypans** (`..\RecipeQuest`): bilingual EN/PL photography-first recipe blog with admin area and object storage. React, Express, Drizzle.
 6. **Short-video social app** (`..\FartGram`, ALWAYS presented neutrally under this generic name): vertical video feed, auth, uploads, likes, comments, AI-assisted upload verification, storage behind a swappable interface.
-7. **Dice Roller** (`..\Dice-Roller`): D20-style roller with persistent roll history. His end-to-end pattern testbed.
+7. **Dungeon Master Codex** (`C:\Users\Giorgio\Documents\GitHub\dungeon-master-codex`, NOTE: lives outside the Projects folder): campaign management app for D&D 5e, his most feature-dense project. 30+ tools across campaign bible, quest board, player knowledge vs DM truth, secret reveals, retcons, clue web, prophecy and Old God codices, faction clocks, combat tracker, boss phase builder, player-safe export. Optional OpenAI layer that degrades gracefully. Runs against a real campaign, the Kingdom of Aurelth, session 10, level 5 party. React + Express 5 + Postgres/Drizzle, pnpm monorepo. Run with its own `run-local.ps1`, or manually: frontend 25814, API 8090, `DATABASE_URL=postgresql://grug:grugdev@127.0.0.1:5432/dm_codex`.
+8. **Dice Roller** (`..\Dice-Roller`): D20-style roller with persistent roll history. His end-to-end pattern testbed.
 
 Screenshots for detail pages: each app runs locally, `..\LOCAL_SETUP.md` has the port map, database setup and run commands. If an app will not boot, use placeholders and log it, do not fake screenshots.
 
