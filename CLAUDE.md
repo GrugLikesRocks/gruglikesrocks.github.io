@@ -20,6 +20,18 @@ Personal portfolio site for **Giorgio Bufalino**. He is job hunting: the site ta
 - **No availability signalling:** the "Open to new opportunities" hero pill and the "looking for my next challenge" line were removed at Giorgio's request. Do not reintroduce job-hunting language without asking.
 - **Copy voice:** founder tone. Never use oxford commas and never use em dashes anywhere in site copy.
 
+## Running the apps locally for screenshots (verified 29 Jul 2026)
+
+Real screenshots live in `screens/` and are wired into each project overlay via the `screens:` array in the `PROJECTS` object (filename, caption, width, height). To recapture:
+
+- Postgres 17 is installed natively at `localhost:5432`, role `grug` / `grugdev`, one database per project. All 7 databases exist.
+- **Windows gotcha 1:** the npm `dev` scripts use Unix syntax (`NODE_ENV=development tsx ...`) which cmd cannot parse. Run `npx dotenv-cli -e .env -- npx tsx server/index.ts` instead of `npm run dev`.
+- **Windows gotcha 2:** `server.listen({ reusePort: true })` throws `ENOTSUP` on Windows. Fixed in RecipeQuest, FartGram and Puzzle-Frame-AI by making it conditional on `process.platform`. This is a real portability fix, not a local hack.
+- **RecipeQuest and FartGram** need Replit auth env vars to boot: `REPL_ID`, `SESSION_SECRET`, `ISSUER_URL=https://replit.com/oidc`, `REPLIT_DOMAINS=localhost:<port>`. With those set they boot and serve public pages fine.
+- **Blob Padel** menus are portrait-only and canvas-rendered, so screenshots need a portrait viewport and coordinate clicks, not DOM clicks. Flow: skip tutorial, tap a tournament, PLAY NOW, SELECT & PLAY, START MATCH, then rotate to landscape for gameplay.
+- **The short-video app has no screenshots on purpose.** Its running build still shows the original crude branding, which the curation rule forbids. Do not add screens for it unless Giorgio rebrands the app itself.
+- Blob Arena is a Unity mobile title and is not in the local project set, so it has no screenshots. Solco uses a capture of the live solco.live site.
+
 ## Backlog (Giorgio's requested next steps, in priority order)
 
 1. **Clickable projects → detail pages.** Each project card should open a rich detail view (screenshots, feature list, stack, story). Decided approach: detail pages/views on the site itself, since none of the apps are publicly deployed. Live-demo and GitHub links can be added per project later as they come online. Screenshots need to be captured from the locally running apps (see LOCAL_SETUP.md one level up in `..\` for how to run each).
