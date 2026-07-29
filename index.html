@@ -257,8 +257,10 @@ footer{border-top:1px solid var(--line);padding:20px 28px;display:flex;justify-c
 .p-live,.f-live{position:absolute;top:0;right:0;display:flex;align-items:center;gap:5px;
   padding:5px 9px;background:var(--sig);color:#0b1220;font-family:'JetBrains Mono',monospace;
   font-size:.52rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.p-live.is-demo,.f-live.is-demo{background:var(--line-hi);color:var(--text)}
 .p-live::before,.f-live::before{content:"";width:5px;height:5px;border-radius:50%;background:#0b1220;
   animation:livepulse 1.6s ease infinite}
+.p-live.is-demo::before,.f-live.is-demo::before{background:var(--sig);animation:none}
 @keyframes livepulse{50%{opacity:.35}}
 @media(prefers-reduced-motion:reduce){.p-live::before,.f-live::before{animation:none}}
 
@@ -741,6 +743,7 @@ const PROJECTS={
     kicker:'The lab · 04',
     title:'PuzzleVault',
     pitch:'The Discogs for jigsaw puzzles. Catalog, collection, trading and a frame shop in one community platform.',
+    live:'https://puzzlevault.vercel.app',liveLabel:'See the landing page',demo:true,
     metrics:[['21','database tables'],['5','product pillars'],['8%','marketplace fee model']],
     story:[
       'Puzzle collectors had no Discogs, so I built one. A community curated catalog searchable by brand, piece count, artist and barcode, with moderator verified entries.',
@@ -756,6 +759,7 @@ const PROJECTS={
     kicker:'The lab · 05',
     title:'Cozypans',
     pitch:'A bilingual recipe blog that skips the life story and gets straight to the food.',
+    live:'https://cozypans.vercel.app',liveLabel:'See the landing page',demo:true,
     metrics:[],
     story:[
       'Cozypans is a photography first recipe blog with full English and Polish parity. A language toggle keeps both versions in sync as a hard project convention, not an afterthought.',
@@ -873,8 +877,8 @@ document.querySelectorAll('[data-project]').forEach(card=>{
   const proj=PROJECTS[card.dataset.project];
   if(proj&&proj.live){
     const badge=document.createElement('span');
-    badge.className=card.classList.contains('f-card')?'f-live':'p-live';
-    badge.textContent='Live';
+    badge.className=(card.classList.contains('f-card')?'f-live':'p-live')+(proj.demo?' is-demo':'');
+    badge.textContent=proj.demo?'Demo':'Live';
     card.appendChild(badge);
   }
   card.addEventListener('click',()=>openProject(card.dataset.project));
