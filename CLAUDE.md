@@ -8,7 +8,11 @@ Personal portfolio site for **Giorgio Bufalino**. He is job hunting: the site ta
 
 ## Locked decisions (do not relitigate without asking Giorgio)
 
-- **Design:** dark and bold, almost futuristic. Navy near-black background `#050810`, electric blue accent `#45c4ff`, indigo secondary `#6d7cff`, Space Grotesk display + Inter body + JetBrains Mono labels (Google Fonts). Modern, fresh, some motion. (Palette changed from lime/violet to navy/blue per Giorgio, 29 Jul 2026.)
+- **Design: "fighter select".** Chosen by Giorgio 29 Jul 2026 after he said the previous version screamed "made by Claude". The concept borrows the *structure* of a fighting-game character-select screen (his flagship is Blob Arena, his degree is Games Technology) while keeping the copy professional. Roster grid of projects, HUD readouts, targeting brackets on hover, honest spec blocks instead of invented power bars.
+  - **Palette (flat, no effects):** bg `#0b1220`, panel `#111a2b`, hairline `#1e2a3d`, warm off-white text `#e8e4dc`, muted `#8494ad`, single signal blue `#4a7fe8`. One accent only, used sparingly, never as a glow.
+  - **Type:** Archivo Black (display, uppercase), Archivo (body), Martian Mono (HUD labels, spec rows, numbers).
+  - **Hard rule: `border-radius: 0` everywhere.** No pills, no rounded cards.
+  - **Banned (these are the AI-portfolio tells):** Space Grotesk / Inter / JetBrains Mono, grain overlays, blueprint grids, radial glow blobs, gradient-filled text, scrolling keyword marquees, blinking terminal cursors, pill buttons, cards that lift on hover.
 - **Hosting:** Vercel or Netlify (static).
 - **Curation:** all projects included, but FartGram/OnlyFarts is presented neutrally as "Short-video social app" with no crude branding.
 - **Contact:** giorgiobufalino@gmail.com, linkedin.com/in/giorgiobufalino, github.com/GrugLikesRocks, profile photo included.
@@ -38,7 +42,7 @@ Personal portfolio site for **Giorgio Bufalino**. He is job hunting: the site ta
 - Co-founder & Head of Product, Volunteer Space, Jul 2017 to Mar 2018
 - Tech Leader, The Alacrity Foundation, Aug 2016 to Jul 2017
 - BSc Games Technology, UWE Bristol, 2013 to 2016
-- Based in Bristol, UK. Languages: English fluent, Italian native.
+- Based in Bristol, UK. **English is his first language** (he corrected this on 29 Jul 2026; the CV's "English fluent, Italian native" phrasing is misleading). He also speaks Italian.
 
 ## Conventions
 

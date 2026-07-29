@@ -53,7 +53,7 @@ When you stop, list what was done, current scores and the exact things you need 
 - Giorgio Bufalino, Bristol, UK
 - Positioning: founder who builds. Founder and CEO with a games technology background and a track record of building companies at the intersection of technology, data and sports entertainment. He raises the money, designs the product and ships the code.
 - Email giorgiobufalino@gmail.com · LinkedIn linkedin.com/in/giorgiobufalino · GitHub github.com/GrugLikesRocks
-- Languages: English fluent, Italian native
+- Languages: English is his first language, and he speaks Italian (the CV's "English fluent, Italian native" wording is misleading, he corrected it 29 Jul 2026)
 - Photo: embedded in current index.html, original at `..\Slick-CV-Maker\giorgio-profile.jpeg`
 
 ### Career (dates from his CV, use these exactly)
@@ -89,7 +89,7 @@ Screenshots for detail pages: each app runs locally, `..\LOCAL_SETUP.md` has the
 
 ## 3. Design and copy rules
 
-- Dark and bold, almost futuristic: navy near-black `#050810`, electric blue accent `#45c4ff`, indigo secondary `#6d7cff`, Space Grotesk display, Inter body, JetBrains Mono labels. (Palette changed from lime/violet per Giorgio, 29 Jul 2026.)
+- **"Fighter select" direction** (Giorgio's pick, 29 Jul 2026, replacing a generic dark-portfolio look he said screamed "made by Claude"). Flat navy: bg `#0b1220`, panel `#111a2b`, hairline `#1e2a3d`, text `#e8e4dc`, muted `#8494ad`, one signal blue `#4a7fe8`. Archivo Black display, Archivo body, Martian Mono HUD. `border-radius: 0` everywhere. No grain, glow, gradients, marquees or pill buttons. See CLAUDE.md for the full banned list.
 - Mobile-first. Disable hover tilt on touch devices. Respect `prefers-reduced-motion`.
 - Copy voice: founder tone, confident and direct. Never use oxford commas. Never use em dashes anywhere in site copy. Short sentences beat long ones. If a sentence works without a word, cut the word.
 - Less verbose everywhere: project card blurbs max ~30 words, detail pages carry the depth instead.
