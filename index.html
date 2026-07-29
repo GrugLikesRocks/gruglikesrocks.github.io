@@ -342,7 +342,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
   <div class="stats">
     <div class="stat"><b>20,000+</b><span>users on Blob Arena</span></div>
     <div class="stat"><b>2.1M</b><span>in-game transactions processed</span></div>
-    <div class="stat"><b>9</b><span>products designed and built</span></div>
+    <div class="stat"><b>10</b><span>products designed and built</span></div>
     <div class="stat"><b>$1M+</b><span>capital raised</span></div>
   </div>
 </section>
@@ -398,7 +398,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
 <section id="projects">
   <div class="sec-head reveal">
     <h2>The lab</h2>
-    <div class="hud dim">07 entries</div>
+    <div class="hud dim">08 entries</div>
   </div>
   <p class="lead reveal">Projects I build for the love of it. Real codebases, each with its own database, API and frontend. Select any card for the full story.</p>
   <div class="roster">
@@ -468,8 +468,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       </div>
       <div class="select">Select</div>
     </div>
-    <div class="p-card brk reveal" data-project="dice-roller" role="button" tabindex="0" aria-haspopup="dialog">
+    <div class="p-card brk reveal" data-project="dm-codex" role="button" tabindex="0" aria-haspopup="dialog">
       <span class="p-num">07</span>
+      <h3>Dungeon Master Codex</h3>
+      <div class="p-role">Campaign management tool</div>
+      <p>A campaign command centre for D&amp;D 5e. Quests, secrets, clue webs, prophecies and combat, all tracked against a real running campaign.</p>
+      <div class="spec">
+        <div class="spec-row"><span class="k">Stack</span><span class="v">React · Express 5</span></div>
+        <div class="spec-row"><span class="k">Tools</span><span class="v">30+ trackers</span></div>
+      </div>
+      <div class="select">Select</div>
+    </div>
+    <div class="p-card brk reveal" data-project="dice-roller" role="button" tabindex="0" aria-haspopup="dialog">
+      <span class="p-num">08</span>
       <h3>Dice Roller</h3>
       <div class="p-role">Tabletop companion</div>
       <p>A D20 roller with roll history. Small on purpose, the testbed where new patterns prove themselves before bigger codebases.</p>
@@ -754,8 +765,25 @@ const PROJECTS={
     arch:['React feed','Express','IStorage interface','Postgres + GCS'],
     links:'Runs locally. Screens are held back because the build still carries its original working branding.'
   },
-  'dice-roller':{
+  'dm-codex':{
     kicker:'The lab · 07',
+    title:'Dungeon Master Codex',
+    pitch:'A campaign command centre for D&D 5e, built for a campaign I actually run.',
+    metrics:[['30+','tracking tools'],['11','entities tracked'],['10','sessions logged'],['7','locations']],
+    story:[
+      'Running a long D&D campaign is a continuity problem. Who knows what, which secret is still hidden, which thread was quietly retconned three months ago. This is the tool I built to hold all of it.',
+      'The spine is a campaign bible, sessions and a quest board that moves between active, planned, dormant, completed and failed. Around that sit the parts a dungeon master actually loses track of: a player knowledge tracker separating what each player knows from the truth, a secret reveal tracker with conditions and risk, a retcon manager, a clue web linking clues to NPCs and locations, prophecy and Old God codices, faction clocks and a mystery health check.',
+      'At the table it turns into a combat tracker, a boss phase builder, NPC voice cards and live notes. AI assists on session planning and continuity checking, but every AI feature degrades gracefully to a message when no key is set, so the tool never depends on it.',
+      'It runs against a real campaign, the Kingdom of Aurelth, currently at session 10 with a level 5 party. Every screenshot here is that campaign, not filler data.'
+    ],
+    features:['Quest board across five states with countdown days','Player knowledge tracked separately from DM truth','Secret reveal tracker with conditions, risk and reward','Retcon manager with old and new versions','Clue web linking clues, NPCs, quests and locations','Prophecy tracker and Old God codex','Combat tracker and multi-phase boss builder','Player-safe export that withholds DM-only secrets'],
+    stack:['React','TypeScript','Express 5','Postgres + Drizzle','Tailwind + Radix','pnpm monorepo'],
+    arch:['React + Vite','Express 5 API','Postgres + Drizzle','Optional AI layer'],
+    screens:[['dmcodex-dashboard.jpg','Campaign dashboard, the Kingdom of Aurelth',1200,750],['dmcodex-quests.jpg','Quest board across five states',1200,750]],
+    links:'Runs locally. Private single-DM tool, so there is no public demo.'
+  },
+  'dice-roller':{
+    kicker:'The lab · 08',
     title:'Dice Roller',
     pitch:'A D20 roller built for feel. My testbed for end to end patterns before they reach bigger codebases.',
     metrics:[],
