@@ -238,14 +238,14 @@ footer{border-top:1px solid var(--line);padding:26px 32px;display:flex;justify-c
 .ov-arch{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .ov-arch span{font-family:'JetBrains Mono';font-size:.74rem;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:7px 12px;background:rgba(148,184,255,.04)}
 .ov-arch i{color:var(--accent);font-style:normal;font-family:'JetBrains Mono'}
-.ov-bench{display:flex;flex-direction:column;gap:12px;max-width:560px}
-.ov-bench .row{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:center}
-.ov-bench .row .label{font-family:'JetBrains Mono';font-size:.7rem;color:var(--muted)}
-.ov-bench .track{height:22px;background:rgba(148,184,255,.06);border-radius:6px;overflow:hidden}
-.ov-bench .bar{height:100%;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;
-  font-family:'JetBrains Mono';font-size:.66rem;color:#021018;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:6px}
-.ov-bench .note{font-family:'JetBrains Mono';font-size:.68rem;color:var(--muted);margin-top:2px}
-@media(max-width:520px){.ov-bench .row{grid-template-columns:1fr;gap:4px}}
+.ov-bench{max-width:560px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.ov-bench .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 18px;background:var(--panel)}
+.ov-bench .row+.row{border-top:1px solid var(--line)}
+.ov-bench .row .label{font-size:.88rem;color:var(--text)}
+.ov-bench .row .val{font-family:'Space Grotesk';font-weight:600;font-size:1.15rem;color:var(--accent);white-space:nowrap}
+.ov-bench .delta{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 18px;background:rgba(148,184,255,.04)}
+.ov-bench .delta span{font-family:'JetBrains Mono';font-size:.7rem;color:var(--muted)}
+.ov-bench .delta b{font-family:'JetBrains Mono';font-size:.78rem;color:var(--accent2);white-space:nowrap}
 .ov-shots{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .ov-shot{aspect-ratio:16/10;border:1px dashed rgba(255,255,255,.18);border-radius:12px;display:flex;align-items:center;justify-content:center;
   color:var(--muted);font-family:'JetBrains Mono';font-size:.72rem;letter-spacing:.08em;text-align:center;padding:10px;background:rgba(255,255,255,.015)}
@@ -360,7 +360,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       <span class="num">01</span>
       <h3>QUANTGRUG</h3>
       <div class="sub">Football prediction engine</div>
-      <p>Fuses an ML ensemble with bookmaker odds and Polymarket prices, benchmarked against Pinnacle closing odds across 18,500+ unseen matches.</p>
+      <p>Fuses an ML ensemble with bookmaker odds and Polymarket prices, benchmarked against Pinnacle closing odds across 18,500+ unseen predictions.</p>
       <div class="chips"><span class="chip">Python</span><span class="chip">XGBoost</span><span class="chip">FastAPI</span><span class="chip">TypeScript</span><span class="chip">React</span></div>
     </div>
     <div class="p-card reveal" data-project="blob-padel" role="button" tabindex="0" aria-haspopup="dialog">
@@ -374,7 +374,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       <span class="num">03</span>
       <h3>Slick CV Maker</h3>
       <div class="sub">Structured CV generator</div>
-      <p>One structured profile in, tailored CV variants out. Renders polished HTML and PDF resumes for founder, PM, finance and gaming roles.</p>
+      <p>One structured profile in, tailored CV variants out. The founder, PM, finance and gaming versions are real committed outputs.</p>
       <div class="chips"><span class="chip">TypeScript</span><span class="chip">Express 5</span><span class="chip">Drizzle</span><span class="chip">OpenAPI</span></div>
     </div>
     <div class="p-card reveal" data-project="puzzlevault" role="button" tabindex="0" aria-haspopup="dialog">
@@ -388,7 +388,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       <span class="num">05</span>
       <h3>Cozypans</h3>
       <div class="sub">Bilingual recipe blog</div>
-      <p>Photography first recipes with full English and Polish parity, a custom admin area and object storage. Built for real publishing, not a demo.</p>
+      <p>Photography first recipes with full English and Polish parity, a custom admin area and object storage. Built to run a real publishing workflow.</p>
       <div class="chips"><span class="chip">React</span><span class="chip">Express</span><span class="chip">Drizzle</span><span class="chip">i18n</span></div>
     </div>
     <div class="p-card reveal" data-project="shortvideo" role="button" tabindex="0" aria-haspopup="dialog">
@@ -472,7 +472,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   <div class="kicker reveal" style="justify-content:center">Contact</div>
   <h2 class="reveal">Let's build something.</h2>
   <!-- TODO: ask Giorgio: one sentence on why he is looking while running Grug's Lair. Cold-read audit flagged the unexplained tension between "Founder & CEO, present" and "looking for my next challenge" as a credibility risk. Needs his real framing, not invented copy. -->
-  <p class="lead reveal">I'm looking for my next challenge. If you need someone who can own a product from strategy to shipped code, let's talk.</p>
+  <p class="lead reveal">If you need someone who can own a product from strategy to shipped code, let's talk.</p>
   <div class="links reveal">
     <a class="btn btn-primary" href="mailto:giorgiobufalino@gmail.com">giorgiobufalino@gmail.com</a>
     <a class="btn btn-ghost" href="https://www.linkedin.com/in/giorgiobufalino" target="_blank" rel="noopener">LinkedIn</a>
@@ -554,7 +554,7 @@ function setNav(open){
 navToggle.addEventListener('click',()=>setNav(!siteNav.classList.contains('open')));
 siteNav.querySelectorAll('ul a').forEach(a=>a.addEventListener('click',()=>setNav(false)));
 document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'&&siteNav.classList.contains('open'))setNav(false);
+  if(e.key==='Escape'&&siteNav.classList.contains('open')&&!document.getElementById('overlay').classList.contains('on'))setNav(false);
 });
 
 // project detail overlay
@@ -573,13 +573,13 @@ const PROJECTS={
     stack:['Unity','C#','Starknet','iOS + Android','Web','Live ops'],
     arch:['Unity + C#','iOS · Android · Web','On-chain revenue on Starknet'],
     shots:['Combat view','Leaderboards'],
-    links:'The studio lives at <a href="https://grugslair.com" target="_blank" rel="noopener">grugslair.com</a>. App store links land here next.'
+    links:'Get it on the <a href="https://apps.apple.com/us/app/blob-arena/id6751915702" target="_blank" rel="noopener">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.GrugsLair.BlobArena" target="_blank" rel="noopener">Google Play</a>. The studio lives at <a href="https://grugslair.com" target="_blank" rel="noopener">grugslair.com</a>.'
   },
   'platform':{
     kicker:'Flagship · B2B SaaS',
     title:"Grug's Lair Platform",
     pitch:'Fan intelligence SaaS that turns live event crowds into promoter owned data, segments and revenue.',
-    metrics:[['<10s','QR fan capture'],['4','behavioural segments'],['1,095','backend tests'],['100k','fan performance benchmark']],
+    metrics:[['<10s','QR fan capture'],['4','behavioural segments'],['1,095','backend tests'],['100k','fans in load test']],
     story:[
       'Promoters fill venues yet ticketing platforms, social networks and streamers own all the fan data. The platform sits between the promoter and those touchpoints and builds a database the promoter actually owns.',
       'Fans scan a QR at the event and register in under 10 seconds. Automated segmentation sorts them into Whales, Engaged, Dormant and Discovery, maps them by city and scores them on spend, frequency and recency. The Ask Grug copilot reads segment state and recommends the next best campaign.',
@@ -594,7 +594,7 @@ const PROJECTS={
   'quantgrug':{
     kicker:'The lab · 01',
     title:'QUANTGRUG',
-    pitch:'A football prediction engine judged the hard way, against Pinnacle closing odds on 18,577 unseen matches.',
+    pitch:'A football prediction engine judged the hard way, against Pinnacle closing odds on 18,577 unseen predictions.',
     metrics:[['18,577','out-of-sample predictions'],['0.008','nats behind Pinnacle close'],['9/9','leagues improved by calibration'],['23','features served']],
     story:[
       'QUANTGRUG fuses three layers into one prediction. A Python ensemble of logistic regression, random forest and XGBoost alongside a Dixon-Coles goals model and an Elo-logit, blended with de-vigged bookmaker odds and Polymarket prices. Claude writes the match analysis.',
@@ -604,7 +604,7 @@ const PROJECTS={
     ],
     features:['Voting ensemble plus Dixon-Coles and Elo-logit models','Blend of model, de-vigged market and Polymarket prices','Rolling-origin walk-forward evaluation harness','Automated leakage tests on every feature','Model drift monitoring across training runs','Claude written match analysis','TypeScript fallback ensemble with cross language parity tests','Append-only odds history from an hourly sync'],
     stack:['Python','FastAPI','scikit-learn','XGBoost','TypeScript','Express 5','React + Vite','Postgres + Drizzle'],
-    bench:{rows:[['QUANTGRUG calibrated','0.9936',99.36],['Pinnacle closing odds','0.9857',98.57]],note:'Log loss, lower is better. 0.008 nats apart over 18,577 out-of-sample predictions.'},
+    bench:{rows:[['De-vigged Pinnacle close, the bar to beat','0.9857'],['QUANTGRUG calibrated','0.9936']],note:'Log loss over 18,577 predictions, lower is better',delta:'gap 0.008 nats'},
     arch:['React + Vite','Express 5 API','Python FastAPI ML','Postgres'],
     shots:['Prediction view','Analytics']
   },
@@ -629,12 +629,11 @@ const PROJECTS={
     pitch:'One structured profile in, role tailored CVs out. The tool behind my own founder, PM, finance and gaming CVs.',
     metrics:[],
     story:[
-      'Every application wants a different story from the same career. Slick CV Maker keeps one structured profile as the source of truth and renders role tailored variants from it. The founder, PM, finance and gaming versions of my own CV all come out of this tool as polished HTML and PDF.',
+      'Every application wants a different story from the same career. Slick CV Maker keeps one structured profile as the source of truth and renders role tailored variants from it. The founder, PM, finance and gaming versions of my own CV all come out of this tool, committed in the repo as HTML and PDF.',
       'The interesting part is the data model. One profile holds the whole career and each variant picks what to surface for its audience. The CV this site is built from came out of it.'
     ],
-    features:['Role tailored CV variants from one structured profile','Real committed outputs: founder, PM, finance and gaming CVs','HTML and PDF output','Spec first API with Orval codegen','Postgres persistence with Drizzle','pnpm monorepo with project references'],
+    features:['Role tailored CV variants from one structured profile','Real committed outputs: founder, PM, finance and gaming CVs','Committed HTML and PDF outputs','Spec first API with Orval codegen','Postgres persistence with Drizzle','pnpm monorepo with project references'],
     stack:['TypeScript','Express 5','Postgres + Drizzle','Orval','Zod','esbuild'],
-    arch:['Structured profile','Express 5 API','Role tailored variants','HTML + PDF'],
     shots:['CV output','Variant gallery']
   },
   'puzzlevault':{
@@ -660,11 +659,10 @@ const PROJECTS={
     story:[
       'Cozypans is a photography first recipe blog with full English and Polish parity. A language toggle keeps both versions in sync as a hard project convention, not an afterthought.',
       'The whole point is straightforward recipes without the padding recipe sites drown in. Copy stays plain and recipe focused.',
-      'Behind the public site sits a real publishing operation. An admin dashboard manages recipes, contact submissions and the newsletter, with broadcasts sent through Resend and images living in object storage behind an access control layer.'
+      'Behind the public site sits a full publishing workflow. An admin dashboard manages recipes, contact submissions and the newsletter, with broadcasts sent through Resend and images living in object storage behind an access control layer.'
     ],
     features:['English and Polish toggle across the site','Photography first recipe pages and category browsing','Admin dashboard for recipes, contact and newsletter','Newsletter broadcasts via Resend','Recipe comments and contact forms','Mobile first UI with 44px touch targets'],
     stack:['React + Vite','TypeScript','Express','Postgres + Drizzle','Tailwind + shadcn','Resend'],
-    arch:['React EN/PL','Express','Postgres','Object storage + Resend'],
     shots:['Recipe page','Admin dashboard']
   },
   'shortvideo':{
@@ -674,7 +672,7 @@ const PROJECTS={
     metrics:[],
     story:[
       'A short-video platform where users sign in, upload clips, scroll a vertical feed, like, comment and follow.',
-      'Uploads flow through Uppy straight to cloud object storage and pass an AI assisted verification check before they publish. An access control layer keeps private and public videos separate.',
+      'Uploads flow through Uppy straight to cloud object storage and through an AI assisted verification check on the way in. An access control layer keeps private and public videos separate.',
       'The architecture is the point. Every database access goes through a repository interface so the storage layer swaps without touching the app. The schema lives in one shared source of truth.'
     ],
     features:['Vertical video feed','Auth with OIDC sessions','Client side uploads via Uppy to object storage','AI assisted upload verification','Likes, comments, follows and profiles','Swappable storage behind a repository interface'],
@@ -693,7 +691,6 @@ const PROJECTS={
     ],
     features:['D20 and multi dice rolling','Smooth roll animations with framer-motion','Confetti celebration on crits','Roll history UI','Shared typed API contract between client and server','Postgres wiring via Drizzle'],
     stack:['React + Vite','TypeScript','Express','Drizzle','framer-motion','canvas-confetti'],
-    arch:['React','Shared typed contract','Express','Postgres'],
     shots:['Roller','Roll history']
   }
 };
@@ -711,20 +708,21 @@ function renderProject(p){
   ${p.metrics.length?`<div class="ov-metrics">${p.metrics.map(m=>`<div><b>${m[0]}</b><span>${m[1]}</span></div>`).join('')}</div>`:''}
   <div class="ov-h">The story</div>
   <div class="ov-story">${p.story.map(s=>`<p>${s}</p>`).join('')}</div>
-  ${p.bench?`<div class="ov-h">The benchmark</div><div class="ov-bench">${p.bench.rows.map(r=>`<div class="row"><span class="label">${r[0]}</span><div class="track"><div class="bar" style="width:${r[2]}%">${r[1]}</div></div></div>`).join('')}<div class="note">${p.bench.note}</div></div>`:''}
+  ${p.bench?`<div class="ov-h">The benchmark</div><div class="ov-bench">${p.bench.rows.map(r=>`<div class="row"><span class="label">${r[0]}</span><span class="val">${r[1]}</span></div>`).join('')}<div class="delta"><span>${p.bench.note}</span><b>${p.bench.delta}</b></div></div>`:''}
   ${p.arch?`<div class="ov-h">How it fits together</div><div class="ov-arch">${p.arch.map((n,i)=>(i?'<i>→</i>':'')+`<span>${n}</span>`).join('')}</div>`:''}
   <div class="ov-h">What's inside</div>
   <ul class="ov-features">${p.features.map(f=>`<li>${f}</li>`).join('')}</ul>
   <div class="ov-h">Stack</div>
   <div class="chips">${p.stack.map(s=>`<span class="chip">${s}</span>`).join('')}</div>
-  <div class="ov-h">Screens</div>
-  <div class="ov-shots">${p.shots.map(s=>`<div class="ov-shot">${s}<br>screenshot coming soon</div>`).join('')}</div>
-  <div class="ov-links">${p.links||'Live demo and code links land here as each project comes online.'}</div>`;
+  <div class="ov-links">${p.links||'Screenshots, live demo and code links land here as each project comes online.'}</div>`;
 }
 
-const bgRegions=()=>document.querySelectorAll('main,nav,footer,.marquee');
+const bgRegions=()=>document.querySelectorAll('.skip,main,nav,footer,.marquee');
+let ovClosing=false;
 function openProject(id,push=true){
   const p=PROJECTS[id];if(!p)return;
+  setNav(false);
+  ovClosing=false;
   ovBody.innerHTML=renderProject(p);
   overlay.classList.add('on');
   ovPanel.scrollTop=0;
@@ -735,6 +733,7 @@ function openProject(id,push=true){
   if(push)history.pushState({p:id},'','#'+id);
 }
 function closeProject(){
+  ovClosing=false;
   if(!overlay.classList.contains('on'))return;
   overlay.classList.remove('on');
   document.documentElement.style.overflow='';
@@ -742,7 +741,8 @@ function closeProject(){
   if(lastFocus&&lastFocus.focus)lastFocus.focus();
 }
 function uiClose(){
-  if(history.state&&history.state.p){history.back();}
+  if(ovClosing)return;
+  if(history.state&&history.state.p){ovClosing=true;history.back();}
   else{history.replaceState(null,'',location.pathname+location.search);closeProject();}
 }
 
@@ -761,7 +761,8 @@ document.addEventListener('keydown',e=>{
   if(e.key!=='Tab')return;
   const f=overlay.querySelectorAll('button,a[href]');
   const first=f[0],last=f[f.length-1];
-  if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+  if(!overlay.contains(document.activeElement)){e.preventDefault();first.focus();}
+  else if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
   else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
 });
 addEventListener('popstate',()=>{
