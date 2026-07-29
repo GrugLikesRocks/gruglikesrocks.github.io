@@ -80,9 +80,11 @@ When you stop, list what was done, current scores and the exact things you need 
 Screenshots for detail pages: each app runs locally, `..\LOCAL_SETUP.md` has the port map, database setup and run commands. If an app will not boot, use placeholders and log it, do not fake screenshots.
 
 ### Skills (grouped, sourced from CV + real repo stacks)
-- Founder & strategy: company strategy, fundraising, investor relations, business development, partnerships, team leadership, pitch decks
+- Founder & strategy: company strategy, fundraising, investor relations, business development, partnerships, team leadership
 - Product & game design: product management, game design, game economy design, live ops, UX, market research
-- Engineering: TypeScript, React, Node + Express, Postgres + Drizzle, pnpm monorepos, OpenAPI codegen, Unity + C#, Expo/React Native
+- Engineering: TypeScript, React, Node + Express, Postgres, API design, Unity + C#, React Native
+
+**The toolkit section lists skills and knowledge only.** Build tooling and deliverables do not belong there (Giorgio removed "pnpm monorepos" and by extension "OpenAPI codegen" and "pitch decks" on 29 Jul 2026). Specific tools still belong on project cards and detail pages, where they describe what a thing was built with rather than claiming a competency.
 - Data & AI: Python, FastAPI, scikit-learn, XGBoost, model evaluation, Claude/LLM integration, analytics, Starknet
 
 ---
