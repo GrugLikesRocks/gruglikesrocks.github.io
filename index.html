@@ -239,6 +239,12 @@ footer{border-top:1px solid var(--line);padding:20px 28px;display:flex;justify-c
 .ov-bench .delta span,.ov-bench .delta b{font-family:'JetBrains Mono',monospace;font-size:.62rem;
   letter-spacing:.05em;color:var(--muted)}
 .ov-bench .delta b{color:var(--sig)}
+.ov-screens{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;align-items:start}
+.ov-screen{border:1px solid var(--line);background:var(--bg)}
+.ov-screen img{width:100%;height:auto;display:block;background:#070d17}
+.ov-screen figcaption{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);padding:9px 11px;border-top:1px solid var(--line)}
+@media(max-width:700px){.ov-screens{grid-template-columns:1fr}}
 .ov-links{font-family:'JetBrains Mono',monospace;font-size:.66rem;line-height:1.9;color:var(--muted);
   margin-top:34px;padding-top:20px;border-top:1px solid var(--line)}
 .ov-links a{color:var(--sig);text-decoration:none;border-bottom:1px solid var(--line-hi)}
@@ -411,7 +417,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       <span class="p-num">02</span>
       <h3>Blob Padel</h3>
       <div class="p-role">Cross-platform arcade game</div>
-      <p>One arcade padel game on web and mobile. Both clients share one API contract, so a change lands everywhere at once.</p>
+      <p>A free to play padel game with a tournament ladder, card based blob levelling, a season pass and timed events. Web and mobile share one API contract.</p>
       <div class="spec">
         <div class="spec-row"><span class="k">Stack</span><span class="v">TypeScript · Expo</span></div>
         <div class="spec-row"><span class="k">Clients</span><span class="v">Web · Mobile</span></div>
@@ -639,7 +645,7 @@ const PROJECTS={
     features:['Turn based combat with arcade pacing','Classic mode plus an AMMA Edition on the combat sports IP','Leagues, weekly leaderboards and seasonal challenges','Live event tie-ins at AMMA shows across the USA','On-chain referral and revenue split on Starknet','In-game purchases live','Runs on web, iOS and Android'],
     stack:['Unity','C#','Starknet','iOS + Android','Web','Live ops'],
     arch:['Unity + C#','iOS · Android · Web','On-chain revenue on Starknet'],
-    shots:['Combat view','Leaderboards'],
+
     links:'Get it on the <a href="https://apps.apple.com/us/app/blob-arena/id6751915702" target="_blank" rel="noopener">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.GrugsLair.BlobArena" target="_blank" rel="noopener">Google Play</a>. The studio lives at <a href="https://grugslair.com" target="_blank" rel="noopener">grugslair.com</a>.'
   },
   'platform':{
@@ -656,7 +662,7 @@ const PROJECTS={
     features:['QR activations with a public mobile capture page','Presale, waitlist and competition activations','Fan Intelligence with dormant and top fan views','Ask Solco agent for next campaign recommendations','Ticketing CSV ingestion with identity resolution','Territory impact reporting for councils and sponsors','Sponsor report export','White-label fan app in the organiser brand','Consent first exports, marketing consent never pre-ticked'],
     stack:['React','TypeScript','Express','Postgres + Drizzle','Vitest','pnpm monorepo'],
     arch:['Capture page','Express API','Postgres + Drizzle','Fan Intelligence','Ask Solco'],
-    shots:['Dashboard','Fan map'],
+    screens:[['solco-site.jpg','Solco, live at solco.live',1200,750]],
     links:'See it at <a href="https://solco.live" target="_blank" rel="noopener">solco.live</a>. Built at <a href="https://grugslair.com" target="_blank" rel="noopener">grugslair.com</a>.'
   },
   'quantgrug':{
@@ -674,22 +680,22 @@ const PROJECTS={
     stack:['Python','FastAPI','scikit-learn','XGBoost','TypeScript','Express 5','React + Vite','Postgres + Drizzle'],
     bench:{rows:[['De-vigged Pinnacle close, the bar to beat','0.9857'],['QUANTGRUG calibrated','0.9936']],note:'Log loss over 18,577 predictions, lower is better',delta:'gap 0.008 nats'},
     arch:['React + Vite','Express 5 API','Python FastAPI ML','Postgres'],
-    shots:['Prediction view','Analytics']
+    screens:[['quantgrug-dashboard.jpg','Command centre, 29,896 matches',1200,750],['quantgrug-track-record.jpg','Walk-forward benchmark vs Pinnacle',1200,750]]
   },
   'blob-padel':{
     kicker:'The lab · 02',
     title:'Blob Padel',
-    pitch:'One arcade padel game, two clients, one contract. Web and mobile share a single generated API client.',
+    pitch:'A free to play padel game with a real progression economy, running on web and mobile from one API contract.',
     metrics:[],
     story:[
-      'Blob Padel ships as a browser game and an Expo mobile app inside one pnpm monorepo. Both clients talk to the same Express 5 API through the same generated client, so the contract changes in exactly one place.',
-      'The API is spec first. An OpenAPI spec is the source of truth and Orval regenerates the React Query client and Zod schemas from it. Generated files are never hand edited.',
-      'TypeScript project references keep the whole monorepo typechecking as one unit, with esbuild and Vite doing the bundling and Expo building the mobile client.'
+      'Blob Padel is a swipe based padel game, but the interesting part is everything wrapped around the match. A six tournament ladder gates progression on trophies. Blobs are characters with a class and six stats, levelled by collecting duplicate cards. On top sit a season pass, timed events, loot bags and two currencies.',
+      'That is a full free to play economy, designed and balanced end to end. Matches are entered with a coin fee against a prize, so every result moves the ladder and the wallet at once.',
+      'The engineering is a browser client and an Expo mobile app inside one pnpm monorepo, both talking to the same Express 5 API through the same generated client. The OpenAPI spec is the source of truth and Orval regenerates the React Query hooks and Zod schemas, so the contract changes in exactly one place.'
     ],
-    features:['Browser web game client','Expo mobile client sharing the same contract','Shared Express 5 API','OpenAPI spec-driven codegen for hooks and schemas','Postgres persistence via Drizzle','UI mockup playground package'],
+    features:['Six tournament ladder gated on trophies','Blob characters with a class and six stats','Card collection levelling per character','Season pass, timed events and loot bags','Coin entry fees against prize pools','Unlockable in-match skills','Browser and Expo mobile clients on one contract','OpenAPI spec-driven codegen for hooks and schemas'],
     stack:['TypeScript','Expo','Express 5','Postgres + Drizzle','Orval','pnpm monorepo'],
     arch:['Web client + Expo mobile','Generated API client','Express 5','Postgres'],
-    shots:['Gameplay','Mobile client']
+    screens:[['padel-gameplay.jpg','Match in play',940,460],['padel-menu.jpg','Tournament ladder and progression',460,940],['padel-select.jpg','Blob select with stat block',460,940]]
   },
   'slick-cv':{
     kicker:'The lab · 03',
@@ -702,7 +708,7 @@ const PROJECTS={
     ],
     features:['Role tailored CV variants from one structured profile','Real committed outputs: founder, PM, finance and gaming CVs','Committed HTML and PDF outputs','Spec first API with Orval codegen','Postgres persistence with Drizzle','pnpm monorepo with project references'],
     stack:['TypeScript','Express 5','Postgres + Drizzle','Orval','Zod','esbuild'],
-    shots:['CV output','Variant gallery']
+    screens:[['slickcv-output.jpg','Generated founder CV',1100,1400]]
   },
   'puzzlevault':{
     kicker:'The lab · 04',
@@ -717,7 +723,7 @@ const PROJECTS={
     features:['Community curated catalog with barcode search','Collection tracking, wishlists and puzzle journals','Marketplace with listings, offers and trade ratings','XP, levels, badges, streaks and leaderboards','Frame shop with a frame size finder wizard','Support tickets and analytics modeled in the schema'],
     stack:['React + Vite','TypeScript','Express','Postgres + Drizzle','Tailwind + shadcn','Google Cloud Storage'],
     arch:['React','Express','Postgres · 21 tables','Object storage'],
-    shots:['Catalog','Collection view']
+    screens:[['puzzlevault-home.jpg','Landing',1200,750],['puzzlevault-catalog.jpg','Catalog with brand and size filters',1200,750]]
   },
   'cozypans':{
     kicker:'The lab · 05',
@@ -731,7 +737,7 @@ const PROJECTS={
     ],
     features:['English and Polish toggle across the site','Photography first recipe pages and category browsing','Admin dashboard for recipes, contact and newsletter','Newsletter broadcasts via Resend','Recipe comments and contact forms','Mobile first UI with 44px touch targets'],
     stack:['React + Vite','TypeScript','Express','Postgres + Drizzle','Tailwind + shadcn','Resend'],
-    shots:['Recipe page','Admin dashboard']
+    screens:[['cozypans-home.jpg','Public site with EN and PL toggle',1200,750]]
   },
   'shortvideo':{
     kicker:'The lab · 06',
@@ -746,7 +752,7 @@ const PROJECTS={
     features:['Vertical video feed','Auth with OIDC sessions','Client side uploads via Uppy to object storage','AI assisted upload verification','Likes, comments, follows and profiles','Swappable storage behind a repository interface'],
     stack:['React 18','TypeScript','Express','Postgres + Drizzle','Uppy.js','Google Cloud Storage'],
     arch:['React feed','Express','IStorage interface','Postgres + GCS'],
-    shots:['Feed','Upload flow']
+    links:'Runs locally. Screens are held back because the build still carries its original working branding.'
   },
   'dice-roller':{
     kicker:'The lab · 07',
@@ -759,7 +765,7 @@ const PROJECTS={
     ],
     features:['D20 and multi dice rolling','Smooth roll animations with framer-motion','Confetti celebration on crits','Roll history UI','Shared typed API contract between client and server','Postgres wiring via Drizzle'],
     stack:['React + Vite','TypeScript','Express','Drizzle','framer-motion','canvas-confetti'],
-    shots:['Roller','Roll history']
+    screens:[['dice-roller.jpg','Roller with history panel',1200,631]]
   }
 };
 
@@ -782,7 +788,9 @@ function renderProject(p){
   <ul class="ov-features">${p.features.map(f=>`<li>${f}</li>`).join('')}</ul>
   <div class="ov-h">Stack</div>
   <div class="tags">${p.stack.map(s=>`<span class="tag">${s}</span>`).join('')}</div>
-  <div class="ov-links">${p.links||'Screenshots, live demo and code links land here as each project comes online.'}</div>`;
+  ${p.screens&&p.screens.length?`<div class="ov-h">Screens</div>
+  <div class="ov-screens">${p.screens.map(s=>`<figure class="ov-screen"><img src="screens/${s[0]}" alt="${s[1]}" loading="lazy" width="${s[2]}" height="${s[3]}"><figcaption>${s[1]}</figcaption></figure>`).join('')}</div>`:''}
+  <div class="ov-links">${p.links||'Runs locally. Live demo and code links land here as each project comes online.'}</div>`;
 }
 
 const bgRegions=()=>document.querySelectorAll('.skip,main,nav,footer');
