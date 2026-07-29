@@ -11,7 +11,9 @@ Personal portfolio site for **Giorgio Bufalino**. He is job hunting: the site ta
 - **Design:** dark and bold, almost futuristic. Navy near-black background `#050810`, electric blue accent `#45c4ff`, indigo secondary `#6d7cff`, Space Grotesk display + Inter body + JetBrains Mono labels (Google Fonts). Modern, fresh, some motion. (Palette changed from lime/violet to navy/blue per Giorgio, 29 Jul 2026.)
 - **Hosting:** Vercel or Netlify (static).
 - **Curation:** all projects included, but FartGram/OnlyFarts is presented neutrally as "Short-video social app" with no crude branding.
-- **Contact:** giorgiobufalino@gmail.com, linkedin.com/in/giorgiobufalino, GitHub (username still TBD — button currently points at github.com, fix when he provides it), profile photo included.
+- **Contact:** giorgiobufalino@gmail.com, linkedin.com/in/giorgiobufalino, github.com/GrugLikesRocks, profile photo included.
+- **Product naming:** the B2B platform is **Solco** (solco.live), NOT "Grug's Lair Platform". Use Solco's own terminology: Fan Intelligence, Ask Solco (not Ask Grug), activations, capture page, territory impact, sponsor report, white-label app. Live positioning: "Audience & impact intelligence for festivals and live events."
+- **No availability signalling:** the "Open to new opportunities" hero pill and the "looking for my next challenge" line were removed at Giorgio's request. Do not reintroduce job-hunting language without asking.
 - **Copy voice:** founder tone. Never use oxford commas and never use em dashes anywhere in site copy.
 
 ## Backlog (Giorgio's requested next steps, in priority order)
@@ -24,7 +26,7 @@ Personal portfolio site for **Giorgio Bufalino**. He is job hunting: the site ta
 ## Content sources (all local, one level up from this folder)
 
 - CV facts, career history, skills: `..\Slick-CV-Maker\giorgio-bufalino-cv.html` (plus role-specific variants alongside it)
-- Grug's Lair company facts, Blob Arena metrics (12,204+ users, 1,645 peak MAU, 2.1M transactions, AMMA partnership, Starkware pre-seed): `..\Grug's Lair\CLAUDE.md`
+- Grug's Lair company facts, Blob Arena metrics (20,000+ users per Giorgio Jul 2026, the file's 12,204+ is stale; 1,645 peak MAU, 2.1M transactions, AMMA partnership, Starkware pre-seed): `..\Grug's Lair\CLAUDE.md`
 - Platform description (fan intelligence, QR capture, segments, Ask Grug): `..\Platform\grugslair-platform-overview.md`
 - Dev projects (each has its own README.md + CLAUDE.md): `..\Football-Predictor` (QUANTGRUG), `..\Browser-Bloons-TD` (Blob Padel), `..\Slick-CV-Maker`, `..\Puzzle-Frame-AI` (PuzzleVault), `..\RecipeQuest` (Cozypans), `..\Dice-Roller`, `..\FartGram` (present neutrally)
 - How to run any project locally for screenshots: `..\LOCAL_SETUP.md`
