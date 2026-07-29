@@ -89,7 +89,7 @@ Screenshots for detail pages: each app runs locally, `..\LOCAL_SETUP.md` has the
 
 ## 3. Design and copy rules
 
-- Dark and bold: near-black `#07070c`, lime accent `#c8ff2e`, violet secondary `#7c5cff`, Space Grotesk display, Inter body, JetBrains Mono labels.
+- Dark and bold, almost futuristic: navy near-black `#050810`, electric blue accent `#45c4ff`, indigo secondary `#6d7cff`, Space Grotesk display, Inter body, JetBrains Mono labels. (Palette changed from lime/violet per Giorgio, 29 Jul 2026.)
 - Mobile-first. Disable hover tilt on touch devices. Respect `prefers-reduced-motion`.
 - Copy voice: founder tone, confident and direct. Never use oxford commas. Never use em dashes anywhere in site copy. Short sentences beat long ones. If a sentence works without a word, cut the word.
 - Less verbose everywhere: project card blurbs max ~30 words, detail pages carry the depth instead.

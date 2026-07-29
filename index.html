@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050810">
 <title>Giorgio Bufalino · Founder who builds</title>
 <meta name="description" content="Portfolio of Giorgio Bufalino. Founder and CEO of Grug's Lair, game designer and builder of products across sports tech, games, data and AI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,14 +11,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#07070c;
-  --bg2:#0c0c14;
-  --panel:#101019;
-  --line:rgba(255,255,255,.08);
-  --text:#f2f2f5;
-  --muted:#9d9daf;
-  --accent:#c8ff2e;
-  --accent2:#7c5cff;
+  --bg:#050810;
+  --bg2:#0a101c;
+  --panel:#0d1524;
+  --line:rgba(148,184,255,.09);
+  --text:#eef2f8;
+  --muted:#8fa0b8;
+  --accent:#45c4ff;
+  --accent2:#6d7cff;
   --radius:18px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -36,8 +37,8 @@ h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif}
 
 /* grain + glow backdrop */
 .backdrop{position:fixed;inset:0;z-index:-2;background:
-  radial-gradient(900px 600px at 85% -10%,rgba(124,92,255,.16),transparent 60%),
-  radial-gradient(700px 500px at -10% 30%,rgba(200,255,46,.07),transparent 60%),
+  radial-gradient(900px 600px at 85% -10%,rgba(109,124,255,.16),transparent 60%),
+  radial-gradient(700px 500px at -10% 30%,rgba(69,196,255,.07),transparent 60%),
   var(--bg);}
 .grain{position:fixed;inset:-100%;z-index:-1;opacity:.05;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
@@ -70,18 +71,18 @@ h2{font-size:clamp(2rem,4.5vw,3.2rem);letter-spacing:-.03em;line-height:1.05;mar
 .hero .tag{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:99px;padding:8px 16px;
   color:var(--muted);font-size:.82rem;width:fit-content;margin-bottom:34px;background:rgba(255,255,255,.02)}
 .hero .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(200,255,46,.5)}50%{box-shadow:0 0 0 7px rgba(200,255,46,0)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(69,196,255,.5)}50%{box-shadow:0 0 0 7px rgba(69,196,255,0)}}
 .hero h1{font-size:clamp(3rem,9vw,7.2rem);line-height:.95;letter-spacing:-.045em;font-weight:700}
 .hero h1 .outline{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.35)}
 .hero h1 .accent{color:var(--accent)}
 .hero .sub{margin-top:34px;display:flex;gap:26px;align-items:center;flex-wrap:wrap}
 .hero .sub p{color:var(--muted);max-width:520px;font-size:1.06rem}
 .hero-photo{width:112px;height:112px;border-radius:50%;object-fit:cover;border:2px solid var(--accent);
-  box-shadow:0 0 0 6px rgba(200,255,46,.08),0 20px 50px rgba(0,0,0,.5);flex-shrink:0}
+  box-shadow:0 0 0 6px rgba(69,196,255,.08),0 20px 50px rgba(0,0,0,.5);flex-shrink:0}
 .hero .actions{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap}
 .btn{font-family:'Space Grotesk';font-weight:600;text-decoration:none;border-radius:99px;padding:14px 30px;font-size:.95rem;transition:transform .2s,box-shadow .2s,background .2s,color .2s}
 .btn-primary{background:var(--accent);color:#000}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(200,255,46,.25)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(69,196,255,.25)}
 .btn-ghost{border:1px solid var(--line);color:var(--text)}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
 .stats{margin-top:70px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
@@ -101,10 +102,10 @@ h2{font-size:clamp(2rem,4.5vw,3.2rem);letter-spacing:-.03em;line-height:1.05;mar
 @media(max-width:860px){.flagship{grid-template-columns:1fr}}
 .f-card{background:linear-gradient(160deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:var(--radius);
   padding:38px;position:relative;overflow:hidden;transition:transform .3s,border-color .3s}
-.f-card:hover{transform:translateY(-6px);border-color:rgba(200,255,46,.35)}
+.f-card:hover{transform:translateY(-6px);border-color:rgba(69,196,255,.35)}
 .f-card::after{content:"";position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;
-  background:radial-gradient(circle,rgba(200,255,46,.12),transparent 70%);pointer-events:none}
-.f-card.violet::after{background:radial-gradient(circle,rgba(124,92,255,.18),transparent 70%)}
+  background:radial-gradient(circle,rgba(69,196,255,.12),transparent 70%);pointer-events:none}
+.f-card.violet::after{background:radial-gradient(circle,rgba(109,124,255,.18),transparent 70%)}
 .f-card .role{font-family:'JetBrains Mono';font-size:.72rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase}
 .f-card.violet .role{color:var(--accent2)}
 .f-card h3{font-size:1.7rem;letter-spacing:-.02em;margin:12px 0 14px}
@@ -121,7 +122,7 @@ h2{font-size:clamp(2rem,4.5vw,3.2rem);letter-spacing:-.03em;line-height:1.05;mar
 @media(max-width:640px){.grid{grid-template-columns:1fr}}
 .p-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;
   transition:transform .3s,border-color .3s,box-shadow .3s;position:relative}
-.p-card:hover{transform:translateY(-5px);border-color:rgba(200,255,46,.3);box-shadow:0 24px 50px rgba(0,0,0,.4)}
+.p-card:hover{transform:translateY(-5px);border-color:rgba(69,196,255,.3);box-shadow:0 24px 50px rgba(0,0,0,.4)}
 .p-card .num{font-family:'JetBrains Mono';font-size:.72rem;color:var(--muted)}
 .p-card h3{font-size:1.22rem;margin:10px 0 4px;letter-spacing:-.01em}
 .p-card .sub{color:var(--accent);font-size:.78rem;font-family:'JetBrains Mono';margin-bottom:12px}
@@ -156,6 +157,50 @@ footer{border-top:1px solid var(--line);padding:26px 32px;display:flex;justify-c
 /* reveal */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:none}
+
+/* clickable cards */
+.f-card,.p-card{cursor:pointer}
+.p-card .open,.f-card .open{margin-top:20px;font-family:'JetBrains Mono';font-size:.72rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.p-card .open::after,.f-card .open::after{content:"→";transition:transform .2s}
+.p-card:hover .open::after,.f-card:hover .open::after{transform:translateX(4px)}
+.f-card:focus-visible,.p-card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* project detail overlay */
+.overlay{position:fixed;inset:0;z-index:200;display:none}
+.overlay.on{display:block}
+.ov-backdrop{position:absolute;inset:0;background:rgba(4,4,8,.72);backdrop-filter:blur(8px)}
+.ov-panel{position:relative;max-width:860px;margin:0 auto;height:100%;overflow-y:auto;overscroll-behavior:contain;
+  background:var(--bg2);border-left:1px solid var(--line);border-right:1px solid var(--line);
+  padding:84px 56px 72px;animation:ovin .35s ease}
+@keyframes ovin{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.ov-close{position:fixed;top:18px;right:max(18px,calc(50% - 430px + 18px));z-index:210;width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:1.3rem;line-height:1;cursor:pointer;transition:border-color .2s,color .2s}
+.ov-close:hover,.ov-close:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+.ov-kicker{font-family:'JetBrains Mono';font-size:.72rem;color:var(--accent);letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+.ov-panel h2{margin-bottom:10px}
+.ov-pitch{color:var(--text);font-size:1.15rem;font-weight:500;max-width:640px;margin-bottom:34px}
+.ov-metrics{display:flex;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:38px;flex-wrap:wrap}
+.ov-metrics div{background:var(--panel);padding:18px 22px;flex:1 1 130px}
+.ov-metrics b{display:block;font-family:'Space Grotesk';font-size:1.45rem;letter-spacing:-.02em;color:var(--accent)}
+.ov-metrics span{color:var(--muted);font-size:.76rem}
+.ov-h{font-family:'JetBrains Mono';font-size:.74rem;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin:34px 0 14px}
+.ov-story p{color:var(--muted);font-size:.97rem;margin-bottom:14px;max-width:660px}
+.ov-features{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+.ov-features li{color:var(--muted);font-size:.92rem;padding-left:20px;position:relative}
+.ov-features li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;background:var(--accent);border-radius:2px;transform:rotate(45deg)}
+.ov-shots{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ov-shot{aspect-ratio:16/10;border:1px dashed rgba(255,255,255,.18);border-radius:12px;display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-family:'JetBrains Mono';font-size:.72rem;letter-spacing:.08em;text-align:center;padding:10px;background:rgba(255,255,255,.015)}
+.ov-links{color:var(--muted);font-family:'JetBrains Mono';font-size:.76rem;margin-top:36px;padding-top:22px;border-top:1px solid var(--line)}
+@media(max-width:760px){
+  .ov-panel{padding:76px 22px 56px;border:none}
+  .ov-close{right:14px;top:14px}
+  .ov-features{grid-template-columns:1fr}
+  .ov-shots{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .ov-panel{animation:none}
+}
 </style>
 </head>
 <body>
@@ -202,7 +247,7 @@ footer{border-top:1px solid var(--line);padding:26px 32px;display:flex;justify-c
   <h2 class="reveal">Building Grug's Lair</h2>
   <p class="lead reveal">In 2022 I founded Grug's Lair to turn sports from something people watch into something they live. Today it is a fan intelligence and engagement platform backed by Starkware, with a live game and real revenue.</p>
   <div class="flagship">
-    <div class="f-card reveal">
+    <div class="f-card reveal" data-project="blob-arena" role="button" tabindex="0" aria-haspopup="dialog">
       <div class="role">Founder &amp; CEO · Live product</div>
       <h3>Blob Arena</h3>
       <p>A mobile first competitive sports battler and the official interactive game of AMMA (Armored MMA). Turn based combat with arcade pacing, leagues, weekly leaderboards and live event tie-ins. Built in Unity with an on-chain referral and revenue system on Starknet. Launched on iOS and Android in November 2025 and now in public early access.</p>
@@ -213,7 +258,7 @@ footer{border-top:1px solid var(--line);padding:26px 32px;display:flex;justify-c
       </div>
       <div class="chips"><span class="chip">Unity</span><span class="chip">C#</span><span class="chip">Starknet</span><span class="chip">iOS + Android</span><span class="chip">Live ops</span></div>
     </div>
-    <div class="f-card violet reveal">
+    <div class="f-card violet reveal" data-project="platform" role="button" tabindex="0" aria-haspopup="dialog">
       <div class="role">Founder &amp; CEO · B2B SaaS</div>
       <h3>Grug's Lair Platform</h3>
       <p>A fan intelligence platform that gives sports promoters ownership of their audience data. QR activation networks capture fans at live events in under 10 seconds, automated segmentation splits them into behavioural groups and an AI copilot recommends the next best campaign. Promoters finally see who their fans are and what drives revenue.</p>
@@ -232,49 +277,49 @@ footer{border-top:1px solid var(--line);padding:26px 32px;display:flex;justify-c
   <h2 class="reveal">Projects I build for the love of it</h2>
   <p class="lead reveal">Full stack products I design, build and run locally. Each one is a real codebase with its own database, API and frontend. This is where I sharpen the craft.</p>
   <div class="grid">
-    <div class="p-card reveal">
+    <div class="p-card reveal" data-project="quantgrug" role="button" tabindex="0" aria-haspopup="dialog">
       <span class="num">01</span>
       <h3>QUANTGRUG</h3>
       <div class="sub">Football prediction engine</div>
       <p>Predicts match outcomes by fusing a Python ML ensemble (voting classifier, Dixon-Coles and Elo-logit) with bookmaker odds and Polymarket prices, with Claude writing the analysis. Evaluated honestly with rolling walk-forward testing over 18,500+ out-of-sample predictions against Pinnacle closing odds, including hunting down a feature leak that faked an edge.</p>
       <div class="chips"><span class="chip">Python</span><span class="chip">XGBoost</span><span class="chip">FastAPI</span><span class="chip">TypeScript</span><span class="chip">React</span></div>
     </div>
-    <div class="p-card reveal">
+    <div class="p-card reveal" data-project="blob-padel" role="button" tabindex="0" aria-haspopup="dialog">
       <span class="num">02</span>
       <h3>Blob Padel</h3>
       <div class="sub">Cross-platform arcade game</div>
       <p>An arcade padel game shipped as a web client and an Expo mobile client sharing one Express API in a pnpm monorepo. Shared OpenAPI spec with generated clients keeps web, mobile and server in lockstep.</p>
       <div class="chips"><span class="chip">TypeScript</span><span class="chip">Expo</span><span class="chip">Express</span><span class="chip">Monorepo</span></div>
     </div>
-    <div class="p-card reveal">
+    <div class="p-card reveal" data-project="slick-cv" role="button" tabindex="0" aria-haspopup="dialog">
       <span class="num">03</span>
       <h3>Slick CV Maker</h3>
       <div class="sub">Structured CV generator</div>
       <p>One structured profile in, multiple tailored CV variants out. A TypeScript monorepo with Express 5, Drizzle and Orval codegen from an OpenAPI spec, rendering polished HTML and PDF resumes for different target roles.</p>
       <div class="chips"><span class="chip">TypeScript</span><span class="chip">Express 5</span><span class="chip">Drizzle</span><span class="chip">OpenAPI</span></div>
     </div>
-    <div class="p-card reveal">
+    <div class="p-card reveal" data-project="puzzlevault" role="button" tabindex="0" aria-haspopup="dialog">
       <span class="num">04</span>
       <h3>PuzzleVault</h3>
       <div class="sub">Community marketplace</div>
       <p>The Discogs for jigsaw puzzles. A community platform where enthusiasts catalog collections, journal their puzzling and trade with each other. Twenty one database tables across catalog, collection, trading, gamification and a frame shop.</p>
       <div class="chips"><span class="chip">React</span><span class="chip">Express</span><span class="chip">Postgres</span><span class="chip">Marketplace</span></div>
     </div>
-    <div class="p-card reveal">
+    <div class="p-card reveal" data-project="cozypans" role="button" tabindex="0" aria-haspopup="dialog">
       <span class="num">05</span>
       <h3>Cozypans</h3>
       <div class="sub">Bilingual recipe blog</div>
       <p>A photography first recipe blog with full English and Polish parity, a custom admin area and object storage for imagery. Built for real content publishing rather than a demo.</p>
       <div class="chips"><span class="chip">React</span><span class="chip">Express</span><span class="chip">Drizzle</span><span class="chip">i18n</span></div>
     </div>
-    <div class="p-card reveal">
+    <div class="p-card reveal" data-project="shortvideo" role="button" tabindex="0" aria-haspopup="dialog">
       <span class="num">06</span>
       <h3>Short-video social app</h3>
       <div class="sub">TikTok-style platform</div>
       <p>A vertical video feed with user auth, uploads, likes and comments plus AI assisted upload verification. Video storage behind a clean storage interface so the backend can swap providers without touching the app.</p>
       <div class="chips"><span class="chip">React</span><span class="chip">Express</span><span class="chip">Object storage</span><span class="chip">Auth</span></div>
     </div>
-    <div class="p-card reveal">
+    <div class="p-card reveal" data-project="dice-roller" role="button" tabindex="0" aria-haspopup="dialog">
       <span class="num">07</span>
       <h3>Dice Roller</h3>
       <div class="sub">Tabletop companion</div>
@@ -289,31 +334,31 @@ footer{border-top:1px solid var(--line);padding:26px 32px;display:flex;justify-c
   <h2 class="reveal">A decade of building</h2>
   <div class="timeline">
     <div class="t-item reveal">
-      <div class="when">Nov 2022 — Present</div>
+      <div class="when">Nov 2022 to Present</div>
       <h3>Founder &amp; CEO</h3>
       <div class="where">Grug's Lair · Bristol / London, UK</div>
       <p>Leading strategy, product vision and fundraising for a fan intelligence and engagement platform. Closed pre-seed backing from Starkware, Tim Ricci and Cartridge, shipped Blob Arena to iOS and Android and built the AMMA partnership with presence at live events across the USA.</p>
     </div>
     <div class="t-item reveal">
-      <div class="when">Apr 2019 — Nov 2022</div>
+      <div class="when">Apr 2019 to Nov 2022</div>
       <h3>Co-founder &amp; Head of Research</h3>
       <div class="where">Agrippa Capital</div>
       <p>Co-founded a capital research firm and built the research function from the ground up. Led market analysis and investment research across the portfolio and produced insight reports for internal stakeholders and external partners.</p>
     </div>
     <div class="t-item reveal">
-      <div class="when">Jul 2017 — Mar 2018</div>
+      <div class="when">Jul 2017 to Mar 2018</div>
       <h3>Co-founder &amp; Head of Product</h3>
       <div class="where">Volunteer Space · Newport, UK</div>
       <p>Shaped product direction for a volunteer management marketplace and contributed to raising pre-seed funding from UK investors.</p>
     </div>
     <div class="t-item reveal">
-      <div class="when">Aug 2016 — Jul 2017</div>
+      <div class="when">Aug 2016 to Jul 2017</div>
       <h3>Tech Leader</h3>
       <div class="where">The Alacrity Foundation · Newport, UK</div>
       <p>Graduate entrepreneurship programme focused on customer discovery, challenge led innovation and turning ideas into real products.</p>
     </div>
     <div class="t-item reveal">
-      <div class="when">Sep 2013 — May 2016</div>
+      <div class="when">Sep 2013 to May 2016</div>
       <h3>BSc Games Technology</h3>
       <div class="where">University of the West of England · Bristol</div>
       <p>Computer games and programming. Where the builder habit started.</p>
@@ -360,6 +405,14 @@ footer{border-top:1px solid var(--line);padding:26px 32px;display:flex;justify-c
   <span class="mono">Designed and built with care in Bristol</span>
 </footer>
 
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="ov-title">
+  <div class="ov-backdrop" id="ov-backdrop"></div>
+  <div class="ov-panel">
+    <button class="ov-close" id="ov-close" aria-label="Close project details">✕</button>
+    <div id="ov-body"></div>
+  </div>
+</div>
+
 <script>
 // scroll progress
 const progress=document.getElementById('progress');
@@ -378,20 +431,219 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const mq=document.getElementById('marquee');
 mq.innerHTML+=mq.innerHTML;
 
-// subtle tilt on cards
-document.querySelectorAll('.f-card,.p-card').forEach(card=>{
-  card.addEventListener('mousemove',e=>{
-    const r=card.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
-    card.style.transform=`translateY(-5px) rotateX(${-y*3}deg) rotateY(${x*3}deg)`;
-    card.style.transition='transform .1s';
+// subtle tilt on cards, pointer devices only, off under reduced motion
+if(matchMedia('(hover:hover) and (pointer:fine)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+  document.querySelectorAll('.f-card,.p-card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`translateY(-5px) rotateX(${-y*3}deg) rotateY(${x*3}deg)`;
+      card.style.transition='transform .1s';
+    });
+    card.addEventListener('mouseleave',()=>{
+      card.style.transform='';card.style.transition='transform .3s';
+    });
   });
-  card.addEventListener('mouseleave',()=>{
-    card.style.transform='';card.style.transition='transform .3s';
-  });
-});
+}
 
 document.getElementById('year').textContent=new Date().getFullYear();
+
+// project detail overlay
+const PROJECTS={
+  'blob-arena':{
+    kicker:'Flagship · Live product',
+    title:'Blob Arena',
+    pitch:'A mobile first competitive sports battler, live on iOS and Android as the official interactive game of AMMA.',
+    metrics:[['12,204+','total users'],['1,645','peak MAU'],['2.1M','in-game transactions'],['~12.5%','event conversion']],
+    story:[
+      'Blob Arena is built in Unity around turn based combat with arcade pacing. Leagues, weekly leaderboards and seasonal challenges keep the meta moving between live events. It launched on iOS and Android in November 2025 and runs in public early access today.',
+      'As the official interactive game of AMMA it shows up where the fans are. Booth presence, big screens and half time activations at every event, with AMMA broadcast on Prime Video. The revenue split with AMMA runs through an automated on-chain referral system on Starknet.',
+      'The numbers are early and real. Around 250 new users per event, roughly 12.5% of attendees converting on site and in-game purchases already flowing. I founded and run the company behind it, closed pre-seed backing from Starkware, Tim Ricci and Cartridge and lead a team of about ten.'
+    ],
+    features:['Turn based combat with arcade pacing','Classic mode plus an AMMA Edition on the combat sports IP','Leagues, weekly leaderboards and seasonal challenges','Live event tie-ins at AMMA shows across the USA','On-chain referral and revenue split on Starknet','In-game purchases live','Runs on web, iOS and Android'],
+    stack:['Unity','C#','Starknet','iOS + Android','Web','Live ops'],
+    shots:['Combat view','Leaderboards']
+  },
+  'platform':{
+    kicker:'Flagship · B2B SaaS',
+    title:"Grug's Lair Platform",
+    pitch:'Fan intelligence SaaS that turns live event crowds into promoter owned data, segments and revenue.',
+    metrics:[['<10s','QR fan capture'],['4','behavioural segments'],['1,095','backend tests'],['78','database tables']],
+    story:[
+      'Promoters fill venues yet ticketing platforms, social networks and streamers own all the fan data. The platform sits between the promoter and those touchpoints and builds a database the promoter actually owns.',
+      'Fans scan a QR at the event and register in under 10 seconds. Automated segmentation sorts them into Whales, Engaged, Dormant and Discovery, maps them by city and scores them on spend, frequency and recency. The Ask Grug copilot reads segment state and recommends the next best campaign.',
+      'It is built like a product, not a demo. Marketing consent is unchecked by default and exports default to consented contacts only. Formal data integrity and performance audits at a 100,000 fan benchmark decide what counts as pilot ready, and paid pilots are gated on named findings rather than shipped past them.'
+    ],
+    features:['QR activation network with a public mobile capture page','Automatic segmentation into Whales, Engaged, Dormant and Discovery','CSV ticket ingestion with identity resolution and dedupe','Ask Grug AI copilot for next best campaign recommendations','Raffle Engine that converts crowds into registered profiles','Creative Kit auto-generated QR promo assets','Dashboard KPIs with per event stats and city level fan mapping','Consent first exports'],
+    stack:['React','TypeScript','Express','Postgres + Drizzle','Vitest','pnpm monorepo'],
+    shots:['Dashboard','Fan map']
+  },
+  'quantgrug':{
+    kicker:'The lab · 01',
+    title:'QUANTGRUG',
+    pitch:'A football prediction engine judged the hard way, against Pinnacle closing odds on 18,577 unseen matches.',
+    metrics:[['18,577','out-of-sample predictions'],['0.008','nats behind Pinnacle close'],['9/9','leagues improved by calibration'],['23','features served']],
+    story:[
+      'QUANTGRUG fuses three layers into one prediction. A Python ensemble of logistic regression, random forest and XGBoost alongside a Dixon-Coles goals model and an Elo-logit, blended with de-vigged bookmaker odds and Polymarket prices. Claude writes the match analysis.',
+      'The headline is honest: the model does not beat the closing line. Rolling walk-forward evaluation over 18,577 out-of-sample predictions puts it 0.008 nats behind de-vigged Pinnacle closing odds. Measuring that gap properly is the point. It keeps the project honest about where edge really comes from.',
+      'The best story is the leak hunt. A feature computed from the shots of the very match being predicted made a losing model look like a winner, worth 18 times the entire distance to the bookmaker. I found it, killed it and replaced it with leakage regression tests that fail the build if any feature reads post-match data.',
+      'One learned calibration step replaced six stacked draw corrections that fought each other, cutting draw calibration error from 0.1067 to 0.0036 and winning in all nine leagues.'
+    ],
+    features:['Voting ensemble plus Dixon-Coles and Elo-logit models','Blend of model, de-vigged market and Polymarket prices','Rolling-origin walk-forward evaluation harness','Automated leakage tests on every feature','Model drift monitoring across training runs','Claude written match analysis','TypeScript fallback ensemble with cross language parity tests','Append-only odds history from an hourly sync'],
+    stack:['Python','FastAPI','scikit-learn','XGBoost','TypeScript','Express 5','React + Vite','Postgres + Drizzle'],
+    shots:['Prediction view','Analytics']
+  },
+  'blob-padel':{
+    kicker:'The lab · 02',
+    title:'Blob Padel',
+    pitch:'One arcade padel game, two clients, one contract. Web and mobile share a single generated API client.',
+    metrics:[],
+    story:[
+      'Blob Padel ships as a browser game and an Expo mobile app inside one pnpm monorepo. Both clients talk to the same Express 5 API through the same generated client, so the contract changes in exactly one place.',
+      'The API is spec first. An OpenAPI spec is the source of truth and Orval regenerates the React Query client and Zod schemas from it. Generated files are never hand edited.',
+      'TypeScript project references keep the whole monorepo typechecking as one unit, with esbuild and Vite doing the bundling and Expo building the mobile client.'
+    ],
+    features:['Browser web game client','Expo mobile client sharing the same contract','Shared Express 5 API','OpenAPI spec-driven codegen for hooks and schemas','Postgres persistence via Drizzle','UI mockup playground package'],
+    stack:['TypeScript','Expo','Express 5','Postgres + Drizzle','Orval','pnpm monorepo'],
+    shots:['Gameplay','Mobile client']
+  },
+  'slick-cv':{
+    kicker:'The lab · 03',
+    title:'Slick CV Maker',
+    pitch:'One structured profile in, role tailored CVs out. The tool behind my own founder, PM, finance and gaming CVs.',
+    metrics:[],
+    story:[
+      'Every application wants a different story from the same career. Slick CV Maker keeps one structured profile as the source of truth and renders role tailored variants from it. The founder, PM, finance and gaming versions of my own CV all come out of this tool as polished HTML and PDF.',
+      'Under the hood it is the same spec first pattern I use everywhere. OpenAPI spec as the contract, Orval generating the React Query client and Zod schemas, Express 5 serving the API and Drizzle talking to Postgres.'
+    ],
+    features:['Role tailored CV variants from one structured profile','Real committed outputs: founder, PM, finance and gaming CVs','HTML and PDF output','Spec first API with Orval codegen','Postgres persistence with Drizzle','pnpm monorepo with project references'],
+    stack:['TypeScript','Express 5','Postgres + Drizzle','Orval','Zod','esbuild'],
+    shots:['CV output','Variant gallery']
+  },
+  'puzzlevault':{
+    kicker:'The lab · 04',
+    title:'PuzzleVault',
+    pitch:'The Discogs for jigsaw puzzles. Catalog, collection, trading and a frame shop in one community platform.',
+    metrics:[['21','database tables'],['5','product pillars'],['8%','marketplace fee model']],
+    story:[
+      'Puzzle collectors had no Discogs, so I built one. A community curated catalog searchable by brand, piece count, artist and barcode, with moderator verified entries.',
+      'Around the catalog sits the collector loop. Collection tracking, wishlists, journals with notes, ratings and photos, XP, levels, badges, streaks and leaderboards. A marketplace handles listings, offers and shipping tracking with an 8% fee on completed sales, and a frame shop with a size finder wizard rounds it out.',
+      'It is the largest data model in my lab at 21 Drizzle tables across catalog, commerce, community and support. The honest caveat: payments stay scaffolding until Stripe is wired in, and the docs say exactly that.'
+    ],
+    features:['Community curated catalog with barcode search','Collection tracking, wishlists and puzzle journals','Marketplace with listings, offers and trade ratings','XP, levels, badges, streaks and leaderboards','Frame shop with a frame size finder wizard','Support tickets and analytics modeled in the schema'],
+    stack:['React + Vite','TypeScript','Express','Postgres + Drizzle','Tailwind + shadcn','Google Cloud Storage'],
+    shots:['Catalog','Collection view']
+  },
+  'cozypans':{
+    kicker:'The lab · 05',
+    title:'Cozypans',
+    pitch:'A bilingual recipe blog that skips the life story and gets straight to the food.',
+    metrics:[],
+    story:[
+      'Cozypans is a photography first recipe blog with full English and Polish parity. A language toggle keeps both versions in sync as a hard project convention, not an afterthought.',
+      'The whole point is straightforward recipes without the padding recipe sites drown in. Copy stays plain and recipe focused.',
+      'Behind the public site sits a real publishing operation. An admin dashboard manages recipes, contact submissions and the newsletter, with broadcasts sent through Resend and images living in object storage behind an access control layer.'
+    ],
+    features:['English and Polish toggle across the site','Photography first recipe pages and category browsing','Admin dashboard for recipes, contact and newsletter','Newsletter broadcasts via Resend','Recipe comments and contact forms','Mobile first UI with 44px touch targets'],
+    stack:['React + Vite','TypeScript','Express','Postgres + Drizzle','Tailwind + shadcn','Resend'],
+    shots:['Recipe page','Admin dashboard']
+  },
+  'shortvideo':{
+    kicker:'The lab · 06',
+    title:'Short-video social app',
+    pitch:'A vertical video feed with the full social loop, built mobile first.',
+    metrics:[],
+    story:[
+      'A short-video platform where users sign in, upload clips, scroll a vertical feed, like, comment and follow.',
+      'Uploads flow through Uppy straight to cloud object storage and pass an AI assisted verification check before they publish. An access control layer keeps private and public videos separate.',
+      'The architecture is the point. Every database access goes through a repository interface so the storage layer swaps without touching the app, and the schema lives in one shared source of truth.'
+    ],
+    features:['Vertical video feed','Auth with OIDC sessions','Client side uploads via Uppy to object storage','AI assisted upload verification','Likes, comments, follows and profiles','Swappable storage behind a repository interface'],
+    stack:['React 18','TypeScript','Express','Postgres + Drizzle','Uppy.js','Google Cloud Storage'],
+    shots:['Feed','Upload flow']
+  },
+  'dice-roller':{
+    kicker:'The lab · 07',
+    title:'Dice Roller',
+    pitch:'A D20 roller built for feel. My testbed for end to end patterns before they reach bigger codebases.',
+    metrics:[],
+    story:[
+      'Small on purpose. Animated rolls with framer-motion, a confetti burst on critical hits and a roll history that remembers your session.',
+      'The client and server share one typed API contract from a single module, the same end to end TypeScript pattern I use across the lab. New patterns prove themselves here before they reach bigger codebases.'
+    ],
+    features:['D20 and multi dice rolling','Smooth roll animations with framer-motion','Confetti celebration on crits','Roll history UI','Shared typed API contract between client and server','Postgres wiring via Drizzle'],
+    stack:['React + Vite','TypeScript','Express','Drizzle','framer-motion','canvas-confetti'],
+    shots:['Roller','Roll history']
+  }
+};
+
+const overlay=document.getElementById('overlay');
+const ovBody=document.getElementById('ov-body');
+const ovClose=document.getElementById('ov-close');
+const ovPanel=overlay.querySelector('.ov-panel');
+let lastFocus=null;
+
+function renderProject(p){
+  return `<div class="ov-kicker">${p.kicker}</div>
+  <h2 id="ov-title">${p.title}</h2>
+  <p class="ov-pitch">${p.pitch}</p>
+  ${p.metrics.length?`<div class="ov-metrics">${p.metrics.map(m=>`<div><b>${m[0]}</b><span>${m[1]}</span></div>`).join('')}</div>`:''}
+  <div class="ov-h">The story</div>
+  <div class="ov-story">${p.story.map(s=>`<p>${s}</p>`).join('')}</div>
+  <div class="ov-h">What's inside</div>
+  <ul class="ov-features">${p.features.map(f=>`<li>${f}</li>`).join('')}</ul>
+  <div class="ov-h">Stack</div>
+  <div class="chips">${p.stack.map(s=>`<span class="chip">${s}</span>`).join('')}</div>
+  <div class="ov-h">Screens</div>
+  <div class="ov-shots">${p.shots.map(s=>`<div class="ov-shot">${s}<br>screenshot coming soon</div>`).join('')}</div>
+  <div class="ov-links">Live demo and code links land here as each project comes online.</div>`;
+}
+
+function openProject(id,push=true){
+  const p=PROJECTS[id];if(!p)return;
+  ovBody.innerHTML=renderProject(p);
+  overlay.classList.add('on');
+  ovPanel.scrollTop=0;
+  document.documentElement.style.overflow='hidden';
+  lastFocus=document.activeElement;
+  ovClose.focus();
+  if(push)history.pushState({p:id},'','#'+id);
+}
+function closeProject(){
+  if(!overlay.classList.contains('on'))return;
+  overlay.classList.remove('on');
+  document.documentElement.style.overflow='';
+  if(lastFocus&&lastFocus.focus)lastFocus.focus();
+}
+function uiClose(){
+  if(history.state&&history.state.p){history.back();}
+  else{history.replaceState(null,'',location.pathname+location.search);closeProject();}
+}
+
+document.querySelectorAll('[data-project]').forEach(card=>{
+  card.insertAdjacentHTML('beforeend','<div class="open">Open project</div>');
+  card.addEventListener('click',()=>openProject(card.dataset.project));
+  card.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();openProject(card.dataset.project);}
+  });
+});
+ovClose.addEventListener('click',uiClose);
+document.getElementById('ov-backdrop').addEventListener('click',uiClose);
+document.addEventListener('keydown',e=>{
+  if(!overlay.classList.contains('on'))return;
+  if(e.key==='Escape'){uiClose();return;}
+  if(e.key!=='Tab')return;
+  const f=overlay.querySelectorAll('button,a[href]');
+  const first=f[0],last=f[f.length-1];
+  if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+  else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+});
+addEventListener('popstate',()=>{
+  const id=location.hash.slice(1);
+  if(PROJECTS[id])openProject(id,false);else closeProject();
+});
+const initId=location.hash.slice(1);
+if(PROJECTS[initId])openProject(initId,false);
 </script>
 </body>
 </html>

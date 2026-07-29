@@ -8,7 +8,7 @@ Personal portfolio site for **Giorgio Bufalino**. He is job hunting: the site ta
 
 ## Locked decisions (do not relitigate without asking Giorgio)
 
-- **Design:** dark and bold. Near-black background, lime accent `#c8ff2e`, violet secondary `#7c5cff`, Space Grotesk display + Inter body + JetBrains Mono labels (Google Fonts). Modern, fresh, some motion.
+- **Design:** dark and bold, almost futuristic. Navy near-black background `#050810`, electric blue accent `#45c4ff`, indigo secondary `#6d7cff`, Space Grotesk display + Inter body + JetBrains Mono labels (Google Fonts). Modern, fresh, some motion. (Palette changed from lime/violet to navy/blue per Giorgio, 29 Jul 2026.)
 - **Hosting:** Vercel or Netlify (static).
 - **Curation:** all projects included, but FartGram/OnlyFarts is presented neutrally as "Short-video social app" with no crude branding.
 - **Contact:** giorgiobufalino@gmail.com, linkedin.com/in/giorgiobufalino, GitHub (username still TBD — button currently points at github.com, fix when he provides it), profile photo included.
