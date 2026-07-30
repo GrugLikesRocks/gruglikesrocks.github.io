@@ -56,7 +56,7 @@ img{display:block;max-width:100%}
 .dim{color:var(--muted)}
 
 /* targeting brackets, two opposite corners */
-.brk::before,.brk::after{content:"";position:absolute;width:13px;height:13px;opacity:0;transition:opacity .16s}
+.brk::before,.brk::after{content:"";position:absolute;width:13px;height:13px;opacity:0;z-index:4;transition:opacity .16s}
 .brk::before{top:-1px;left:-1px;border-top:2px solid var(--sig);border-left:2px solid var(--sig)}
 .brk::after{bottom:-1px;right:-1px;border-bottom:2px solid var(--sig);border-right:2px solid var(--sig)}
 .brk:hover::before,.brk:hover::after,.brk:focus-visible::before,.brk:focus-visible::after{opacity:1}
@@ -66,13 +66,13 @@ img{display:block;max-width:100%}
 
 /* nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;justify-content:space-between;
-  align-items:center;height:58px;padding:0 28px;background:rgba(11,18,32,.92);
+  align-items:center;height:68px;padding:0 32px;background:rgba(11,18,32,.92);
   backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav .logo{font-family:'Space Grotesk';font-weight:700;font-size:.98rem;letter-spacing:.02em;text-decoration:none;color:var(--text)}
+nav .logo{font-family:'Space Grotesk';font-weight:700;font-size:1.12rem;letter-spacing:.02em;text-decoration:none;color:var(--text)}
 nav .logo b{color:var(--sig);font-weight:inherit}
-nav ul{display:flex;gap:2px;list-style:none;align-items:center}
-nav ul a{display:block;padding:8px 13px;color:var(--muted);text-decoration:none;
-  font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.11em;text-transform:uppercase;
+nav ul{display:flex;gap:4px;list-style:none;align-items:center}
+nav ul a{display:block;padding:11px 16px;color:var(--muted);text-decoration:none;
+  font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
   transition:color .15s,background .15s}
 nav ul a:hover{color:var(--text);background:var(--panel)}
 .nav-cta{color:var(--sig)!important;border:1px solid var(--sig);margin-left:10px}
@@ -85,7 +85,7 @@ nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 nav.open .nav-toggle span:nth-child(2){opacity:0}
 nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-main{padding-top:58px}
+main{padding-top:68px}
 section{max-width:1180px;margin:0 auto;padding:clamp(54px,6vw,80px) 28px}
 .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;
   border-bottom:1px solid var(--line);padding-bottom:13px;margin-bottom:16px}
@@ -94,8 +94,8 @@ h2{font-size:clamp(1.7rem,3.6vw,2.5rem);text-transform:uppercase}
 .lead{color:var(--muted);max-width:640px;font-size:1rem;margin-bottom:34px}
 
 /* hero: the player card */
-.hero{min-height:calc(100vh - 58px);display:flex;flex-direction:column;justify-content:center;
-  padding-top:54px;padding-bottom:38px}
+.hero{display:flex;flex-direction:column;
+  padding-top:clamp(64px,9vh,120px);padding-bottom:clamp(52px,7vh,88px)}
 .player{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:start}
 .portrait{position:relative;width:168px;flex-shrink:0;border:1px solid var(--line);background:var(--panel);padding:7px}
 .portrait img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 22%;
@@ -149,6 +149,17 @@ h2{font-size:clamp(1.7rem,3.6vw,2.5rem);text-transform:uppercase}
 /* roster */
 .roster{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .p-card{padding:21px}
+.p-shot{position:relative;margin:-21px -21px 18px;height:150px;overflow:hidden;border-bottom:1px solid var(--line);background:#0a1120}
+.p-shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;
+  filter:grayscale(1) brightness(.6) contrast(1.05);transition:filter .35s ease,transform .45s ease}
+.p-card:hover .p-shot img,.p-card:focus-visible .p-shot img{filter:grayscale(0) brightness(1) contrast(1);transform:scale(1.06)}
+.p-shot::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,var(--panel),rgba(13,21,36,0) 60%)}
+.p-shot.empty{display:flex;align-items:center;justify-content:center;
+  background:repeating-linear-gradient(135deg,#0a1120,#0a1120 11px,#0c1526 11px,#0c1526 22px)}
+.p-noshot{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+/* touch devices have no hover, so show colour imagery by default */
+@media(hover:none){.p-shot img,.portrait img{filter:none;transform:none}}
 .p-num{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.09em;color:var(--muted);transition:color .16s}
 .p-card:hover .p-num{color:var(--sig)}
 .p-card h3{font-size:1.08rem;text-transform:uppercase;margin:8px 0 5px}
@@ -282,11 +293,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
 }
 @media(max-width:760px){
   .nav-toggle{display:inline-flex}
-  nav ul{position:fixed;top:58px;left:0;right:0;z-index:-1;flex-direction:column;align-items:stretch;
+  nav ul{position:fixed;top:68px;left:0;right:0;z-index:-1;flex-direction:column;align-items:stretch;
     gap:0;padding:8px 18px 18px;background:rgba(11,18,32,.98);backdrop-filter:blur(14px);
     border-bottom:1px solid var(--line);transform:translateY(-115%);transition:transform .24s ease;visibility:hidden}
   nav.open ul{transform:none;visibility:visible}
-  nav ul a{padding:13px 6px;font-size:.68rem}
+  nav ul a{padding:14px 6px;font-size:.82rem}
   .nav-cta{margin-left:0;margin-top:10px;text-align:center}
   .player{grid-template-columns:1fr;gap:20px;align-items:start}
   .portrait{width:104px}
@@ -316,7 +327,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
-  nav ul,.nav-toggle span,.portrait img,.btn,.f-card,.p-card,.brk::before,.brk::after,.select,.p-num{transition:none}
+  nav ul,.nav-toggle span,.portrait img,.btn,.f-card,.p-card,.brk::before,.brk::after,.select,.p-num,.p-shot img{transition:none}
+  .p-card:hover .p-shot img,.p-card:focus-visible .p-shot img{transform:none}
 }
 </style>
 </head>
@@ -356,7 +368,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
   <div class="stats">
     <div class="stat"><b>20,000+</b><span>users on Blob Arena</span></div>
     <div class="stat"><b>2.1M</b><span>in-game transactions processed</span></div>
-    <div class="stat"><b>10</b><span>products designed and built</span></div>
+    <div class="stat"><b>9</b><span>products designed and built</span></div>
     <div class="stat"><b>$1M+</b><span>capital raised</span></div>
   </div>
 </section>
@@ -366,7 +378,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
     <h2>Building Grug's Lair</h2>
     <div class="hud dim">Flagship</div>
   </div>
-  <p class="lead reveal">I founded Grug's Lair to turn sports from something people watch into something they live. Today it is backed by Starkware, with a game live on the app stores and Solco taking the same thinking into festivals and live events.</p>
+  <p class="lead reveal">I founded Grug's Lair to turn sports from something people watch into something they live. We started by pioneering onchain gaming, then moved to traditional architecture. Today it is backed by Starkware, with a game live on the app stores and Solco taking the same thinking into festivals and live events.</p>
   <div class="flagship">
     <div class="f-card brk reveal" data-project="blob-arena" role="button" tabindex="0" aria-haspopup="dialog">
       <div class="f-head">
@@ -374,7 +386,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
         <div class="hud badge">Live</div>
       </div>
       <h3>Blob Arena</h3>
-      <p>The official interactive game of AMMA (Armored MMA). Turn based combat, leagues and live event tie-ins, built in Unity with on-chain revenue on Starknet.</p>
+      <p>The official interactive game of AMMA (Armored MMA). Turn based combat, leagues and live event tie-ins, built in Unity.</p>
       <div class="f-metrics">
         <div><b>20,000+</b><span>total users</span></div>
         <div><b>1,645</b><span>peak MAU</span></div>
@@ -383,7 +395,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       <div class="spec">
         <div class="spec-row"><span class="k">Engine</span><span class="v">Unity · C#</span></div>
         <div class="spec-row"><span class="k">Platforms</span><span class="v">iOS · Android · Web</span></div>
-        <div class="spec-row"><span class="k">Chain</span><span class="v">Starknet</span></div>
       </div>
       <div class="select">Select</div>
     </div>
@@ -394,11 +405,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       </div>
       <h3>Solco</h3>
       <p>Audience and impact intelligence for festivals and live events. Capture the crowd, segment it, then prove its value to sponsors and councils.</p>
-      <div class="f-metrics">
-        <div><b>&lt;10s</b><span>QR to consented profile</span></div>
-        <div><b>1,095</b><span>backend tests</span></div>
-        <div><b>100k</b><span>fans in load test</span></div>
-      </div>
       <div class="spec">
         <div class="spec-row"><span class="k">Stack</span><span class="v">React · Express · Postgres</span></div>
         <div class="spec-row"><span class="k">Modules</span><span class="v">5</span></div>
@@ -412,7 +418,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
 <section id="projects">
   <div class="sec-head reveal">
     <h2>The lab</h2>
-    <div class="hud dim">08 entries</div>
+    <div class="hud dim">07 entries</div>
   </div>
   <p class="lead reveal">Projects I build for the love of it. Real codebases, each with its own database, API and frontend. Select any card for the full story.</p>
   <div class="roster">
@@ -423,7 +429,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       <p>Fuses an ML ensemble with bookmaker odds and Polymarket prices, benchmarked against Pinnacle closing odds across 18,500+ unseen predictions.</p>
       <div class="spec">
         <div class="spec-row"><span class="k">Stack</span><span class="v">Python · TypeScript</span></div>
-        <div class="spec-row"><span class="k">Evaluated</span><span class="v">18,577 predictions</span></div>
       </div>
       <div class="select">Select</div>
     </div>
@@ -434,73 +439,56 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       <p>A free to play padel game with a tournament ladder, card based blob levelling, a season pass and timed events. Web and mobile share one API contract.</p>
       <div class="spec">
         <div class="spec-row"><span class="k">Stack</span><span class="v">TypeScript · Expo</span></div>
-        <div class="spec-row"><span class="k">Clients</span><span class="v">Web · Mobile</span></div>
-      </div>
-      <div class="select">Select</div>
-    </div>
-    <div class="p-card brk reveal" data-project="slick-cv" role="button" tabindex="0" aria-haspopup="dialog">
-      <span class="p-num">03</span>
-      <h3>Slick CV Maker</h3>
-      <div class="p-role">Structured CV generator</div>
-      <p>One structured profile in, tailored CV variants out. The founder, PM, finance and gaming versions are real committed outputs.</p>
-      <div class="spec">
-        <div class="spec-row"><span class="k">Stack</span><span class="v">TypeScript · Express 5</span></div>
-        <div class="spec-row"><span class="k">Output</span><span class="v">4 CV variants</span></div>
       </div>
       <div class="select">Select</div>
     </div>
     <div class="p-card brk reveal" data-project="puzzlevault" role="button" tabindex="0" aria-haspopup="dialog">
-      <span class="p-num">04</span>
+      <span class="p-num">03</span>
       <h3>PuzzleVault</h3>
       <div class="p-role">Community marketplace</div>
       <p>The Discogs for jigsaw puzzles. Catalog, collection, journaling, trading and gamification across 21 database tables, plus a frame shop.</p>
       <div class="spec">
         <div class="spec-row"><span class="k">Stack</span><span class="v">React · Express</span></div>
-        <div class="spec-row"><span class="k">Schema</span><span class="v">21 tables</span></div>
       </div>
       <div class="select">Select</div>
     </div>
     <div class="p-card brk reveal" data-project="cozypans" role="button" tabindex="0" aria-haspopup="dialog">
-      <span class="p-num">05</span>
+      <span class="p-num">04</span>
       <h3>Cozypans</h3>
       <div class="p-role">Bilingual recipe blog</div>
       <p>Photography first recipes with full English and Polish parity, a custom admin area and object storage. Built to run a real publishing workflow.</p>
       <div class="spec">
         <div class="spec-row"><span class="k">Stack</span><span class="v">React · Express</span></div>
-        <div class="spec-row"><span class="k">Locales</span><span class="v">EN · PL</span></div>
       </div>
       <div class="select">Select</div>
     </div>
     <div class="p-card brk reveal" data-project="shortvideo" role="button" tabindex="0" aria-haspopup="dialog">
-      <span class="p-num">06</span>
+      <span class="p-num">05</span>
       <h3>Short-video social app</h3>
       <div class="p-role">Vertical video platform</div>
       <p>A vertical video feed with auth, uploads, likes and comments. AI assisted upload verification and a swappable storage interface behind the scenes.</p>
       <div class="spec">
         <div class="spec-row"><span class="k">Stack</span><span class="v">React · Express</span></div>
-        <div class="spec-row"><span class="k">Storage</span><span class="v">Swappable</span></div>
       </div>
       <div class="select">Select</div>
     </div>
     <div class="p-card brk reveal" data-project="dm-codex" role="button" tabindex="0" aria-haspopup="dialog">
-      <span class="p-num">07</span>
+      <span class="p-num">06</span>
       <h3>Dungeon Master Codex</h3>
       <div class="p-role">Campaign management tool</div>
       <p>A campaign command centre for D&amp;D 5e. Quests, secrets, clue webs, prophecies and combat, all tracked against a real running campaign.</p>
       <div class="spec">
         <div class="spec-row"><span class="k">Stack</span><span class="v">React · Express 5</span></div>
-        <div class="spec-row"><span class="k">Tools</span><span class="v">30+ trackers</span></div>
       </div>
       <div class="select">Select</div>
     </div>
     <div class="p-card brk reveal" data-project="dice-roller" role="button" tabindex="0" aria-haspopup="dialog">
-      <span class="p-num">08</span>
+      <span class="p-num">07</span>
       <h3>Dice Roller</h3>
       <div class="p-role">Tabletop companion</div>
       <p>A D20 roller with roll history. Small on purpose, the testbed where new patterns prove themselves before bigger codebases.</p>
       <div class="spec">
         <div class="spec-row"><span class="k">Stack</span><span class="v">React · Express</span></div>
-        <div class="spec-row"><span class="k">Role</span><span class="v">Pattern testbed</span></div>
       </div>
       <div class="select">Select</div>
     </div>
@@ -664,12 +652,12 @@ const PROJECTS={
     metrics:[['20,000+','total users'],['1,645','peak MAU'],['2.1M','in-game transactions'],['~12.5%','event conversion']],
     story:[
       'Blob Arena is built in Unity around turn based combat with arcade pacing. Leagues, weekly leaderboards and seasonal challenges keep the meta moving between live events. It launched on iOS and Android in November 2025 and runs in public early access today.',
-      'As the official interactive game of AMMA it shows up where the fans are. Booth presence, big screens and half time activations at every event, with AMMA broadcast on Prime Video. The revenue split with AMMA runs through an automated on-chain referral system on Starknet.',
+      'As the official interactive game of AMMA it shows up where the fans are. Booth presence, big screens and half time activations at every event, with AMMA broadcast on Prime Video.',
       'The numbers are early and real. Around 250 new users per event, roughly 12.5% of attendees converting on site and in-game purchases already flowing. I founded and run the company behind it, raised around $1M from Starkware, Tim Ricci and Cartridge and lead an 11 person team.'
     ],
-    features:['Turn based combat with arcade pacing','Classic mode plus an AMMA Edition on the combat sports IP','Leagues, weekly leaderboards and seasonal challenges','Live event tie-ins at AMMA shows across the USA','On-chain referral and revenue split on Starknet','In-game purchases live','Runs on web, iOS and Android'],
-    stack:['Unity','C#','Starknet','iOS + Android','Web','Live ops'],
-    arch:['Unity + C#','iOS · Android · Web','On-chain revenue on Starknet'],
+    features:['Turn based combat with arcade pacing','Classic mode plus an AMMA Edition on the combat sports IP','Leagues, weekly leaderboards and seasonal challenges','Live event tie-ins at AMMA shows across the USA','In-game purchases live','Runs on web, iOS and Android'],
+    stack:['Unity','C#','iOS + Android','Web','Live ops'],
+    arch:['Unity + C#','iOS · Android · Web'],
 
     links:'Get it on the <a href="https://apps.apple.com/us/app/blob-arena/id6751915702" target="_blank" rel="noopener">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.GrugsLair.BlobArena" target="_blank" rel="noopener">Google Play</a>. The studio lives at <a href="https://grugslair.com" target="_blank" rel="noopener">grugslair.com</a>.'
   },
@@ -725,22 +713,8 @@ const PROJECTS={
     arch:['Web client + Expo mobile','Generated API client','Express 5','Postgres'],
     screens:[['padel-gameplay.jpg','Match in play',940,460],['padel-menu.jpg','Tournament ladder and progression',460,940],['padel-select.jpg','Blob select with stat block',460,940]]
   },
-  'slick-cv':{
-    kicker:'The lab · 03',
-    title:'Slick CV Maker',
-    pitch:'One structured profile in, role tailored CVs out. The tool behind my own founder, PM, finance and gaming CVs.',
-    live:'https://slick-cv.vercel.app',liveLabel:'See the CV outputs',
-    metrics:[],
-    story:[
-      'Every application wants a different story from the same career. Slick CV Maker keeps one structured profile as the source of truth and renders role tailored variants from it. The founder, PM, finance and gaming versions of my own CV all come out of this tool, committed in the repo as HTML and PDF.',
-      'The interesting part is the data model. One profile holds the whole career and each variant picks what to surface for its audience. The CV this site is built from came out of it.'
-    ],
-    features:['Role tailored CV variants from one structured profile','Real committed outputs: founder, PM, finance and gaming CVs','Committed HTML and PDF outputs','Spec first API with Orval codegen','Postgres persistence with Drizzle','pnpm monorepo with project references'],
-    stack:['TypeScript','Express 5','Postgres + Drizzle','Orval','Zod','esbuild'],
-    screens:[['slickcv-output.jpg','Generated founder CV',1100,1400]]
-  },
   'puzzlevault':{
-    kicker:'The lab · 04',
+    kicker:'The lab · 03',
     title:'PuzzleVault',
     pitch:'The Discogs for jigsaw puzzles. Catalog, collection, trading and a frame shop in one community platform.',
     live:'https://puzzlevault.vercel.app',liveLabel:'See the landing page',demo:true,
@@ -756,7 +730,7 @@ const PROJECTS={
     screens:[['puzzlevault-home.jpg','Landing',1200,750],['puzzlevault-catalog.jpg','Catalog with brand and size filters',1200,750]]
   },
   'cozypans':{
-    kicker:'The lab · 05',
+    kicker:'The lab · 04',
     title:'Cozypans',
     pitch:'A bilingual recipe blog that skips the life story and gets straight to the food.',
     live:'https://cozypans.vercel.app',liveLabel:'See the landing page',demo:true,
@@ -771,7 +745,7 @@ const PROJECTS={
     screens:[['cozypans-home.jpg','Public site with EN and PL toggle',1200,750]]
   },
   'shortvideo':{
-    kicker:'The lab · 06',
+    kicker:'The lab · 05',
     title:'Short-video social app',
     pitch:'A vertical video feed with the full social loop, built mobile first.',
     metrics:[],
@@ -786,7 +760,7 @@ const PROJECTS={
     links:'Runs locally. Screens are held back because the build still carries its original working branding.'
   },
   'dm-codex':{
-    kicker:'The lab · 07',
+    kicker:'The lab · 06',
     title:'Dungeon Master Codex',
     pitch:'A campaign command centre for D&D 5e, built for a campaign I actually run.',
     metrics:[['30+','tracking tools'],['11','entities tracked'],['10','sessions logged'],['7','locations']],
@@ -804,7 +778,7 @@ const PROJECTS={
     links:'Open by default, so anyone can browse the live Kingdom of Aurelth campaign.'
   },
   'dice-roller':{
-    kicker:'The lab · 08',
+    kicker:'The lab · 07',
     title:'Dice Roller',
     pitch:'A D20 roller built for feel. My testbed for end to end patterns before they reach bigger codebases.',
     live:'https://dice-roller-one-alpha.vercel.app',liveLabel:'Roll it live',
@@ -872,6 +846,24 @@ function uiClose(){
   if(history.state&&history.state.p){ovClosing=true;history.back();}
   else{history.replaceState(null,'',location.pathname+location.search);closeProject();}
 }
+
+// fighter-select screenshot on each roster card: grayscale by default, colour + brackets on hover
+document.querySelectorAll('.p-card[data-project]').forEach(card=>{
+  const proj=PROJECTS[card.dataset.project];
+  const shot=document.createElement('div');
+  shot.className='p-shot';
+  if(proj&&proj.screens&&proj.screens.length){
+    const s=proj.screens[0];
+    const img=document.createElement('img');
+    img.src='screens/'+s[0];img.alt=(proj.title||'')+' preview';img.loading='lazy';
+    if(s[2]&&s[3]){img.width=s[2];img.height=s[3];}
+    shot.appendChild(img);
+  }else{
+    shot.classList.add('empty');
+    shot.innerHTML='<span class="p-noshot">No preview</span>';
+  }
+  card.prepend(shot);
+});
 
 document.querySelectorAll('[data-project]').forEach(card=>{
   const proj=PROJECTS[card.dataset.project];
