@@ -149,17 +149,19 @@ h2{font-size:clamp(1.7rem,3.6vw,2.5rem);text-transform:uppercase}
 /* roster */
 .roster{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .p-card{padding:21px}
-.p-shot{position:relative;margin:-21px -21px 18px;height:150px;overflow:hidden;border-bottom:1px solid var(--line);background:#0a1120}
-.p-shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;
+.p-shot,.f-shot{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#0a1120}
+.p-shot{margin:-21px -21px 18px;height:150px}
+.f-shot{margin:-28px -28px 22px;height:190px}
+.p-shot img,.f-shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;
   filter:grayscale(1) brightness(.6) contrast(1.05);transition:filter .35s ease,transform .45s ease}
-.p-card:hover .p-shot img,.p-card:focus-visible .p-shot img{filter:grayscale(0) brightness(1) contrast(1);transform:scale(1.06)}
-.p-shot::after{content:"";position:absolute;inset:0;pointer-events:none;
+.p-card:hover .p-shot img,.p-card:focus-visible .p-shot img,.f-card:hover .f-shot img,.f-card:focus-visible .f-shot img{filter:grayscale(0) brightness(1) contrast(1);transform:scale(1.06)}
+.p-shot::after,.f-shot::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(to top,var(--panel),rgba(13,21,36,0) 60%)}
-.p-shot.empty{display:flex;align-items:center;justify-content:center;
+.p-shot.empty,.f-shot.empty{display:flex;align-items:center;justify-content:center;
   background:repeating-linear-gradient(135deg,#0a1120,#0a1120 11px,#0c1526 11px,#0c1526 22px)}
 .p-noshot{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 /* touch devices have no hover, so show colour imagery by default */
-@media(hover:none){.p-shot img,.portrait img{filter:none;transform:none}}
+@media(hover:none){.p-shot img,.f-shot img,.portrait img{filter:none;transform:none}}
 .p-num{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.09em;color:var(--muted);transition:color .16s}
 .p-card:hover .p-num{color:var(--sig)}
 .p-card h3{font-size:1.08rem;text-transform:uppercase;margin:8px 0 5px}
@@ -317,6 +319,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
   nav{padding:0 18px}
   footer{padding:18px}
   .f-card{padding:22px}
+  .f-shot{margin:-22px -22px 20px}
   .f-metrics{grid-template-columns:1fr}
   .f-metrics div{border-left:0;padding-left:0;border-top:1px solid var(--line)}
   .f-metrics div:first-child{border-top:0}
@@ -327,8 +330,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
-  nav ul,.nav-toggle span,.portrait img,.btn,.f-card,.p-card,.brk::before,.brk::after,.select,.p-num,.p-shot img{transition:none}
-  .p-card:hover .p-shot img,.p-card:focus-visible .p-shot img{transform:none}
+  nav ul,.nav-toggle span,.portrait img,.btn,.f-card,.p-card,.brk::before,.brk::after,.select,.p-num,.p-shot img,.f-shot img{transition:none}
+  .p-card:hover .p-shot img,.p-card:focus-visible .p-shot img,.f-card:hover .f-shot img,.f-card:focus-visible .f-shot img{transform:none}
 }
 </style>
 </head>
@@ -383,7 +386,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
     <div class="f-card brk reveal" data-project="blob-arena" role="button" tabindex="0" aria-haspopup="dialog">
       <div class="f-head">
         <div class="hud sig">Founder &amp; CEO</div>
-        <div class="hud badge">Live</div>
       </div>
       <h3>Blob Arena</h3>
       <p>The official interactive game of AMMA (Armored MMA). Turn based combat, leagues and live event tie-ins, built in Unity.</p>
@@ -401,7 +403,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
     <div class="f-card brk reveal" data-project="platform" role="button" tabindex="0" aria-haspopup="dialog">
       <div class="f-head">
         <div class="hud sig">Founder &amp; CEO</div>
-        <div class="hud badge">Live</div>
       </div>
       <h3>Solco</h3>
       <p>Audience and impact intelligence for festivals and live events. Capture the crowd, segment it, then prove its value to sponsors and councils.</p>
@@ -658,8 +659,9 @@ const PROJECTS={
     features:['Turn based combat with arcade pacing','Classic mode plus an AMMA Edition on the combat sports IP','Leagues, weekly leaderboards and seasonal challenges','Live event tie-ins at AMMA shows across the USA','In-game purchases live','Runs on web, iOS and Android'],
     stack:['Unity','C#','iOS + Android','Web','Live ops'],
     arch:['Unity + C#','iOS · Android · Web'],
-
-    links:'Get it on the <a href="https://apps.apple.com/us/app/blob-arena/id6751915702" target="_blank" rel="noopener">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.GrugsLair.BlobArena" target="_blank" rel="noopener">Google Play</a>. The studio lives at <a href="https://grugslair.com" target="_blank" rel="noopener">grugslair.com</a>.'
+    screens:[['blob-arena.jpg','Arcade combat in the AMMA arena',1200,750]],
+    live:'https://apps.apple.com/us/app/blob-arena/id6751915702',liveLabel:'Get it on the App Store',
+    links:'Also on <a href="https://play.google.com/store/apps/details?id=com.GrugsLair.BlobArena" target="_blank" rel="noopener">Google Play</a>. The studio lives at <a href="https://grugslair.com" target="_blank" rel="noopener">grugslair.com</a>.'
   },
   'platform':{
     kicker:'Flagship · B2B SaaS',
@@ -848,10 +850,10 @@ function uiClose(){
 }
 
 // fighter-select screenshot on each roster card: grayscale by default, colour + brackets on hover
-document.querySelectorAll('.p-card[data-project]').forEach(card=>{
+document.querySelectorAll('.p-card[data-project],.f-card[data-project]').forEach(card=>{
   const proj=PROJECTS[card.dataset.project];
   const shot=document.createElement('div');
-  shot.className='p-shot';
+  shot.className=card.classList.contains('f-card')?'f-shot':'p-shot';
   if(proj&&proj.screens&&proj.screens.length){
     const s=proj.screens[0];
     const img=document.createElement('img');
