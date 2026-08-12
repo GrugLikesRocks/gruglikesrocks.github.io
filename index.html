@@ -142,13 +142,6 @@ h2{font-size:clamp(1.7rem,3.6vw,2.5rem);text-transform:uppercase}
 .badge.off{border-color:var(--line-hi);color:var(--muted)}
 .f-card h3{font-size:1.5rem;text-transform:uppercase;margin-bottom:9px}
 .f-card>p{color:var(--muted);font-size:.92rem;margin-bottom:20px}
-.f-metrics{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);margin-bottom:18px}
-.f-metrics div{padding:13px 0 13px 14px;border-left:1px solid var(--line)}
-.f-metrics div:first-child{border-left:0;padding-left:0}
-.f-metrics b{display:block;font-family:'Space Grotesk';font-size:1.1rem;letter-spacing:-.02em}
-.f-metrics span{display:block;margin-top:3px;font-family:'JetBrains Mono',monospace;font-size:.58rem;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);line-height:1.45}
 
 /* roster */
 .roster{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -201,8 +194,8 @@ h2{font-size:clamp(1.7rem,3.6vw,2.5rem);text-transform:uppercase}
 .lo{background:var(--panel);border:1px solid var(--line);padding:21px}
 .lo h3{font-size:.92rem;text-transform:uppercase;margin-bottom:13px;padding-bottom:10px;border-bottom:1px solid var(--line)}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.06em;
-  color:var(--muted);border:1px solid var(--line);padding:5px 9px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.04em;
+  color:var(--muted);border:1px solid var(--line);padding:6px 10px}
 
 /* off duty */
 /* six tracks so five cards sit flush: three on top, two wider underneath.
@@ -338,9 +331,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
   footer{padding:18px}
   .f-card{padding:22px}
   .f-shot{margin:-22px -22px 20px}
-  .f-metrics{grid-template-columns:1fr}
-  .f-metrics div{border-left:0;padding-left:0;border-top:1px solid var(--line)}
-  .f-metrics div:first-child{border-top:0}
   .ov-metrics{grid-template-columns:1fr}
   .ov-metrics div{border-left:0}
   .ov-metrics div:not(:first-child){border-top:1px solid var(--line)}
@@ -403,16 +393,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
   <p class="lead reveal">I founded Grug's Lair to turn sports from something people watch into something they live. We started by pioneering onchain gaming, then moved to traditional architecture. Today it is backed by Starkware, with a game live on the app stores and Solco taking the same thinking into festivals and live events.</p>
   <div class="flagship">
     <div class="f-card brk reveal" data-project="blob-arena" role="button" tabindex="0" aria-haspopup="dialog">
-      <div class="f-head">
-        <div class="hud sig">Founder &amp; CEO</div>
-      </div>
       <h3>Blob Arena</h3>
       <p>The official interactive game of AMMA (Armored MMA). Turn based combat, leagues and live event tie-ins, built in Unity.</p>
-      <div class="f-metrics">
-        <div><b>20,000+</b><span>total users</span></div>
-        <div><b>1,645</b><span>peak MAU</span></div>
-        <div><b>~12.5%</b><span>event conversion</span></div>
-      </div>
       <div class="spec">
         <div class="spec-row"><span class="k">Engine</span><span class="v">Unity · C#</span></div>
         <div class="spec-row"><span class="k">Platforms</span><span class="v">iOS · Android · Web</span></div>
@@ -423,7 +405,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
     <div class="f-card locked reveal">
       <div class="f-shot empty"><span class="p-noshot">Unannounced</span></div>
       <div class="f-head">
-        <div class="hud sig">Founder &amp; CEO</div>
         <div class="badge off hud">In development</div>
       </div>
       <h3>Project: Fame</h3>
