@@ -87,6 +87,8 @@ nav.open .nav-toggle span:nth-child(2){opacity:0}
 nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 main{padding-top:68px}
+/* the nav is fixed at 68px, so anchor jumps must not land under it */
+section[id],main{scroll-margin-top:28px}
 section{max-width:1180px;margin:0 auto;padding:clamp(54px,6vw,80px) 28px}
 .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;
   border-bottom:1px solid var(--line);padding-bottom:13px;margin-bottom:16px}
@@ -861,7 +863,7 @@ function renderProject(p){
   <div class="ov-h">Stack</div>
   <div class="tags">${p.stack.map(s=>`<span class="tag">${s}</span>`).join('')}</div>
   ${p.screens&&p.screens.length?`<div class="ov-h">Screens</div>
-  <div class="ov-screens">${p.screens.map(s=>`<figure class="ov-screen"><img src="screens/${s[0]}" alt="${s[1]}" loading="lazy" width="${s[2]}" height="${s[3]}"><figcaption>${s[1]}</figcaption></figure>`).join('')}</div>`:''}
+  <div class="ov-screens">${p.screens.map(s=>`<figure class="ov-screen"><img src="screens/${s[0]}" alt="${s[1]}" width="${s[2]}" height="${s[3]}"><figcaption>${s[1]}</figcaption></figure>`).join('')}</div>`:''}
   <div class="ov-links">${p.links||'Runs locally. Live demo and code links land here as each project comes online.'}</div>`;
 }
 
