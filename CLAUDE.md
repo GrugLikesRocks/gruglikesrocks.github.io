@@ -60,7 +60,7 @@ The embedded base64 photo is **400x444, not the original 400x400**. The source c
 - Co-founder & Head of Product, Volunteer Space, Jul 2017 to Mar 2018
 - Tech Leader, The Alacrity Foundation, Aug 2016 to Jul 2017
 - BSc Games Technology, UWE Bristol, 2013 to 2016
-- **Hobbies (his own words, 12 Aug 2026):** DJing, running D&D as dungeon master, and gaming with soulslikes and roguelikes as favourite genres. These are the "Off duty" section on the site. The dungeon master card deliberately ties back to Dungeon Master Codex.
+- **Hobbies (his own words, 12 Aug 2026):** he collects vinyl and DJs electronic music, runs D&D as dungeon master, and games with soulslikes and roguelikes as favourite genres. These are the "Off duty" section on the site. The dungeon master card deliberately ties back to Dungeon Master Codex. He asked for this copy to sound human rather than AI written, so keep it first person and conversational. Avoid stacked sentence fragments ("Decks, crates and long mixes."), noun triplets and neat aphoristic closers: those were the exact tells he rejected.
 - Based in Bristol, UK. **English is his first language** (he corrected this on 29 Jul 2026; the CV's "English fluent, Italian native" phrasing is misleading). He also speaks Italian.
 
 ## Conventions
