@@ -202,7 +202,16 @@ h2{font-size:clamp(1.7rem,3.6vw,2.5rem);text-transform:uppercase}
   color:var(--muted);border:1px solid var(--line);padding:5px 9px}
 
 /* off duty */
-.offduty{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+/* six tracks so five cards sit flush: three on top, two wider underneath.
+   the nth-child rules assume five cards, so revisit them if one is added */
+.offduty{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.offduty .lo{grid-column:span 2}
+.offduty .lo:nth-child(n+4){grid-column:span 3}
+@media(max-width:900px){
+  .offduty .lo,.offduty .lo:nth-child(n+4){grid-column:span 3}
+  .offduty .lo:last-child:nth-child(odd){grid-column:span 6}
+}
+@media(max-width:620px){.offduty .lo,.offduty .lo:nth-child(n+4){grid-column:span 6}}
 .lo .idx{margin-bottom:9px}
 .lo p{color:var(--muted);font-size:.85rem}
 
@@ -514,7 +523,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       <div>
         <h3>Founder &amp; CEO</h3>
         <div class="where">Grug's Lair · Bristol / London, UK</div>
-        <p>Raised around $1M, closing pre-seed backing from Starkware, Tim Ricci and Cartridge. Built and led an 11 person team across engineering, art, product and partnerships, shipped Blob Arena and built the AMMA partnership.</p>
+        <p>Raised around $1M, closing pre-seed backing from PTC, Starkware, Cartridge and Angels. Built and led an 11 person team across engineering, art, product and partnerships, shipped Blob Arena and built the AMMA partnership.</p>
       </div>
     </div>
     <div class="rec reveal">
@@ -597,6 +606,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       <div class="hud sig idx">03</div>
       <h3>Gaming</h3>
       <p>Mostly soulslikes and roguelikes. I like games that expect you to work it out for yourself and let you fail until you do.</p>
+    </div>
+    <div class="lo reveal">
+      <div class="hud sig idx">04</div>
+      <h3>Food</h3>
+      <p>I love food. Finding somewhere great to eat is the best part of going anywhere new.</p>
+    </div>
+    <div class="lo reveal">
+      <div class="hud sig idx">05</div>
+      <h3>Quantum tech</h3>
+      <p>I am studying quantum technology in my spare time. It sits completely outside anything I ship, which is exactly why I like it.</p>
     </div>
   </div>
 </section>
@@ -685,7 +704,7 @@ const PROJECTS={
     story:[
       'Blob Arena is built in Unity around turn based combat with arcade pacing. Leagues, weekly leaderboards and seasonal challenges keep the meta moving between live events. It launched on iOS and Android in November 2025 and runs in public early access today.',
       'As the official interactive game of AMMA it shows up where the fans are. Booth presence, big screens and half time activations at every event, with AMMA broadcast on Prime Video.',
-      'The numbers are early and real. Around 250 new users per event, roughly 12.5% of attendees converting on site and in-game purchases already flowing. I founded and run the company behind it, raised around $1M from Starkware, Tim Ricci and Cartridge and lead an 11 person team.'
+      'The numbers are early and real. Around 250 new users per event, roughly 12.5% of attendees converting on site and in-game purchases already flowing. I founded and run the company behind it, lead an 11 person team and raised around $1M from PTC, Starkware, Cartridge and Angels.'
     ],
     features:['Turn based combat with arcade pacing','Classic mode plus an AMMA Edition on the combat sports IP','Leagues, weekly leaderboards and seasonal challenges','Live event tie-ins at AMMA shows across the USA','In-game purchases live','Runs on web, iOS and Android'],
     stack:['Unity','C#','iOS + Android','Web','Live ops'],
