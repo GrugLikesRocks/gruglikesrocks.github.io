@@ -133,6 +133,9 @@ h2{font-size:clamp(1.7rem,3.6vw,2.5rem);text-transform:uppercase}
 .f-card,.p-card{position:relative;background:var(--panel);border:1px solid var(--line);
   cursor:pointer;display:flex;flex-direction:column;transition:border-color .16s,background .16s}
 .f-card:hover,.p-card:hover,.f-card:focus-visible,.p-card:focus-visible{border-color:var(--sig);background:var(--panel-hi);outline:none}
+/* an unreleased title is a locked slot, so it must not read as clickable */
+.f-card.locked{cursor:default}
+.f-card.locked:hover{border-color:var(--line);background:var(--panel)}
 .f-card{padding:28px}
 .f-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:15px}
 .badge{border:1px solid var(--sig);color:var(--sig);padding:4px 8px;white-space:nowrap;flex-shrink:0}
@@ -416,18 +419,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       </div>
       <div class="select">Select</div>
     </div>
-    <div class="f-card brk reveal" data-project="platform" role="button" tabindex="0" aria-haspopup="dialog">
+    <!-- unreleased, so it is a locked slot: no overlay, no data-project, nothing invented -->
+    <div class="f-card locked reveal">
+      <div class="f-shot empty"><span class="p-noshot">Unannounced</span></div>
       <div class="f-head">
         <div class="hud sig">Founder &amp; CEO</div>
+        <div class="badge off hud">In development</div>
       </div>
-      <h3>Solco</h3>
-      <p>Audience and impact intelligence for festivals and live events. Capture the crowd, segment it, then prove its value to sponsors and councils.</p>
+      <h3>Project: Fame</h3>
+      <p>An original game title in development at the studio. More to share once it is announced.</p>
       <div class="spec">
-        <div class="spec-row"><span class="k">Stack</span><span class="v">React · Express · Postgres</span></div>
-        <div class="spec-row"><span class="k">Modules</span><span class="v">5</span></div>
-        <div class="spec-row"><span class="k">Live at</span><span class="v">solco.live</span></div>
+        <div class="spec-row"><span class="k">Studio</span><span class="v">Grug's Lair</span></div>
+        <div class="spec-row"><span class="k">Status</span><span class="v">Unreleased</span></div>
       </div>
-      <div class="select">Select</div>
     </div>
   </div>
 </section>
@@ -435,12 +439,22 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
 <section id="projects">
   <div class="sec-head reveal">
     <h2>The lab</h2>
-    <div class="hud dim">07 entries</div>
+    <div class="hud dim">08 entries</div>
   </div>
-  <p class="lead reveal">Projects I build for the love of it. Real codebases, each with its own database, API and frontend. Select any card for the full story.</p>
+  <p class="lead reveal">Products and side projects I have designed and built. Real codebases, each with its own database, API and frontend. Select any card for the full story.</p>
   <div class="roster">
-    <div class="p-card brk reveal" data-project="quantgrug" role="button" tabindex="0" aria-haspopup="dialog">
+    <div class="p-card brk reveal" data-project="platform" role="button" tabindex="0" aria-haspopup="dialog">
       <span class="p-num">01</span>
+      <h3>Solco</h3>
+      <div class="p-role">Fan intelligence platform</div>
+      <p>Audience and impact intelligence for festivals and live events. Capture the crowd, segment it, then prove its value to sponsors and councils.</p>
+      <div class="spec">
+        <div class="spec-row"><span class="k">Stack</span><span class="v">React · Express</span></div>
+      </div>
+      <div class="select">Select</div>
+    </div>
+    <div class="p-card brk reveal" data-project="quantgrug" role="button" tabindex="0" aria-haspopup="dialog">
+      <span class="p-num">02</span>
       <h3>QUANTGRUG</h3>
       <div class="p-role">Football prediction engine</div>
       <p>Fuses an ML ensemble with bookmaker odds and Polymarket prices, benchmarked against Pinnacle closing odds across 18,500+ unseen predictions.</p>
@@ -450,7 +464,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       <div class="select">Select</div>
     </div>
     <div class="p-card brk reveal" data-project="blob-padel" role="button" tabindex="0" aria-haspopup="dialog">
-      <span class="p-num">02</span>
+      <span class="p-num">03</span>
       <h3>Blob Padel</h3>
       <div class="p-role">Cross-platform arcade game</div>
       <p>A free to play padel game with a tournament ladder, card based blob levelling, a season pass and timed events. Web and mobile share one API contract.</p>
@@ -460,7 +474,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       <div class="select">Select</div>
     </div>
     <div class="p-card brk reveal" data-project="puzzlevault" role="button" tabindex="0" aria-haspopup="dialog">
-      <span class="p-num">03</span>
+      <span class="p-num">04</span>
       <h3>PuzzleVault</h3>
       <div class="p-role">Community marketplace</div>
       <p>The Discogs for jigsaw puzzles. Catalog, collection, journaling, trading and gamification across 21 database tables, plus a frame shop.</p>
@@ -470,7 +484,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       <div class="select">Select</div>
     </div>
     <div class="p-card brk reveal" data-project="cozypans" role="button" tabindex="0" aria-haspopup="dialog">
-      <span class="p-num">04</span>
+      <span class="p-num">05</span>
       <h3>Cozypans</h3>
       <div class="p-role">Bilingual recipe blog</div>
       <p>Photography first recipes with full English and Polish parity, a custom admin area and object storage. Built to run a real publishing workflow.</p>
@@ -480,7 +494,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       <div class="select">Select</div>
     </div>
     <div class="p-card brk reveal" data-project="shortvideo" role="button" tabindex="0" aria-haspopup="dialog">
-      <span class="p-num">05</span>
+      <span class="p-num">06</span>
       <h3>Short-video social app</h3>
       <div class="p-role">Vertical video platform</div>
       <p>A vertical video feed with auth, uploads, likes and comments. AI assisted upload verification and a swappable storage interface behind the scenes.</p>
@@ -490,7 +504,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       <div class="select">Select</div>
     </div>
     <div class="p-card brk reveal" data-project="dm-codex" role="button" tabindex="0" aria-haspopup="dialog">
-      <span class="p-num">06</span>
+      <span class="p-num">07</span>
       <h3>Dungeon Master Codex</h3>
       <div class="p-role">Campaign management tool</div>
       <p>A campaign command centre for D&amp;D 5e. Quests, secrets, clue webs, prophecies and combat, all tracked against a real running campaign.</p>
@@ -500,7 +514,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       <div class="select">Select</div>
     </div>
     <div class="p-card brk reveal" data-project="dice-roller" role="button" tabindex="0" aria-haspopup="dialog">
-      <span class="p-num">07</span>
+      <span class="p-num">08</span>
       <h3>Dice Roller</h3>
       <div class="p-role">Tabletop companion</div>
       <p>A D20 roller with roll history. Small on purpose, the testbed where new patterns prove themselves before bigger codebases.</p>
