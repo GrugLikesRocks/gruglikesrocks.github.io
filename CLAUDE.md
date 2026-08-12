@@ -32,11 +32,15 @@ Real screenshots live in `screens/` and are wired into each project overlay via 
 - **The short-video app has no screenshots on purpose.** Its running build still shows the original crude branding, which the curation rule forbids. Do not add screens for it unless Giorgio rebrands the app itself.
 - Blob Arena is a Unity mobile title and is not in the local project set, so it has no screenshots. Solco uses a capture of the live solco.live site.
 
+## The hero portrait
+
+The embedded base64 photo is **400x444, not the original 400x400**. The source crop cut the top of his hair, so on 12 Aug 2026 the canvas was extended 44px upward and the new band filled with the wall behind him (top rows sampled per column, subject columns interpolated out, blurred and faded with height). Do not swap it back to the square original, and do not try to fix headroom with `object-position`: the frame is `aspect-ratio:3/4` so the image fills it exactly on the vertical and the Y offset does nothing. The script that built it is in the session scratchpad as `extend-portrait.ps1`.
+
 ## Backlog (Giorgio's requested next steps, in priority order)
 
 1. **Clickable projects → detail pages.** Each project card should open a rich detail view (screenshots, feature list, stack, story). Decided approach: detail pages/views on the site itself, since none of the apps are publicly deployed. Live-demo and GitHub links can be added per project later as they come online. Screenshots need to be captured from the locally running apps (see LOCAL_SETUP.md one level up in `..\` for how to run each).
 2. **Less verbose copy.** Tighten everything. Shorter card descriptions, shorter section intros. Keep the facts, cut the prose.
-3. **Responsive design as a priority.** Current version has basic breakpoints only. Design mobile-first, test at 360px, 768px, 1024px and 1440px. The oversized hero type, stats grid, marquee, timeline and card tilt all need proper small-screen treatment (disable tilt on touch devices).
+3. ~~**Responsive design as a priority.**~~ Done 12 Aug 2026 and verified with headless captures at 320, 360, 390, 414, 740 landscape, 768, 820, 900, 1024, 1280 and 1440. Zero horizontal overflow at every width, all 31 reveal elements fire, project overlay and mobile menu both work on a phone. Re-verify these widths after any layout change.
 4. Consider whether to stay single-file or migrate to a small Vite/Astro project now that detail pages are coming. Migration is acceptable if it stays static and trivially deployable to Vercel/Netlify.
 
 ## Content sources (all local, one level up from this folder)
@@ -56,6 +60,7 @@ Real screenshots live in `screens/` and are wired into each project overlay via 
 - Co-founder & Head of Product, Volunteer Space, Jul 2017 to Mar 2018
 - Tech Leader, The Alacrity Foundation, Aug 2016 to Jul 2017
 - BSc Games Technology, UWE Bristol, 2013 to 2016
+- **Hobbies (his own words, 12 Aug 2026):** DJing, running D&D as dungeon master, and gaming with soulslikes and roguelikes as favourite genres. These are the "Off duty" section on the site. The dungeon master card deliberately ties back to Dungeon Master Codex.
 - Based in Bristol, UK. **English is his first language** (he corrected this on 29 Jul 2026; the CV's "English fluent, Italian native" phrasing is misleading). He also speaks Italian.
 
 ## Conventions
