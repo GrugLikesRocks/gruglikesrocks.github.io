@@ -55,12 +55,12 @@ The embedded base64 photo is **400x444, not the original 400x400**. The source c
 ## Facts to keep accurate
 
 - Founder & CEO, Grug's Lair, **Nov 2022 to present**. Date conflict resolved by Giorgio 29 Jul 2026: the company was **officially founded in 2023**, but he had been working on it since **Nov 2022**, which is the date the CV and the site use. Both sources were right about different things, so do not "correct" this to 2023.
-- Grug's Lair: **raised around $1M** (pre-seed, Starkware lead plus Tim Ricci and Cartridge) and **built and led an 11 person team**. Both confirmed by Giorgio 29 Jul 2026 and shown on the site.
+- Grug's Lair: **raised around $1M** and **built and led an 11 person team**. Investor list corrected by Giorgio 12 Aug 2026 to **PTC, Starkware, Cartridge and Angels**. Tim Ricci is no longer named, so do not reinstate him from older notes or from the CV. The list appears twice on the site, in the record sheet and in the Blob Arena overlay story, so change both together.
 - Co-founder & Head of Research, Agrippa Capital, Apr 2019 to Nov 2022. It was a **crypto hedge fund** (confirmed by Giorgio 29 Jul 2026), not a generic "capital research firm".
 - Co-founder & Head of Product, Volunteer Space, Jul 2017 to Mar 2018
 - Tech Leader, The Alacrity Foundation, Aug 2016 to Jul 2017
 - BSc Games Technology, UWE Bristol, 2013 to 2016
-- **Hobbies (his own words, 12 Aug 2026):** he collects vinyl and DJs electronic music, runs D&D as dungeon master, and games with soulslikes and roguelikes as favourite genres. These are the "Off duty" section on the site. The dungeon master card deliberately ties back to Dungeon Master Codex. He asked for this copy to sound human rather than AI written, so keep it first person and conversational. Avoid stacked sentence fragments ("Decks, crates and long mixes."), noun triplets and neat aphoristic closers: those were the exact tells he rejected.
+- **Hobbies (his own words, 12 Aug 2026):** he collects records and loves electronic music, runs D&D campaigns as dungeon master, games with soulslikes and roguelikes as favourite genres, loves food, and is studying quantum technology in his spare time. Five cards in total, and the grid CSS is tuned to that count. These are the "Off duty" section on the site. The dungeon master card deliberately ties back to Dungeon Master Codex. He asked for this copy to sound human rather than AI written, so keep it first person and conversational. Avoid stacked sentence fragments ("Decks, crates and long mixes."), noun triplets and neat aphoristic closers: those were the exact tells he rejected.
 - Based in Bristol, UK. **English is his first language** (he corrected this on 29 Jul 2026; the CV's "English fluent, Italian native" phrasing is misleading). He also speaks Italian.
 
 ## Conventions
