@@ -7,7 +7,7 @@
 <title>Giorgio Bufalino · Founder who builds</title>
 <meta name="description" content="Portfolio of Giorgio Bufalino. Founder and CEO of Grug's Lair, game designer and builder of products across sports tech, games, data and AI.">
 <meta property="og:title" content="Giorgio Bufalino · Founder who builds">
-<meta property="og:description" content="Founder and CEO of Grug's Lair. I raise the money, design the product and ship the code.">
+<meta property="og:description" content="Founder and CEO of Grug's Lair. I own products from zero to one. I raise the money, design the product and ship the code.">
 <meta property="og:type" content="website">
 <!-- TODO: add og:image and og:url with absolute URLs once the site is deployed and the domain is known -->
 <meta name="twitter:card" content="summary">
@@ -131,7 +131,9 @@ h2{font-size:clamp(1.7rem,3.6vw,2.5rem);text-transform:uppercase}
   letter-spacing:.09em;text-transform:uppercase;color:var(--muted);line-height:1.5}
 
 /* flagship tier */
-.flagship{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+/* six tracks so three studio titles sit flush, and any odd card fills the row */
+.flagship{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.flagship>*{grid-column:span 2}
 .f-card,.p-card{position:relative;background:var(--panel);border:1px solid var(--line);
   cursor:pointer;display:flex;flex-direction:column;transition:border-color .16s,background .16s}
 .f-card:hover,.p-card:hover,.f-card:focus-visible,.p-card:focus-visible{border-color:var(--sig);background:var(--panel-hi);outline:none}
@@ -301,7 +303,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
 
 @media(max-width:980px){.roster{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:880px){
-  .flagship{grid-template-columns:1fr}
+  .flagship>*,.flagship>*:last-child:nth-child(odd){grid-column:span 6}
   .ov-metrics{grid-template-columns:repeat(2,1fr)}
   .ov-metrics div:nth-child(3){border-left:0}
   .ov-metrics div:nth-child(n+3){border-top:1px solid var(--line)}
@@ -372,7 +374,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       <div class="hud dim">Bristol, UK</div>
       <h1>Giorgio<br>Bufalino</h1>
       <div class="class-line">Founder who builds</div>
-      <p class="hero-desc">Founder and CEO of Grug's Lair. I build products across sports tech, games, data and AI. I raise the money, design the product and ship the code.</p>
+      <p class="hero-desc">Founder and CEO of Grug's Lair. I own products from zero to one across sports tech, games, blockchain, data and AI. I raise the money, design the product and ship the code.</p>
       <div class="actions">
         <a class="btn btn-primary" href="#work">See the work</a>
         <a class="btn" href="#contact">Get in touch</a>
@@ -414,6 +416,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       <div class="spec">
         <div class="spec-row"><span class="k">Studio</span><span class="v">Grug's Lair</span></div>
         <div class="spec-row"><span class="k">Status</span><span class="v">Unreleased</span></div>
+      </div>
+    </div>
+    <!-- discontinued, and no screenshots survive locally, so it stays a locked slot too -->
+    <div class="f-card locked reveal">
+      <div class="f-shot empty"><span class="p-noshot">No preview</span></div>
+      <div class="f-head">
+        <div class="badge off hud">Discontinued</div>
+      </div>
+      <h3>Rising Revenant</h3>
+      <p>Our first title. A last player standing strategy game on Starknet where you fortify outposts, buy reinforcements and survive randomised world events. We ran three playtests before moving the studio on.</p>
+      <div class="spec">
+        <div class="spec-row"><span class="k">Built with</span><span class="v">Unity · Dojo</span></div>
+        <div class="spec-row"><span class="k">Chain</span><span class="v">Starknet</span></div>
       </div>
     </div>
   </div>
