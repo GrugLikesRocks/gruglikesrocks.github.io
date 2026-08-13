@@ -418,9 +418,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
         <div class="spec-row"><span class="k">Status</span><span class="v">Unreleased</span></div>
       </div>
     </div>
-    <!-- discontinued, and no screenshots survive locally, so it stays a locked slot too -->
-    <div class="f-card locked reveal">
-      <div class="f-shot empty"><span class="p-noshot">No preview</span></div>
+    <div class="f-card brk reveal" data-project="rising-revenant" role="button" tabindex="0" aria-haspopup="dialog">
       <div class="f-head">
         <div class="badge off hud">Discontinued</div>
       </div>
@@ -430,6 +428,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
         <div class="spec-row"><span class="k">Built with</span><span class="v">Unity · Dojo</span></div>
         <div class="spec-row"><span class="k">Platforms</span><span class="v">PC · Web</span></div>
       </div>
+      <div class="select">Select</div>
     </div>
   </div>
 </section>
@@ -854,6 +853,23 @@ const PROJECTS={
     features:['D20 and multi dice rolling','Smooth roll animations with framer-motion','Confetti celebration on crits','Roll history UI','Shared typed API contract between client and server','Postgres wiring via Drizzle'],
     stack:['React + Vite','TypeScript','Express','Drizzle','framer-motion','canvas-confetti'],
     screens:[['dice-roller.jpg','Roller with history panel',1200,631]]
+  },
+  'rising-revenant':{
+    kicker:'Flagship · Discontinued',
+    title:'Rising Revenant',
+    pitch:'The studio’s first title. A dark fantasy survival game on Starknet where a match ends with one revenant left standing and a jackpot to claim.',
+    metrics:[],
+    story:[
+      'Rising Revenant is where Grug’s Lair started. We wanted to find out whether a real game could live onchain instead of bolting a wallet onto a website, so we built it in Unity against Cairo contracts running on Starknet with the Dojo engine.',
+      'Every match runs in two phases. During Preparation you summon a revenant, take an outpost and buy care packages of reinforcements priced by a dynamic auction, then choose where the defences go. Then the map turns real time. Goblins, earthquakes and dragons hit whatever is not fortified against them, revenants ride out with troops to gather wood, stone and obsidian, and rivals besiege each other for what is left.',
+      'The endgame is the part I am still proud of. Once the field thins out the survivors can convene the Final Table and vote on splitting the jackpot, and a single refusal sends everyone back to the fight. Destroyed defences drop debris that recycles into resources or new reinforcements, so a bad siege still leaves you something to build with.',
+      'Later we added Luna, a mobile companion that let players act on their outposts from a phone, and ran a collaboration with Eternum that handed their season pass holders a free outpost. We eventually stopped development and put the studio behind Blob Arena.'
+    ],
+    features:['Two phase matches, preparation then real time survival','Care packages priced by a VRGDA dynamic auction','Revenant progression across Guardian, Seeker, Harvester and Warmonger paths','Outpost buildings for troops, storage, mobility and recycling','Random events: goblin raids, earthquakes and dragon strikes','Debris recycling that turns destroyed defences back into resources','Final Table endgame where survivors vote on splitting the jackpot','Luna, a mobile AI companion for players on the move'],
+    stack:['Unity','C#','Dojo','Cairo','Starknet'],
+    arch:['Unity client','Dojo + Cairo contracts','Starknet'],
+    screens:[['rr-luna.jpg','Luna, the mobile companion for Rising Revenant',486,701],['rr-keyart.jpg','Revenant key art from the alpha release',700,700]],
+    links:'Development is discontinued and risingrevenant.xyz is offline, so there is nothing left to play.'
   }
 };
 
