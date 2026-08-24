@@ -710,11 +710,11 @@ const PROJECTS={
     kicker:'Flagship · Live product',
     title:'Blob Arena',
     pitch:'A mobile first competitive sports battler, live on iOS and Android and built on real combat sports IP.',
-    metrics:[['20,000+','total users'],['1,645','peak MAU'],['2.1M','in-game transactions'],['~12.5%','event conversion']],
+    metrics:[['1,645','peak MAU'],['250','new users per event'],['~12.5%','event conversion']],
     story:[
-      'Blob Arena is built in Unity around turn based combat with arcade pacing. Leagues, weekly leaderboards and seasonal challenges keep the meta moving between live events. It launched on iOS and Android in November 2025 and runs in public early access today.',
+      'Blob Arena is a Unity title built around fast turn based combat. A rolling meta of leagues and seasonal play keeps players coming back between live events. It launched on iOS and Android in November 2025 and runs in public early access today.',
       'As the official AMMA game it shows up where the fans are. Booth presence, big screens and half time activations at every event, with AMMA broadcast on Prime Video.',
-      'The numbers are early and real. Around 250 new users per event, roughly 12.5% of attendees converting on site and in-game purchases already flowing. I founded and run the company behind it and lead the 11 person team that ships it.'
+      'The numbers are early and real: in-game purchases are already flowing and every AMMA show adds a fresh cohort of players. I founded and run the company behind it and lead the 11 person team that ships it.'
     ],
     features:['Turn based combat with arcade pacing','Classic mode plus an AMMA Edition on the combat sports IP','Leagues, weekly leaderboards and seasonal challenges','Live event tie-ins at AMMA shows across the USA','In-game purchases live','Runs on web, iOS and Android'],
     stack:['Unity','C#','iOS + Android','Web','Live ops'],
@@ -766,7 +766,7 @@ const PROJECTS={
     live:'https://blob-padel.vercel.app',liveLabel:'Play it live',
     metrics:[],
     story:[
-      'Blob Padel is a swipe based padel game, but the interesting part is everything wrapped around the match. A six tournament ladder gates progression on trophies. Blobs are characters with a class and six stats, levelled by collecting duplicate cards. On top sit a season pass, timed events, loot bags and two currencies.',
+      'Blob Padel is a swipe based padel game, but the interesting part is everything wrapped around the match: a trophy gated tournament ladder, collectable blob characters that level through duplicate cards, and a live economy running on two currencies.',
       'All of it is designed and balanced end to end. Matches are entered with a coin fee against a prize, so every result moves the ladder and the wallet at once.',
       'The engineering is a browser client and an Expo mobile app inside one pnpm monorepo, both talking to the same Express 5 API through the same generated client. The OpenAPI spec is the source of truth and Orval regenerates the React Query hooks and Zod schemas, so the contract changes in exactly one place.'
     ],
@@ -827,7 +827,7 @@ const PROJECTS={
     metrics:[['30+','tracking tools'],['11','entities tracked'],['10','sessions logged'],['7','locations']],
     story:[
       'Running a long D&D campaign is a continuity problem. Who knows what, which secret is still hidden, which thread was quietly retconned three months ago. This is the tool I built to hold all of it.',
-      'The spine is a campaign bible, sessions and a quest board that moves between active, planned, dormant, completed and failed. Around that sit the parts a dungeon master actually loses track of: a player knowledge tracker separating what each player knows from the truth, a secret reveal tracker with conditions and risk, a retcon manager, a clue web linking clues to NPCs and locations, prophecy and Old God codices, faction clocks and a mystery health check.',
+      'The spine is a campaign bible, sessions and a quest board. Around that sit the parts a dungeon master actually loses track of: what each player knows versus what is true, which secrets are still buried, what got retconned and how every clue, NPC and prophecy connects, plus faction clocks and a mystery health check.',
       'At the table it turns into a combat tracker, a boss phase builder, NPC voice cards and live notes. AI assists on session planning and continuity checking, but every AI feature degrades gracefully to a message when no key is set, so the tool never depends on it.',
       'It runs against a real campaign, the Kingdom of Aurelth, currently at session 10 with a level 5 party. Every screenshot here is that campaign, not filler data.'
     ],
@@ -860,8 +860,8 @@ const PROJECTS={
     story:[
       'Rising Revenant is where Grug\'s Lair started. We wanted a real game running onchain, not a wallet bolted onto a website, so we built it in Unity against Cairo contracts on Starknet with the Dojo engine.',
       'Every match runs in two phases. During Preparation you summon a revenant, take an outpost and buy care packages of reinforcements priced by a dynamic auction, then choose where the defences go. Then the map turns real time. Goblins, earthquakes and dragons hit whatever is not fortified against them, revenants ride out with troops to gather wood, stone and obsidian, and rivals besiege each other for what is left.',
-      'The endgame is the part I am still proud of. Once the field thins out the survivors can convene the Final Table and vote on splitting the jackpot, and a single refusal sends everyone back to the fight. Destroyed defences drop debris that recycles into resources or new reinforcements, so a bad siege still leaves you something to build with.',
-      'Later we added Luna, a mobile companion that let players act on their outposts from a phone, and ran a collaboration with Eternum that handed their season pass holders a free outpost. We eventually stopped development and put the studio behind Blob Arena.'
+      'The endgame is the part I am still proud of. Once the field thins out the survivors can convene the Final Table, and a single refusal to split sends everyone back to the fight. Even losing feeds the loop, since a wrecked defence leaves something behind to rebuild with.',
+      'Later we added Luna so players could run their outposts from a phone, and a collaboration with Eternum handed season pass holders a free outpost. We eventually stopped development and put the studio behind Blob Arena.'
     ],
     features:['Two phase matches, preparation then real time survival','Care packages priced by a VRGDA dynamic auction','Revenant progression across Guardian, Seeker, Harvester and Warmonger paths','Outpost buildings for troops, storage, mobility and recycling','Random events: goblin raids, earthquakes and dragon strikes','Debris recycling that turns destroyed defences back into resources','Final Table endgame where survivors vote on splitting the jackpot','Luna, a mobile AI companion for players on the move'],
     stack:['Unity','C#','Dojo','Cairo','Starknet'],
