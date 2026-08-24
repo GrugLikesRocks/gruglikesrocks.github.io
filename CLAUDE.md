@@ -64,7 +64,9 @@ The embedded base64 photo is **400x444, not the original 400x400**. The source c
 ## Facts to keep accurate
 
 - Founder & CEO, Grug's Lair, **Nov 2022 to present**. Date conflict resolved by Giorgio 29 Jul 2026: the company was **officially founded in 2023**, but he had been working on it since **Nov 2022**, which is the date the CV and the site use. Both sources were right about different things, so do not "correct" this to 2023.
-- Grug's Lair: **raised around $1M** and **built and led an 11 person team**. Investor list corrected by Giorgio 12 Aug 2026 to **PTC, Starkware, Cartridge and Angels**. Tim Ricci is no longer named, so do not reinstate him from older notes or from the CV. The list appears twice on the site, in the record sheet and in the Blob Arena overlay story, so change both together.
+- Grug's Lair: **raised around $1M** and **built and led an 11 person team**. Investor list corrected by Giorgio 12 Aug 2026 to **PTC, Starkware, Cartridge and Angels**. Tim Ricci is no longer named, so do not reinstate him from older notes or from the CV. Since the 24 Aug 2026 copy audit the list lives **only in the record sheet** (the Blob Arena overlay no longer repeats it), so there is exactly one place to change.
+- **Overlay kickers must match the roster numbering.** Since Solco became lab entry 01, every lab overlay kicker is "The lab · NN" with NN equal to the card's `p-num` (Solco is "The lab · 01 · B2B SaaS"). If cards are ever added, removed or reordered, renumber both the `p-num` spans and the kickers together.
+- **Copy audit 24 Aug 2026:** card blurbs and overlay pitches are deliberately non-duplicating (a visitor sees them back to back), and section-level facts appear once each. Before adding copy, check the fact is not already stated elsewhere on the page.
 - Co-founder & Head of Research, Agrippa Capital, Apr 2019 to Nov 2022. It was a **crypto hedge fund** (confirmed by Giorgio 29 Jul 2026), not a generic "capital research firm".
 - Co-founder & Head of Product, Volunteer Space, Jul 2017 to Mar 2018
 - Tech Leader, The Alacrity Foundation, Aug 2016 to Jul 2017
