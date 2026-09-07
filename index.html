@@ -19,7 +19,7 @@
   "jobTitle": "Founder, CEO & Product Manager",
   "worksFor": {"@type": "Organization", "name": "Grug's Lair", "url": "https://grugslair.com"},
   "email": "mailto:giorgiobufalino@gmail.com",
-  "sameAs": ["https://www.linkedin.com/in/giorgiobufalino", "https://github.com/GrugLikesRocks"],
+  "sameAs": ["https://www.linkedin.com/in/giorgiobufalino", "https://github.com/GrugLikesRocks", "https://x.com/gruglikesrocks"],
   "address": {"@type": "PostalAddress", "addressLocality": "Bristol", "addressCountry": "GB"},
   "alumniOf": {"@type": "CollegeOrUniversity", "name": "University of the West of England"},
   "knowsLanguage": ["en", "it"]
@@ -375,7 +375,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       <div class="hud dim">Bristol, UK</div>
       <h1>Giorgio<br>Bufalino</h1>
       <div class="class-line">Founder who builds</div>
-      <p class="hero-desc">Founder and CEO of Grug's Lair, and the sole product manager on everything we ship. I own products from zero to one across consumer, gaming, finance, blockchain, data and AI. I raise the money, design the product and ship the code.</p>
+      <p class="hero-desc">Founder, CEO and sole product manager at Grug's Lair. I own products from zero to one across consumer, gaming, finance, blockchain, data and AI. I raise the money, design the product and ship the code.</p>
       <div class="actions">
         <a class="btn btn-primary" href="#work">See the work</a>
         <a class="btn" href="#contact">Get in touch</a>
@@ -393,9 +393,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
 <section id="work">
   <div class="sec-head reveal">
     <h2>Building Grug's Lair</h2>
-    <div class="hud dim">Flagship</div>
   </div>
-  <p class="lead reveal">I founded Grug's Lair to turn sports from something people watch into something they live. We started by pioneering onchain gaming, then moved to traditional architecture. Today it is backed by Starkware, with a game live on the app stores and Solco taking the same thinking into festivals and live events.</p>
+  <p class="lead reveal">I founded Grug's Lair to turn sports from something people watch into something they live. We started by pioneering onchain gaming, then moved to traditional architecture. Today it is backed by Starkware, with a game live on the app stores.</p>
   <div class="flagship">
     <div class="f-card brk reveal" data-project="blob-arena" role="button" tabindex="0" aria-haspopup="dialog">
       <h3>Blob Arena</h3>
@@ -437,7 +436,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
 <section id="projects">
   <div class="sec-head reveal">
     <h2>The lab</h2>
-    <div class="hud dim">08 entries</div>
   </div>
   <p class="lead reveal">Products and side projects, every one a real codebase with its own database, API and frontend. Select any card for the full story.</p>
   <div class="roster">
@@ -658,13 +656,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
     <a class="btn btn-primary" href="mailto:giorgiobufalino@gmail.com">giorgiobufalino@gmail.com</a>
     <a class="btn btn-ghost" href="https://www.linkedin.com/in/giorgiobufalino" target="_blank" rel="noopener">LinkedIn</a>
     <a class="btn btn-ghost" href="https://github.com/GrugLikesRocks" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn btn-ghost" href="https://x.com/gruglikesrocks" target="_blank" rel="noopener">X</a>
   </div>
 </section>
 </main>
 
 <footer>
   <span>© <span id="year"></span> Giorgio Bufalino</span>
-  <span class="mono">Designed and built with care in Bristol</span>
 </footer>
 
 <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="ov-title">
@@ -757,7 +755,7 @@ const PROJECTS={
     stack:['React','TypeScript','Express','Postgres + Drizzle','Vitest','pnpm monorepo'],
     arch:['Capture page','Express API','Postgres + Drizzle','Fan Intelligence','Ask Solco'],
     screens:[['solco-site.jpg','Solco, live at solco.live',1200,750]],
-    links:'See it at <a href="https://solco.live" target="_blank" rel="noopener">solco.live</a>. Built at <a href="https://grugslair.com" target="_blank" rel="noopener">grugslair.com</a>.'
+    links:'See it at <a href="https://solco.live" target="_blank" rel="noopener">solco.live</a>.'
   },
   'quantgrug':{
     kicker:'The lab · 02',
@@ -784,7 +782,7 @@ const PROJECTS={
     live:'https://blob-padel.vercel.app',liveLabel:'Play it live',
     metrics:[],
     story:[
-      'Blob Padel is a swipe based padel game, but the interesting part is everything wrapped around the match: a trophy gated tournament ladder, collectable blob characters that level through duplicate cards, and a live economy running on two currencies.',
+      'Blob Padel is a swipe based padel game, but the interesting part is everything wrapped around the match: a trophy gated tournament ladder, collectable blob characters that level through duplicate cards and a live economy running on two currencies.',
       'All of it is designed and balanced end to end. Matches are entered with a coin fee against a prize, so every result moves the ladder and the wallet at once.',
       'The engineering is a browser client and an Expo mobile app inside one pnpm monorepo, both talking to the same Express 5 API through the same generated client. The OpenAPI spec is the source of truth and Orval regenerates the React Query hooks and Zod schemas, so the contract changes in exactly one place.'
     ],
@@ -859,7 +857,7 @@ const PROJECTS={
   'dice-roller':{
     kicker:'The lab · 08',
     title:'Dice Roller',
-    pitch:'A D20 roller built for feel, and the smallest real product in the lab.',
+    pitch:'A D20 roller built for feel and the smallest real product in the lab.',
     live:'https://dice-roller-one-alpha.vercel.app',liveLabel:'Roll it live',
     metrics:[],
     story:[
@@ -873,13 +871,13 @@ const PROJECTS={
   'rising-revenant':{
     kicker:'Flagship · Discontinued',
     title:'Rising Revenant',
-    pitch:'A dark fantasy survival game living fully onchain, and the experiment Grug\'s Lair was founded on.',
+    pitch:'A dark fantasy survival game living fully onchain and the experiment Grug\'s Lair was founded on.',
     metrics:[],
     story:[
       'Rising Revenant is where Grug\'s Lair started. We wanted a real game running onchain, not a wallet bolted onto a website, so we built it in Unity against Cairo contracts on Starknet with the Dojo engine.',
-      'Every match runs in two phases. During Preparation you summon a revenant, take an outpost and buy care packages of reinforcements priced by a dynamic auction, then choose where the defences go. Then the map turns real time. Goblins, earthquakes and dragons hit whatever is not fortified against them, revenants ride out with troops to gather wood, stone and obsidian, and rivals besiege each other for what is left.',
-      'The endgame is the part I am still proud of. Once the field thins out the survivors can convene the Final Table, and a single refusal to split sends everyone back to the fight. Even losing feeds the loop, since a wrecked defence leaves something behind to rebuild with.',
-      'Later we added Luna so players could run their outposts from a phone, and a collaboration with Eternum handed season pass holders a free outpost. We eventually stopped development and put the studio behind Blob Arena.'
+      'Every match runs in two phases. During Preparation you summon a revenant, take an outpost and buy care packages of reinforcements priced by a dynamic auction, then choose where the defences go. Then the map turns real time. Goblins, earthquakes and dragons hit whatever is not fortified against them, revenants ride out with troops to gather wood, stone and obsidian while rivals besiege each other for what is left.',
+      'The endgame is the part I am still proud of. Once the field thins out the survivors can convene the Final Table, where a single refusal to split sends everyone back to the fight. Even losing feeds the loop, since a wrecked defence leaves something behind to rebuild with.',
+      'Later we added Luna so players could run their outposts from a phone. A collaboration with Eternum handed season pass holders a free outpost. We eventually stopped development and put the studio behind Blob Arena.'
     ],
     features:['Two phase matches, preparation then real time survival','Care packages priced by a VRGDA dynamic auction','Revenant progression across Guardian, Seeker, Harvester and Warmonger paths','Outpost buildings for troops, storage, mobility and recycling','Random events: goblin raids, earthquakes and dragon strikes','Debris recycling that turns destroyed defences back into resources','Final Table endgame where survivors vote on splitting the jackpot','Luna, a mobile AI companion for players on the move'],
     stack:['Unity','C#','Dojo','Cairo','Starknet'],
