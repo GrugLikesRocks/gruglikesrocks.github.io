@@ -31,30 +31,15 @@ export const about = {
   ],
 };
 
-// His own words from the old site (12 Aug 2026). Keep them first person and conversational.
+// Titles only (Giorgio, 30 Sep 2026). His longer lines for each live in the old index.html.
 export const offDuty = {
   heading: 'Off duty',
   items: [
-    {
-      name: 'Music / DJ',
-      text: 'I collect records and love electronic music. Nothing beats dropping a record you have been sitting on for weeks and feeling the room catch it.',
-    },
-    {
-      name: 'Dungeon master',
-      text: 'I run D&D campaigns for my friends. Building worlds and then improvising when the players ignore all of it is the best part of my week. Omenkeeper came out of running those games.',
-    },
-    {
-      name: 'Gaming',
-      text: 'Mostly soulslikes and roguelikes. I like games that expect you to work it out for yourself and let you fail until you do.',
-    },
-    {
-      name: 'Food',
-      text: 'I love food. Finding somewhere great to eat is the best part of going anywhere new.',
-    },
-    {
-      name: 'Quantum tech',
-      text: 'I am studying quantum technology in my spare time. It sits completely outside anything I ship, which is exactly why I like it.',
-    },
+    { name: 'Music / DJ' },
+    { name: 'Dungeon master' },
+    { name: 'Quantum tech' },
+    { name: 'Gaming' },
+    { name: 'Food' },
   ],
 };
 
@@ -116,7 +101,7 @@ export const projects = {
       shots: [
         { src: img('solco-a'), alt: 'Solco home page', position: 'left center' },
         { src: img('solco-b'), alt: 'Solco activation section' },
-        { src: img('solco-c'), alt: 'Solco sponsor report with audience figures', position: 'left top' },
+        { src: img('solco-c'), alt: 'Who Solco is for: plans from a first club night to large festival groups', position: 'left top' },
       ],
     },
     {
@@ -168,7 +153,7 @@ export const marquee = {
     tile('padel-gameplay', 'Blob Padel'),
     tile('blob-phones', 'Blob Arena'),
     tile('puzzle-home', 'PuzzleVault'),
-    tile('solco-report', 'Solco'),
+    tile('solco-who', 'Solco'),
     tile('cozypans', 'Cozypans'),
     tile('rr-keyart', 'Rising Revenant'),
   ],
@@ -236,7 +221,7 @@ export const skills = {
     },
     {
       name: 'Engineering',
-      items: ['TypeScript', 'React', 'Node and Express', 'Postgres', 'Building with Claude and Codex', 'Unity and C# foundations', 'Unreal Engine 4 and C++ familiarity'],
+      items: ['Building 0 to 1 products', 'AI and prompt engineering', 'Building with Claude and Codex', 'TypeScript', 'React', 'Node and Express', 'Postgres', 'Unity and C# foundations', 'Unreal Engine 4 and C++ familiarity'],
     },
     {
       name: 'Data and blockchain',
