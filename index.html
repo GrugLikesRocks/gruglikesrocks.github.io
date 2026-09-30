@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,7 +9,8 @@
 <meta property="og:title" content="Giorgio Bufalino · Founder who builds">
 <meta property="og:description" content="Founder, CEO and product manager at Grug's Lair. I own products from zero to one. I raise the money, design the product and ship the code.">
 <meta property="og:type" content="website">
-<!-- TODO: add og:image and og:url with absolute URLs once the site is deployed and the domain is known -->
+<meta property="og:url" content="https://gruglikesrocks.github.io/">
+<link rel="canonical" href="https://gruglikesrocks.github.io/">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">
 {
@@ -28,8 +29,8 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b1220'/%3E%3Crect x='3' y='3' width='16' height='3' fill='%234a7fe8'/%3E%3Crect x='3' y='3' width='3' height='16' fill='%234a7fe8'/%3E%3Ctext x='32' y='43' font-family='Arial Black,Arial,sans-serif' font-size='30' font-weight='900' fill='%23e8e4dc' text-anchor='middle'%3EGB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <style>
 :root{
   --bg:#0b1220;
@@ -42,7 +43,7 @@
   --sig:#4a7fe8;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scrollbar-gutter:stable}
 body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;
   line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 ::selection{background:var(--sig);color:#fff}
@@ -127,7 +128,7 @@ h2{font-size:clamp(1.7rem,3.6vw,2.5rem);text-transform:uppercase}
 .stat{padding:17px 19px;border-left:1px solid var(--line)}
 .stat:first-child{border-left:0}
 .stat b{display:block;font-family:'Space Grotesk';font-size:1.65rem;letter-spacing:-.025em;line-height:1.1}
-.stat span{display:block;margin-top:5px;font-family:'JetBrains Mono',monospace;font-size:.6rem;
+.stat span{display:block;margin-top:5px;font-family:'JetBrains Mono',monospace;font-size:.66rem;
   letter-spacing:.09em;text-transform:uppercase;color:var(--muted);line-height:1.5}
 
 /* flagship tier */
@@ -141,14 +142,27 @@ h2{font-size:clamp(1.7rem,3.6vw,2.5rem);text-transform:uppercase}
 .f-card.locked{cursor:default}
 .f-card.locked:hover{border-color:var(--line);background:var(--panel)}
 .f-card{padding:28px}
-.f-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:15px}
-.badge{border:1px solid var(--sig);color:var(--sig);padding:4px 8px;white-space:nowrap;flex-shrink:0}
-.badge.off{border-color:var(--line-hi);color:var(--muted)}
 .f-card h3{font-size:1.5rem;text-transform:uppercase;margin-bottom:9px}
-.f-card>p{color:var(--muted);font-size:.92rem;margin-bottom:20px}
+/* the blurb takes the slack so the spec rows line up across the three cards */
+.f-card>p{color:var(--muted);font-size:.92rem;margin-bottom:20px;flex-grow:1}
 
 /* roster */
-.roster{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+/* flush grid, shared with off duty: six tracks so the last row always fills,
+   whatever the card count. Stacked on phones, two across on tablets (an odd last
+   card takes the row), three across on desktop (two left over share the row,
+   one left over takes it all). */
+.roster,.offduty{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.roster>*,.offduty>*{grid-column:span 6}
+@media(min-width:621px){
+  .roster>*,.offduty>*{grid-column:span 3}
+  .roster>*:nth-child(odd):last-child,.offduty>*:nth-child(odd):last-child{grid-column:span 6}
+}
+@media(min-width:981px){
+  .roster>*,.offduty>*,.roster>*:nth-child(odd):last-child,.offduty>*:nth-child(odd):last-child{grid-column:span 2}
+  .roster>*:nth-child(3n+1):nth-last-child(2),.roster>*:nth-child(3n+2):last-child,
+  .offduty>*:nth-child(3n+1):nth-last-child(2),.offduty>*:nth-child(3n+2):last-child{grid-column:span 3}
+  .roster>*:nth-child(3n+1):last-child,.offduty>*:nth-child(3n+1):last-child{grid-column:span 6}
+}
 .p-card{padding:21px}
 .p-shot,.f-shot{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#0a1120}
 .p-shot{margin:-21px -21px 18px;height:150px}
@@ -160,13 +174,13 @@ h2{font-size:clamp(1.7rem,3.6vw,2.5rem);text-transform:uppercase}
   background:linear-gradient(to top,var(--panel),rgba(13,21,36,0) 60%)}
 .p-shot.empty,.f-shot.empty{display:flex;align-items:center;justify-content:center;
   background:repeating-linear-gradient(135deg,#0a1120,#0a1120 11px,#0c1526 11px,#0c1526 22px)}
-.p-noshot{font-family:'JetBrains Mono',monospace;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.p-noshot{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 /* touch devices have no hover, so show colour imagery by default */
 @media(hover:none){.p-shot img,.f-shot img,.portrait img{filter:none;transform:none}}
 .p-num{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.09em;color:var(--muted);transition:color .16s}
 .p-card:hover .p-num{color:var(--sig)}
 .p-card h3{font-size:1.08rem;text-transform:uppercase;margin:8px 0 5px}
-.p-role{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.11em;
+.p-role{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.11em;
   text-transform:uppercase;color:var(--sig);margin-bottom:12px}
 .p-card>p{color:var(--muted);font-size:.85rem;flex-grow:1;margin-bottom:15px}
 
@@ -175,21 +189,23 @@ h2{font-size:clamp(1.7rem,3.6vw,2.5rem);text-transform:uppercase}
 .spec-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
   padding:8px 0;border-bottom:1px solid var(--line)}
 .spec-row:last-child{border-bottom:0}
-.spec-row .k{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;
+.spec-row .k{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.1em;
   text-transform:uppercase;color:var(--muted);flex-shrink:0}
-.spec-row .v{font-family:'JetBrains Mono',monospace;font-size:.64rem;color:var(--text);text-align:right}
+.spec-row .v{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--text);text-align:right}
 
 .select{display:flex;align-items:center;gap:8px;margin-top:15px;font-family:'JetBrains Mono',monospace;
-  font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);transition:color .16s}
+  font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);transition:color .16s}
 .select::before{content:"\25B8";color:var(--sig)}
 .p-card:hover .select,.f-card:hover .select,.p-card:focus-visible .select,.f-card:focus-visible .select{color:var(--sig)}
+/* keeps a locked card's spec rows level with its clickable neighbours */
+.select.ghost{visibility:hidden}
 
 /* record sheet */
 .record{border-top:1px solid var(--line)}
-.rec{display:grid;grid-template-columns:158px 1fr;gap:24px;padding:19px 0;border-bottom:1px solid var(--line)}
-.rec .when{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.07em;color:var(--sig);padding-top:3px}
+.rec{display:grid;grid-template-columns:172px 1fr;gap:24px;padding:19px 0;border-bottom:1px solid var(--line)}
+.rec .when{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.07em;color:var(--sig);padding-top:3px}
 .rec h3{font-size:1.06rem;text-transform:uppercase;margin-bottom:5px}
-.rec .where{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.09em;
+.rec .where{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.09em;
   text-transform:uppercase;color:var(--muted);margin-bottom:9px}
 .rec p{color:var(--muted);font-size:.89rem;max-width:670px}
 
@@ -201,17 +217,7 @@ h2{font-size:clamp(1.7rem,3.6vw,2.5rem);text-transform:uppercase}
 .tag{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.04em;
   color:var(--muted);border:1px solid var(--line);padding:6px 10px}
 
-/* off duty */
-/* six tracks so five cards sit flush: three on top, two wider underneath.
-   the nth-child rules assume five cards, so revisit them if one is added */
-.offduty{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
-.offduty .lo{grid-column:span 2}
-.offduty .lo:nth-child(n+4){grid-column:span 3}
-@media(max-width:900px){
-  .offduty .lo,.offduty .lo:nth-child(n+4){grid-column:span 3}
-  .offduty .lo:last-child:nth-child(odd){grid-column:span 6}
-}
-@media(max-width:620px){.offduty .lo,.offduty .lo:nth-child(n+4){grid-column:span 6}}
+/* off duty: layout comes from the flush grid defined with the roster */
 .lo .idx{margin-bottom:9px}
 .lo p{color:var(--muted);font-size:.85rem}
 
@@ -222,7 +228,7 @@ h2{font-size:clamp(1.7rem,3.6vw,2.5rem);text-transform:uppercase}
 .avail{margin-top:16px}
 .links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
 footer{border-top:1px solid var(--line);padding:20px 28px;display:flex;justify-content:space-between;
-  gap:12px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:.6rem;
+  gap:12px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:.66rem;
   letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
 
 /* detail overlay */
@@ -236,25 +242,25 @@ footer{border-top:1px solid var(--line);padding:20px 28px;display:flex;justify-c
   width:40px;height:40px;border:1px solid var(--line-hi);background:var(--panel);
   color:var(--text);font-size:1.05rem;line-height:1;cursor:pointer;transition:border-color .15s,color .15s}
 .ov-close:hover,.ov-close:focus-visible{border-color:var(--sig);color:var(--sig);outline:none}
-.ov-kicker{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.14em;
+.ov-kicker{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.14em;
   text-transform:uppercase;color:var(--sig);margin-bottom:13px}
 .ov-panel h2{margin-bottom:12px;font-size:clamp(1.6rem,4vw,2.3rem)}
 .ov-pitch{font-size:1.08rem;font-weight:500;max-width:640px;margin-bottom:32px}
-.ov-metrics{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);
+.ov-metrics{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;border:1px solid var(--line);
   background:var(--panel);margin-bottom:36px}
 .ov-metrics div{padding:15px 16px;border-left:1px solid var(--line)}
 .ov-metrics div:first-child{border-left:0}
 .ov-metrics b{display:block;font-family:'Space Grotesk';font-size:1.3rem;letter-spacing:-.025em}
-.ov-metrics span{display:block;margin-top:4px;font-family:'JetBrains Mono',monospace;font-size:.58rem;
+.ov-metrics span{display:block;margin-top:4px;font-family:'JetBrains Mono',monospace;font-size:.64rem;
   letter-spacing:.08em;text-transform:uppercase;color:var(--muted);line-height:1.45}
-.ov-h{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;
+.ov-h{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;
   color:var(--muted);margin:32px 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line)}
 .ov-story p{color:var(--muted);font-size:.96rem;margin-bottom:14px;max-width:670px}
 .ov-features{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:9px 22px}
 .ov-features li{color:var(--muted);font-size:.9rem;padding-left:17px;position:relative}
 .ov-features li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;background:var(--sig)}
 .ov-arch{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.ov-arch span{font-family:'JetBrains Mono',monospace;font-size:.66rem;color:var(--text);
+.ov-arch span{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--text);
   border:1px solid var(--line);padding:8px 12px;background:var(--panel)}
 .ov-arch i{color:var(--sig);font-style:normal;font-family:'JetBrains Mono',monospace}
 .ov-bench{max-width:560px;border:1px solid var(--line)}
@@ -265,31 +271,33 @@ footer{border-top:1px solid var(--line);padding:20px 28px;display:flex;justify-c
 .ov-bench .row .val{font-family:'Space Grotesk';font-weight:700;font-size:1.15rem;color:var(--sig);white-space:nowrap}
 .ov-bench .delta{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
   padding:11px 17px;border-top:1px solid var(--line)}
-.ov-bench .delta span,.ov-bench .delta b{font-family:'JetBrains Mono',monospace;font-size:.62rem;
+.ov-bench .delta span,.ov-bench .delta b{font-family:'JetBrains Mono',monospace;font-size:.68rem;
   letter-spacing:.05em;color:var(--muted)}
 .ov-bench .delta b{color:var(--sig)}
 .ov-screens{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;align-items:start}
 .ov-screen{border:1px solid var(--line);background:var(--bg)}
 .ov-screen img{width:100%;height:auto;display:block;background:#070d17}
-.ov-screen figcaption{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.08em;
+.ov-screen figcaption{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.08em;
   text-transform:uppercase;color:var(--muted);padding:9px 11px;border-top:1px solid var(--line)}
 @media(max-width:700px){.ov-screens{grid-template-columns:1fr}}
-.ov-links{font-family:'JetBrains Mono',monospace;font-size:.66rem;line-height:1.9;color:var(--muted);
+.ov-links{font-family:'JetBrains Mono',monospace;font-size:.72rem;line-height:1.9;color:var(--muted);
   margin-top:34px;padding-top:20px;border-top:1px solid var(--line)}
 .ov-links a{color:var(--sig);text-decoration:none;border-bottom:1px solid var(--line-hi)}
 .ov-links a:hover{border-bottom-color:var(--sig)}
 .ov-live{display:inline-flex;align-items:center;gap:9px;margin-bottom:30px;padding:12px 20px;
   border:1px solid var(--sig);background:rgba(74,127,232,.08);color:var(--sig);text-decoration:none;
-  font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;transition:background .15s}
+  font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;transition:background .15s}
 .ov-live:hover{background:var(--sig);color:#0b1220}
 .ov-live::after{content:"\2197"}
 .p-live,.f-live{position:absolute;top:0;right:0;display:flex;align-items:center;gap:5px;
   padding:5px 9px;background:var(--sig);color:#0b1220;font-family:'JetBrains Mono',monospace;
-  font-size:.52rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+  font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
 .p-live.is-demo,.f-live.is-demo{background:var(--line-hi);color:var(--text)}
-.p-live::before,.f-live::before{content:"";width:5px;height:5px;border-radius:50%;background:#0b1220;
+.p-live::before,.f-live::before{content:"";width:5px;height:5px;background:#0b1220;
   animation:livepulse 1.6s ease infinite}
 .p-live.is-demo::before,.f-live.is-demo::before{background:var(--sig);animation:none}
+.f-live.is-off{background:var(--line);color:var(--muted)}
+.f-live.is-off::before{display:none}
 @keyframes livepulse{50%{opacity:.35}}
 @media(prefers-reduced-motion:reduce){.p-live::before,.f-live::before{animation:none}}
 
@@ -302,10 +310,10 @@ footer{border-top:1px solid var(--line);padding:20px 28px;display:flex;justify-c
 .skip:focus{left:0}
 a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset:2px}
 
-@media(max-width:980px){.roster{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:880px){
   .flagship>*,.flagship>*:last-child:nth-child(odd){grid-column:span 6}
-  .ov-metrics{grid-template-columns:repeat(2,1fr)}
+  .ov-metrics{grid-auto-flow:row;grid-template-columns:repeat(2,1fr)}
+  .ov-metrics div:last-child:nth-child(odd){grid-column:span 2}
   .ov-metrics div:nth-child(3){border-left:0}
   .ov-metrics div:nth-child(n+3){border-top:1px solid var(--line)}
 }
@@ -329,7 +337,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
   .ov-close{right:14px}
   .ov-features{grid-template-columns:1fr}
 }
-@media(max-width:620px){.roster{grid-template-columns:1fr}}
 @media(max-width:480px){
   section{padding:60px 18px}
   nav{padding:0 18px}
@@ -337,6 +344,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
   .f-card{padding:22px}
   .f-shot{margin:-22px -22px 20px}
   .ov-metrics{grid-template-columns:1fr}
+  .ov-metrics div:last-child:nth-child(odd){grid-column:auto}
   .ov-metrics div{border-left:0}
   .ov-metrics div:not(:first-child){border-top:1px solid var(--line)}
 }
@@ -352,8 +360,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
 <a class="skip" href="#main">Skip to content</a>
 <div id="progress" aria-hidden="true"></div>
 
-<nav id="site-nav">
-  <a class="logo" href="#top">GB<b>.</b></a>
+<nav id="site-nav" aria-label="Primary">
+  <a class="logo" href="#top" aria-label="Giorgio Bufalino, back to top">GB<b>.</b></a>
   <ul id="nav-menu">
     <li><a href="#work">Work</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -384,9 +392,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
   </div>
   <div class="stats">
     <div class="stat"><b>20,000+</b><span>users on Blob Arena</span></div>
-    <div class="stat"><b>2.1M</b><span>in-game transactions processed</span></div>
+    <div class="stat"><b>2.1M</b><span>in-game transactions</span></div>
     <div class="stat"><b>11</b><span>products designed and built</span></div>
-    <div class="stat"><b>$1M+</b><span>capital raised</span></div>
+    <div class="stat"><b>~$1M</b><span>capital raised</span></div>
   </div>
 </section>
 
@@ -394,7 +402,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
   <div class="sec-head reveal">
     <h2>Building Grug's Lair</h2>
   </div>
-  <p class="lead reveal">I founded Grug's Lair to turn sports from something people watch into something they live. We started by pioneering onchain gaming, then moved to traditional architecture. Today it is backed by Starkware, with a game live on the app stores.</p>
+  <p class="lead reveal">I founded Grug's Lair to turn sports from something people watch into something they live. We started with onchain games on Starknet, then moved to a mainstream mobile release. Today it is backed by Starkware, with a game live on the app stores.</p>
   <div class="flagship">
     <div class="f-card brk reveal" data-project="blob-arena" role="button" tabindex="0" aria-haspopup="dialog">
       <h3>Blob Arena</h3>
@@ -408,20 +416,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
     <!-- unreleased, so it is a locked slot: no overlay, no data-project, nothing invented -->
     <div class="f-card locked reveal">
       <div class="f-shot empty"><span class="p-noshot">Unannounced</span></div>
-      <div class="f-head">
-        <div class="badge off hud">In development</div>
-      </div>
+      <span class="f-live is-off">In development</span>
       <h3>Project: Fame</h3>
       <p>An original title from the studio, still under wraps. More to share once it is announced.</p>
       <div class="spec">
         <div class="spec-row"><span class="k">Studio</span><span class="v">Grug's Lair</span></div>
         <div class="spec-row"><span class="k">Status</span><span class="v">Unreleased</span></div>
       </div>
+      <div class="select ghost" aria-hidden="true">Select</div>
     </div>
     <div class="f-card brk reveal" data-project="rising-revenant" role="button" tabindex="0" aria-haspopup="dialog">
-      <div class="f-head">
-        <div class="badge off hud">Discontinued</div>
-      </div>
+      <span class="f-live is-off">Discontinued</span>
       <h3>Rising Revenant</h3>
       <p>Our first title. A dark fantasy survival game on Starknet. Fortify your outpost, gather resources and outlast rivals, goblin raids, earthquakes and dragons. Last one standing takes the jackpot.</p>
       <div class="spec">
@@ -442,7 +447,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
     <div class="p-card brk reveal" data-project="platform" role="button" tabindex="0" aria-haspopup="dialog">
       <span class="p-num">01</span>
       <h3>Solco</h3>
-      <div class="p-role">Fan intelligence platform</div>
+      <div class="p-role">B2B SaaS for live events</div>
       <p>Festivals fill fields and still cannot say who turned up. Solco captures the crowd, segments it and proves its worth to sponsors and councils.</p>
       <div class="spec">
         <div class="spec-row"><span class="k">Stack</span><span class="v">React · Express</span></div>
@@ -499,9 +504,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
       </div>
       <div class="select">Select</div>
     </div>
-    <div class="p-card brk reveal" data-project="dm-codex" role="button" tabindex="0" aria-haspopup="dialog">
+    <div class="p-card brk reveal" data-project="omenkeeper" role="button" tabindex="0" aria-haspopup="dialog">
       <span class="p-num">07</span>
-      <h3>Dungeon Master Codex</h3>
+      <h3>Omenkeeper</h3>
       <div class="p-role">Campaign management tool</div>
       <p>A campaign command centre for D&amp;D 5e. Quests, secrets, clue webs, prophecies and combat, all tracked against a real running campaign.</p>
       <div class="spec">
@@ -626,7 +631,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sig);outline-offset
     <div class="lo reveal">
       <div class="hud sig idx">02</div>
       <h3>Dungeon master</h3>
-      <p>I run D&amp;D campaigns for my friends. Building worlds and then improvising when the players ignore all of it is the best part of my week. Dungeon Master Codex came out of running those games.</p>
+      <p>I run D&amp;D campaigns for my friends. Building worlds and then improvising when the players ignore all of it is the best part of my week. Omenkeeper came out of running those games.</p>
     </div>
     <div class="lo reveal">
       <div class="hud sig idx">03</div>
@@ -749,7 +754,7 @@ const PROJECTS={
       'Solco is built for the mid to large scale events that need to actually understand their audience. The line on the tin is simple: your audience is alive, watch it move.',
       'A QR at the event opens a capture page. The crowd signs up from a phone with explicit consent in under 10 seconds, into a profile the organiser owns. Ticketing CSVs and other sources fold into the same picture. Fan Intelligence surfaces who has gone dormant and who the top fans are. Ask Solco reads that state and recommends the next campaign.',
       'The output is the part organisers actually need. Territory impact that wins councils, a sponsor report they can take home and a white-label app in their own brand.',
-      'It is built like a product, not a demo. Marketing consent is unchecked by default and exports default to consented contacts only. Formal data integrity and performance audits at a 100,000 fan benchmark decide what counts as pilot ready. Paid pilots are gated on named findings rather than shipped past them.'
+      'It is built to be sold. Marketing consent is unchecked by default and exports default to consented contacts only. Formal data integrity and performance audits at a 100,000 fan benchmark decide what counts as pilot ready. I designed, built and shipped it solo with AI assisted development. It is in live pilots with festival organisers today.'
     ],
     features:['QR activations with a public mobile capture page','Presale, waitlist and competition activations','Fan Intelligence with dormant and top fan views','Ask Solco agent for next campaign recommendations','Ticketing CSV ingestion with identity resolution','Territory impact reporting for councils and sponsors','Sponsor report export','White-label fan app in the organiser brand','Consent first exports, marketing consent never pre-ticked'],
     stack:['React','TypeScript','Express','Postgres + Drizzle','Vitest','pnpm monorepo'],
@@ -769,7 +774,7 @@ const PROJECTS={
       'The best story is the leak hunt. A feature computed from the shots of the very match being predicted made a losing model look like a winner, worth 18 times the entire distance to the bookmaker. I found it, killed it and replaced it with leakage regression tests that fail the build if any feature reads post-match data.',
       'One learned calibration step replaced six stacked draw corrections that fought each other, cutting draw calibration error from 0.1067 to 0.0036 and winning in all nine leagues.'
     ],
-    features:['Voting ensemble plus Dixon-Coles and Elo-logit models','Blend of model, de-vigged market and Polymarket prices','Rolling-origin walk-forward evaluation harness','Automated leakage tests on every feature','Model drift monitoring across training runs','Claude written match analysis','TypeScript fallback ensemble with cross language parity tests','Append-only odds history from an hourly sync'],
+    features:['Voting ensemble plus Dixon-Coles and Elo-logit models','Blend of model, de-vigged market and Polymarket prices','Rolling-origin walk-forward evaluation suite','Automated leakage tests on every feature','Model drift monitoring across training runs','Claude written match analysis','TypeScript fallback ensemble with cross language parity tests','Append-only odds history from an hourly sync'],
     stack:['Python','FastAPI','scikit-learn','XGBoost','TypeScript','Express 5','React + Vite','Postgres + Drizzle'],
     bench:{rows:[['De-vigged Pinnacle close, the bar to beat','0.9857'],['QUANTGRUG calibrated','0.9936']],note:'Log loss over 18,577 predictions, lower is better',delta:'gap 0.008 nats'},
     arch:['React + Vite','Express 5 API','Python FastAPI ML','Postgres'],
@@ -786,7 +791,7 @@ const PROJECTS={
       'All of it is designed and balanced end to end. Matches are entered with a coin fee against a prize, so every result moves the ladder and the wallet at once.',
       'The engineering is a browser client and an Expo mobile app inside one pnpm monorepo, both talking to the same Express 5 API through the same generated client. The OpenAPI spec is the source of truth and Orval regenerates the React Query hooks and Zod schemas, so the contract changes in exactly one place.'
     ],
-    features:['Six tournament ladder gated on trophies','Blob characters with a class and six stats','Card collection levelling per character','Season pass, timed events and loot bags','Coin entry fees against prize pools','Unlockable in-match skills','Browser and Expo mobile clients on one contract','OpenAPI spec-driven codegen for hooks and schemas'],
+    features:['Six tournament ladder gated on trophies','Blob characters with a class and six stats','Card collection levelling per character','Season pass, timed events and loot bags','Coin entry fees against prize pools','In-match skills earned through play','Browser and Expo mobile clients on one contract','OpenAPI spec-driven codegen for hooks and schemas'],
     stack:['TypeScript','Expo','Express 5','Postgres + Drizzle','Orval','pnpm monorepo'],
     arch:['Web client + Expo mobile','Generated API client','Express 5','Postgres'],
     screens:[['padel-gameplay.jpg','Match in play',940,460],['padel-menu.jpg','Tournament ladder and progression',460,940],['padel-select.jpg','Blob select with stat block',460,940]]
@@ -814,8 +819,8 @@ const PROJECTS={
     live:'https://cozypans.vercel.app',liveLabel:'See the landing page',demo:true,
     metrics:[],
     story:[
-      'Every recipe ships in English and Polish, kept in sync by a language toggle that is a hard project convention, not an afterthought.',
-      'The whole point is straightforward recipes without the padding recipe sites drown in. Copy stays plain and recipe focused.',
+      'Every recipe ships in English and Polish, kept in sync by a language toggle the whole project is built around.',
+      'The whole point is plain recipes without the padding recipe sites drown in. Copy stays short and recipe focused.',
       'Behind the public site sits a full publishing workflow. An admin dashboard manages recipes, contact submissions and the newsletter, with broadcasts sent through Resend and images living in object storage behind an access control layer.'
     ],
     features:['English and Polish toggle across the site','Photography first recipe pages and category browsing','Admin dashboard for recipes, contact and newsletter','Newsletter broadcasts via Resend','Recipe comments and contact forms','Mobile first UI with 44px touch targets'],
@@ -834,25 +839,26 @@ const PROJECTS={
     features:['Vertical video feed','Auth with OIDC sessions','Client side uploads via Uppy to object storage','AI assisted upload verification','Likes, comments, follows and profiles','Swappable storage behind a repository interface'],
     stack:['React 18','TypeScript','Express','Postgres + Drizzle','Uppy.js','Google Cloud Storage'],
     arch:['React feed','Express','IStorage interface','Postgres + GCS'],
-    links:'Runs locally. Screens are held back because the build still carries its original working branding.'
+    links:'Runs locally. Screens are held back until the branding is final.'
   },
-  'dm-codex':{
+  'omenkeeper':{
     kicker:'The lab · 07',
-    title:'Dungeon Master Codex',
+    title:'Omenkeeper',
     pitch:'Runs my actual D&D table. One tool that holds the whole campaign so nothing slips between sessions.',
-    metrics:[['30+','tracking tools'],['11','entities tracked'],['10','sessions logged'],['7','locations']],
+    live:'https://dm-codex-rho.vercel.app',liveLabel:'Visit Omenkeeper',
+    metrics:[],
     story:[
       'Running a long D&D campaign is a continuity problem. Who knows what, which secret is still hidden, which thread was quietly retconned three months ago. This is the tool I built to hold all of it.',
       'The spine is a campaign bible, sessions and a quest board. Around that sit the parts a dungeon master actually loses track of: what each player knows versus what is true, which secrets are still buried, what got retconned and how every clue, NPC and prophecy connects, plus faction clocks and a mystery health check.',
-      'At the table it turns into a combat tracker, a boss phase builder, NPC voice cards and live notes. AI assists on session planning and continuity checking, but every AI feature degrades gracefully to a message when no key is set, so the tool never depends on it.',
-      'It runs against a real campaign, the Kingdom of Aurelth, currently at session 10 with a level 5 party. Every screenshot here is that campaign, not filler data.'
+      'The line between the two screens is enforced on the server. The player display only ever receives what the table has earned, so a secret that has not been revealed does not exist on their side.',
+      'At the table it turns into a combat tracker, a boss phase builder, NPC voice cards and live notes. AI assists on session planning and continuity checking. The tool works fully without it.',
+      'It began as the tool for my own campaign, the Kingdom of Aurelth, which is what the in-app screens show. It now runs as a product with accounts and a free tier for other game masters.'
     ],
-    features:['Quest board across five states with countdown days','Player knowledge tracked separately from DM truth','Secret reveal tracker with conditions, risk and reward','Retcon manager with old and new versions','Clue web linking clues, NPCs, quests and locations','Prophecy tracker and Old God codex','Combat tracker and multi-phase boss builder','Player-safe export that withholds DM-only secrets'],
+    features:['Quest board across five states with countdown days','Player knowledge tracked separately from DM truth','Secret reveal tracker with conditions, risk and reward','Retcon manager with old and new versions','Clue web linking clues, NPCs, quests and locations','Prophecy tracker and Old God codex','Combat tracker and multi-phase boss builder','Player display filtered on the server so secrets cannot leak'],
     stack:['React','TypeScript','Express 5','Postgres + Drizzle','Tailwind + Radix','pnpm monorepo'],
     arch:['React + Vite','Express 5 API','Postgres + Drizzle','Optional AI layer'],
-    screens:[['dmcodex-dashboard.jpg','Campaign dashboard, the Kingdom of Aurelth',1200,750],['dmcodex-quests.jpg','Quest board across five states',1200,750]],
-    live:'https://dm-codex-rho.vercel.app',liveLabel:'Open it live',
-    links:'Open by default, so anyone can browse the live Kingdom of Aurelth campaign.'
+    screens:[['omenkeeper-landing.jpg','Omenkeeper landing page',1200,750],['omenkeeper-dashboard.jpg','Campaign dashboard, the Kingdom of Aurelth',986,750],['omenkeeper-quests.jpg','Quest board across five states',986,750]],
+    links:'Free to start at <a href="https://dm-codex-rho.vercel.app" target="_blank" rel="noopener">dm-codex-rho.vercel.app</a>.'
   },
   'dice-roller':{
     kicker:'The lab · 08',
@@ -893,6 +899,11 @@ const ovClose=document.getElementById('ov-close');
 const ovPanel=overlay.querySelector('.ov-panel');
 let lastFocus=null;
 
+// closing line of a detail view: the project's own note, else where it lives
+const linkLine=p=>p.links||(p.live
+  ?(p.demo?'Public demo':'Live')+' at <a href="'+p.live+'" target="_blank" rel="noopener">'+p.live.replace('https://','')+'</a>.'
+  :'Runs locally.');
+
 function renderProject(p){
   return `<div class="ov-kicker">${p.kicker}</div>
   <h2 id="ov-title">${p.title}</h2>
@@ -909,7 +920,7 @@ function renderProject(p){
   <div class="tags">${p.stack.map(s=>`<span class="tag">${s}</span>`).join('')}</div>
   ${p.screens&&p.screens.length?`<div class="ov-h">Screens</div>
   <div class="ov-screens">${p.screens.map(s=>`<figure class="ov-screen"><img src="screens/${s[0]}" alt="${s[1]}" width="${s[2]}" height="${s[3]}"><figcaption>${s[1]}</figcaption></figure>`).join('')}</div>`:''}
-  <div class="ov-links">${p.links||'Runs locally. Live demo and code links land here as each project comes online.'}</div>`;
+  <div class="ov-links">${linkLine(p)}</div>`;
 }
 
 const bgRegions=()=>document.querySelectorAll('.skip,main,nav,footer');
