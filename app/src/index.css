@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body,
+  #root {
+    background: #0c0c0c;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: 'Kanit', sans-serif;
+    color: #d7e2ea;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid #d7e2ea;
+    outline-offset: 4px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Full viewport hero that never collapses on a short landscape phone. */
+.hero-h {
+  height: 100vh;
+  height: 100svh;
+  min-height: 520px;
+}
+
+/* On a screen too short to hold a whole card, let the cards scroll normally. */
+@media (max-height: 640px) {
+  .stack-slot {
+    position: static !important;
+    height: auto !important;
+    margin-bottom: 28px;
+  }
+  .stack-card {
+    top: 0 !important;
+    transform: none !important;
+  }
+}

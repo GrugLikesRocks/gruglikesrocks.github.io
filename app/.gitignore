@@ -1,0 +1,5 @@
+node_modules
+_work
+# working notes, kept out of the public repo
+REBUILD_PLAN.md
+DESIGN_PROMPT.md

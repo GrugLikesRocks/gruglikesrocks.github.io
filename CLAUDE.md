@@ -6,6 +6,8 @@ Personal portfolio site for **Giorgio Bufalino**. He is job hunting: the site ta
 
 ## Current state
 
+**Rebuild staged, waiting for approval (30 Sep 2026).** Giorgio asked for the site to be rebuilt from a design prompt (React, TypeScript, Tailwind, Framer Motion, dark Kanit look). The source lives in app/ and the built preview is published unlisted at https://gruglikesrocks.github.io/next/. **The live root page is still the old single-file site described below** and stays that way until he approves the new one. Read app/REBUILD_PLAN.md (status at the top) and app/DESIGN_PROMPT.md before doing anything else on the site. Once he approves, the design decisions below are superseded and this file needs rewriting.
+
 `index.html` is a complete self-contained first version (inline CSS/JS, profile photo embedded as a base64 data URL). Built in Cowork, July 2026. It renders and works, but it is a starting point, not a finished site.
 
 ## Locked decisions (do not relitigate without asking Giorgio)
