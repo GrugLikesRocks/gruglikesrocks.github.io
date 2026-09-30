@@ -6,7 +6,9 @@ type Props = { text: string; className?: string; style?: CSSProperties };
 /** Paragraph whose characters brighten one by one as it scrolls through the viewport. */
 export default function AnimatedText({ text, className, style }: Props) {
   const ref = useRef<HTMLParagraphElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.8', 'end 0.2'] });
+  // Fully lit once the paragraph's last line reaches 60% down the screen, so a visitor who has
+  // scrolled the section into the middle of the view sees all of it (the template ran to 20%).
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.95', 'end 0.6'] });
   const total = text.length;
 
   let at = 0;

@@ -36,15 +36,6 @@ export default function About() {
             </FadeIn>
           ))}
         </dl>
-
-        <FadeIn
-          as="p"
-          delay={0.1}
-          className="max-w-[640px] text-center font-light leading-relaxed text-[#D7E2EA]/75 [text-wrap:pretty]"
-          style={{ fontSize: 'clamp(1rem, 1.8vw, 1.25rem)' }}
-        >
-          {about.closing}
-        </FadeIn>
       </div>
     </section>
   );

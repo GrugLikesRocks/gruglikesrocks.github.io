@@ -29,8 +29,6 @@ export const about = {
     { value: '2.1M', label: 'In-game transactions' },
     { value: '11', label: 'Products designed and built' },
   ],
-  closing:
-    'Because I also build, I can sit with leadership on strategy, write the spec with design and talk implementation with engineers without anything getting lost between them.',
 };
 
 // His own words from the old site (12 Aug 2026). Keep them first person and conversational.
