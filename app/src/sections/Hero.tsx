@@ -52,8 +52,8 @@ export default function Hero() {
             <img
               src={hero.portrait}
               alt={hero.portraitAlt}
-              width={1100}
-              height={1100}
+              width={840}
+              height={840}
               draggable={false}
               className="block h-auto w-full select-none"
             />
