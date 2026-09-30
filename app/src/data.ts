@@ -35,10 +35,6 @@ export const services = {
       text: 'Strategy, roadmaps, specs and backlog. I run discovery with users, set the KPIs and take a product from first idea through launch and the updates after it.',
     },
     {
-      name: 'Game design',
-      text: 'Combat systems, progression, quests, leaderboards and reward loops, with an in-game economy balanced to hold them together.',
-    },
-    {
       name: 'Strategy and leadership',
       text: 'Company strategy, partnerships and hiring. I built and led an 11 person team across engineering, art, marketing and partnerships.',
     },
@@ -49,6 +45,10 @@ export const services = {
     {
       name: 'Data and blockchain',
       text: 'Python, model evaluation and analytics, plus blockchain technology and forensics from years inside a crypto hedge fund.',
+    },
+    {
+      name: 'Game design',
+      text: 'Combat systems, progression, quests, leaderboards and reward loops, with an in-game economy balanced to hold them together.',
     },
   ],
 };
