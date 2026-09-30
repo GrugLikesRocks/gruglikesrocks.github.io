@@ -5,6 +5,8 @@ import About from './sections/About';
 import Services from './sections/Services';
 import Projects from './sections/Projects';
 import Experience from './sections/Experience';
+import Skills from './sections/Skills';
+import OffDuty from './sections/OffDuty';
 import Contact from './sections/Contact';
 
 export default function App() {
@@ -17,6 +19,8 @@ export default function App() {
         <Services />
         <Projects />
         <Experience />
+        <Skills />
+        <OffDuty />
         <Contact />
       </main>
     </MotionConfig>

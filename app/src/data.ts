@@ -23,8 +23,41 @@ export const hero = {
 
 export const about = {
   heading: 'About me',
-  text: "I have spent 7+ years owning product end to end. Most recently I was CEO and Product Owner at Grug's Lair, where I took Blob Arena from an onchain build to a live mobile game with 20,000+ users. I also design, build and ship my own products solo with Claude and Codex.",
-  offDuty: ['Records', 'Dungeon master', 'Soulslikes', 'Quantum'],
+  lead: "Product leader with 7+ years owning product end to end. I take products from first idea to live release, then keep improving them on real user data. Most recently I was CEO and Product Owner at Grug's Lair, the sole PM on every title the studio made.",
+  stats: [
+    { value: '20,000+', label: 'Blob Arena users' },
+    { value: '2.1M', label: 'In-game transactions' },
+    { value: '11', label: 'Products designed and built' },
+  ],
+  closing:
+    'Because I also build, I can sit with leadership on strategy, write the spec with design and talk implementation with engineers without anything getting lost between them.',
+};
+
+// His own words from the old site (12 Aug 2026). Keep them first person and conversational.
+export const offDuty = {
+  heading: 'Off duty',
+  items: [
+    {
+      name: 'Music / DJ',
+      text: 'I collect records and love electronic music. Nothing beats dropping a record you have been sitting on for weeks and feeling the room catch it.',
+    },
+    {
+      name: 'Dungeon master',
+      text: 'I run D&D campaigns for my friends. Building worlds and then improvising when the players ignore all of it is the best part of my week. Omenkeeper came out of running those games.',
+    },
+    {
+      name: 'Gaming',
+      text: 'Mostly soulslikes and roguelikes. I like games that expect you to work it out for yourself and let you fail until you do.',
+    },
+    {
+      name: 'Food',
+      text: 'I love food. Finding somewhere great to eat is the best part of going anywhere new.',
+    },
+    {
+      name: 'Quantum tech',
+      text: 'I am studying quantum technology in my spare time. It sits completely outside anything I ship, which is exactly why I like it.',
+    },
+  ],
 };
 
 export const services = {
@@ -187,6 +220,45 @@ export const experience = {
       org: 'University of the West of England',
       when: '2013 to 2016',
       text: 'Computer games and programming.',
+    },
+  ],
+};
+
+// From the Skills list in cv.md, trimmed to the product-led rules: no fundraising or founder items here.
+export const skills = {
+  heading: 'Skills',
+  groups: [
+    {
+      name: 'Product',
+      items: ['Product strategy and roadmapping', 'Feature specs and GDDs', 'User stories', 'Backlog management', 'Sprint planning and prioritisation', 'KPI definition and tracking', 'GTM planning', 'User research and feedback loops', 'Agile delivery'],
+    },
+    {
+      name: 'Strategy and leadership',
+      items: ['Vision setting', 'OKRs', 'Business model design', 'Executive team leadership', 'Cross-functional team management', 'Hiring', 'Partnerships and business development', 'Board and stakeholder communication'],
+    },
+    {
+      name: 'Engineering',
+      items: ['TypeScript', 'React', 'Node and Express', 'Postgres', 'Building with Claude and Codex', 'Unity and C# foundations', 'Unreal Engine 4 and C++ familiarity'],
+    },
+    {
+      name: 'Data and blockchain',
+      items: ['Python', 'Statistical modelling', 'Machine learning ensembles', 'Model evaluation', 'Analytics', 'Blockchain technology', 'Blockchain forensics', 'Starknet and the Dojo engine'],
+    },
+    {
+      name: 'Research and analysis',
+      items: ['Investment research and memos', 'Market and competitive analysis', 'Sector mapping', 'Due diligence', 'Portfolio and risk analysis', 'P&L oversight', 'Crypto and digital asset markets', 'Technology trend analysis'],
+    },
+    {
+      name: 'Game design',
+      items: ['Combat systems and fighter abilities', 'Progression systems', 'Game economy and reward balancing', 'Achievements and quests', 'Leaderboards', 'Player behaviour analysis'],
+    },
+    {
+      name: 'Tools',
+      items: ['Notion', 'Jira', 'Confluence', 'Figma', 'Google Workspace', 'Airtable', 'Excel and Google Sheets', 'Crunchbase'],
+    },
+    {
+      name: 'Languages',
+      items: ['English (native)', 'Italian (native)'],
     },
   ],
 };

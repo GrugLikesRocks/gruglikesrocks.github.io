@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative z-30 -mt-10 rounded-t-[40px] bg-ink px-5 pt-24 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:pt-28 md:-mt-14 md:rounded-t-[60px] md:px-10 md:pt-36"
+      className="relative z-50 -mt-10 rounded-t-[40px] bg-ink px-5 pt-24 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:pt-28 md:-mt-14 md:rounded-t-[60px] md:px-10 md:pt-36"
     >
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 text-center sm:gap-12">
         <FadeIn

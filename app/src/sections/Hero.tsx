@@ -1,5 +1,4 @@
 import FadeIn from '../components/FadeIn';
-import Magnet from '../components/Magnet';
 import ContactButton from '../components/ContactButton';
 import { hero, nav } from '../data';
 
@@ -48,7 +47,6 @@ export default function Hero() {
       {/* Portrait: floats mid screen on phones and tablets, stands on the bottom edge from 1024px up. */}
       <div className="pointer-events-none absolute left-1/2 top-[54%] z-10 w-[min(86vw,46vh)] -translate-x-1/2 -translate-y-1/2 sm:top-[56%] sm:w-[min(72vw,max(52vh,270px))] lg:bottom-0 lg:top-auto lg:w-[min(680px,74vh,50vw)] lg:translate-y-0">
         <FadeIn delay={0.6} y={30}>
-          <Magnet padding={150} strength={3} activeTransition="transform 0.3s ease-out" inactiveTransition="transform 0.6s ease-in-out">
             <img
               src={hero.portrait}
               alt={hero.portraitAlt}
@@ -57,7 +55,6 @@ export default function Hero() {
               draggable={false}
               className="block h-auto w-full select-none"
             />
-          </Magnet>
         </FadeIn>
       </div>
     </section>
