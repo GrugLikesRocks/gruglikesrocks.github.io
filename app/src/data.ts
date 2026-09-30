@@ -95,7 +95,7 @@ export const projects = {
       url: 'https://quantgrug.vercel.app',
       shots: [
         { src: img('quant-a'), alt: 'QUANTGRUG matchday predictions', position: 'left top' },
-        { src: img('quant-b'), alt: 'QUANTGRUG track record against the market', position: 'left top' },
+        { src: img('quant-b'), alt: 'QUANTGRUG model analytics with backtest charts', position: 'left top' },
         { src: img('quant-c'), alt: 'QUANTGRUG command centre dashboard', position: 'left top' },
       ],
     },
@@ -147,7 +147,7 @@ export const marquee = {
     tile('blob-ranks', 'Blob Arena'),
     tile('solco-activate', 'Solco'),
     tile('dice-roller', 'Dice Roller'),
-    tile('quant-record', 'QUANTGRUG'),
+    tile('quant-match', 'QUANTGRUG'),
     tile('puzzle-catalog', 'PuzzleVault'),
     tile('omen-quests', 'Omenkeeper'),
     tile('blob-arcade', 'Blob Arena'),
