@@ -186,7 +186,7 @@ export const experience = {
       role: 'BSc Games Technology',
       org: 'University of the West of England',
       when: '2013 to 2016',
-      text: 'Computer games and programming. Where the builder habit started.',
+      text: 'Computer games and programming.',
     },
   ],
 };
@@ -194,7 +194,7 @@ export const experience = {
 export const contact = {
   heading: "Let's talk",
   text: "If you need someone who can own a product from strategy to shipped code, let's talk.",
-  availability: 'Open to new roles · Bristol or remote',
+  availability: 'Open to new roles · Bristol, UK or remote · Open to relocation within the UK',
   button: 'Contact me',
   links: [
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/giorgiobufalino' },

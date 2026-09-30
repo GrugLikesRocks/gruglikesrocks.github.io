@@ -23,7 +23,15 @@ export default function Contact() {
           <p className="max-w-[560px] font-medium leading-relaxed text-mist" style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}>
             {contact.text}
           </p>
-          <p className="text-xs font-medium uppercase tracking-widest text-[#D7E2EA]/60 sm:text-sm">{contact.availability}</p>
+          {/* each part stays on one line, so a narrow screen breaks the line only between parts */}
+          <p className="text-xs font-medium uppercase tracking-widest text-[#D7E2EA]/60 sm:text-sm">
+            {contact.availability.split(' · ').map((part, i) => (
+              <span key={part}>
+                {i > 0 && ' · '}
+                <span className="whitespace-nowrap">{part}</span>
+              </span>
+            ))}
+          </p>
         </FadeIn>
 
         <FadeIn delay={0.2} className="flex flex-col items-center gap-5">
