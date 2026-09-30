@@ -20,7 +20,7 @@ export const hero = {
   portrait: img('portrait'),
   portraitAlt: 'Giorgio Bufalino',
   // Giorgio's insider joke, said by the hero portrait when the visitor starts scrolling
-  aside: '...but everyone still calls me Giorgio',
+  aside: '...but everyone calls me Giorgio',
 };
 
 export const about = {
