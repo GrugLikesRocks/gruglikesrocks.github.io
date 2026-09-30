@@ -19,14 +19,8 @@ export const hero = {
   line: 'Giorgio Bufalino. Product leader with 7+ years owning product end to end.',
   portrait: img('portrait'),
   portraitAlt: 'Giorgio Bufalino',
-};
-
-// Giorgio's insider joke, drawn as a one-panel manga gag right after the hero.
-export const punchline = {
-  line: '...but everyone still calls me Giorgio',
-  sfx: 'BA DUM TSS!',
-  image: img('manga-me'),
-  alt: 'Giorgio drawn in black and white manga style',
+  // Giorgio's insider joke, said by the hero portrait when the visitor starts scrolling
+  aside: '...but everyone still calls me Giorgio',
 };
 
 export const about = {

@@ -1,8 +1,21 @@
+import { useEffect, useState } from 'react';
 import FadeIn from '../components/FadeIn';
 import ContactButton from '../components/ContactButton';
+import SpeechBubble from '../components/SpeechBubble';
 import { hero, nav } from '../data';
 
 export default function Hero() {
+  // his running joke pops out of his mouth the first time the visitor scrolls
+  const [said, setSaid] = useState(false);
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY > 24) setSaid(true);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <section className="hero-h relative flex flex-col" style={{ overflowX: 'clip' }}>
       <FadeIn as="nav" aria-label="Main" delay={0} y={-20} className="relative z-20 flex justify-between px-4 pt-6 min-[380px]:px-6 md:px-10 md:pt-8">
@@ -46,7 +59,7 @@ export default function Hero() {
 
       {/* Portrait: floats mid screen on phones and tablets, stands on the bottom edge from 1024px up. */}
       <div className="pointer-events-none absolute left-1/2 top-[54%] z-10 w-[min(86vw,46vh)] -translate-x-1/2 -translate-y-1/2 sm:top-[56%] sm:w-[min(72vw,max(52vh,270px))] lg:bottom-0 lg:top-auto lg:w-[min(680px,74vh,50vw)] lg:translate-y-0">
-        <FadeIn delay={0.6} y={30}>
+        <FadeIn delay={0.6} y={30} className="relative">
             <img
               src={hero.portrait}
               alt={hero.portraitAlt}
@@ -55,6 +68,9 @@ export default function Hero() {
               draggable={false}
               className="block h-auto w-full select-none"
             />
+            {/* tail tips placed against the portrait: beside the mouth from 640px up, over the head on a phone */}
+            <SpeechBubble text={hero.aside} show={said} variant="side" className="bottom-[57%] left-[66%] hidden w-[47%] sm:block" />
+            <SpeechBubble text={hero.aside} show={said} variant="above" className="bottom-[94%] left-[-6%] w-[92%] sm:hidden" />
         </FadeIn>
       </div>
     </section>
