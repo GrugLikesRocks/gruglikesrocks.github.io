@@ -58,7 +58,7 @@ export const services = {
     },
     {
       name: 'Engineering',
-      text: 'Front end in TypeScript, React, Tailwind and Three.js. Back end in Node, Express, Postgres and Drizzle, with Python, FastAPI and scikit-learn for data work, plus Stripe payments, auth, Vitest testing and deploys on Vercel.',
+      text: 'Technical enough to build what I spec and talk implementation with any engineering team. TypeScript, React, Node, Postgres and APIs, Python for data work, plus payments and deploys on Vercel.',
     },
     {
       name: 'Data and blockchain',
@@ -223,11 +223,11 @@ export const skills = {
     },
     {
       name: 'Engineering',
-      items: ['Building 0 to 1 products', 'AI and prompt engineering', 'Building with Claude and Codex', 'TypeScript', 'React', 'Tailwind CSS', 'Vite', 'Node and Express', 'REST APIs and OpenAPI', 'Postgres and Drizzle ORM', 'Zod validation', 'FastAPI', 'Three.js', 'Stripe payments', 'Auth and sessions', 'Vitest', 'Git and GitHub', 'pnpm monorepos', 'Vercel deployment', 'Unity and C# foundations', 'Unreal Engine 4 and C++ familiarity'],
+      items: ['Building 0 to 1 products', 'AI and prompt engineering', 'Building with Claude and Codex', 'Rapid prototyping', 'TypeScript', 'React', 'Node and Express', 'Postgres', 'REST APIs', 'Stripe payments', 'Git and GitHub', 'Vercel deployment', 'Unity and C# foundations', 'Unreal Engine 4 and C++ familiarity'],
     },
     {
       name: 'Data and blockchain',
-      items: ['Python', 'NumPy, SciPy and scikit-learn', 'Statistical modelling', 'Machine learning ensembles', 'Model evaluation', 'Analytics', 'Blockchain technology', 'Blockchain forensics', 'Starknet and the Dojo engine'],
+      items: ['Python', 'Statistical modelling', 'Machine learning ensembles', 'Model evaluation', 'Analytics', 'Blockchain technology', 'Blockchain forensics', 'Starknet and the Dojo engine'],
     },
     {
       name: 'Research and analysis',
