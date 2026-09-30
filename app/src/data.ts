@@ -25,7 +25,7 @@ export const hero = {
 
 export const about = {
   heading: 'About me',
-  lead: "Product leader with 7+ years owning product end to end. I take products from first idea to live release, then keep improving them on real user data. Most recently I was CEO and Product Owner at Grug's Lair, the sole PM on every title the studio made.",
+  lead: "Product leader with 7+ years owning product end to end. I take products from first idea to live release, then keep improving them on real user data. Now looking for a new permanent role. Most recently I was CEO and Product Owner at Grug's Lair, the sole PM on every title the studio made.",
   stats: [
     { value: '20,000+', label: 'Blob Arena users' },
     { value: '2.1M', label: 'In-game transactions' },

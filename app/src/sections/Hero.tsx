@@ -5,11 +5,13 @@ import SpeechBubble from '../components/SpeechBubble';
 import { hero, nav } from '../data';
 
 export default function Hero() {
-  // his running joke pops out of his mouth the first time the visitor scrolls
+  // his running joke pops out of his mouth when the visitor scrolls down, and tucks away again
+  // back at the very top, so it replays
   const [said, setSaid] = useState(false);
   useEffect(() => {
     const onScroll = () => {
       if (window.scrollY > 24) setSaid(true);
+      else if (window.scrollY < 4) setSaid(false);
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
