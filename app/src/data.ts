@@ -162,7 +162,7 @@ export const experience = {
       role: 'CEO & Product Owner',
       org: "Grug's Lair",
       when: 'Nov 2022 to Sep 2026',
-      text: 'Sole PM across every studio title, from discovery through to live ops. Made the call to move our flagship off an onchain Starknet build and onto a mainstream mobile release, then shipped Blob Arena on iOS and Android to 2.1M in-game transactions. Founded the studio, raised around $1M from PTC, Starkware, Cartridge and Angels and led an 11 person team.',
+      text: 'Sole PM across every studio title, from discovery through to live ops. Shipped Blob Arena on iOS and Android to 2.1M in-game transactions. Founded the studio, raised pre-seed from VCs and led an 11 person team for 4 years.',
     },
     {
       role: 'Head of Research, Product & Project Manager',
