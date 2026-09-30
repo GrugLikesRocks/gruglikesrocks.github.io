@@ -21,6 +21,14 @@ export const hero = {
   portraitAlt: 'Giorgio Bufalino',
 };
 
+// Giorgio's insider joke, drawn as a one-panel manga gag right after the hero.
+export const punchline = {
+  line: '...but everyone still calls me Giorgio',
+  sfx: 'BA DUM TSS!',
+  image: img('manga-me'),
+  alt: 'Giorgio drawn in black and white manga style',
+};
+
 export const about = {
   heading: 'About me',
   lead: "Product leader with 7+ years owning product end to end. I take products from first idea to live release, then keep improving them on real user data. Most recently I was CEO and Product Owner at Grug's Lair, the sole PM on every title the studio made.",

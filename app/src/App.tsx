@@ -1,5 +1,6 @@
 import { MotionConfig } from 'framer-motion';
 import Hero from './sections/Hero';
+import Punchline from './sections/Punchline';
 import Marquee from './sections/Marquee';
 import About from './sections/About';
 import Services from './sections/Services';
@@ -14,6 +15,7 @@ export default function App() {
     <MotionConfig reducedMotion="user">
       <main className="bg-ink font-kanit" style={{ overflowX: 'clip' }}>
         <Hero />
+        <Punchline />
         <Marquee />
         <About />
         <Services />
