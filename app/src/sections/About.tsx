@@ -22,7 +22,7 @@ export default function About() {
           style={{ fontSize: 'clamp(1.1rem, 2.3vw, 1.6rem)' }}
         />
 
-        <dl className="grid w-full grid-cols-1 gap-3 sm:grid-cols-3 md:gap-4">
+        <dl className="mx-auto grid w-full max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4">
           {about.stats.map((stat, i) => (
             <FadeIn
               key={stat.label}
