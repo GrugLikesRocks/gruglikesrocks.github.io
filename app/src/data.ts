@@ -121,7 +121,7 @@ export const projects = {
       url: 'https://dm-codex-rho.vercel.app',
       shots: [
         { src: img('omen-a'), alt: 'Omenkeeper quest board', position: 'left top' },
-        { src: img('omen-b'), alt: 'Omenkeeper landing page', position: 'center top' },
+        { src: img('omen-b'), alt: 'Omenkeeper session presenter with scene notes', position: 'left top' },
         { src: img('omen-c'), alt: 'Omenkeeper campaign dashboard', position: 'left top' },
       ],
     },
