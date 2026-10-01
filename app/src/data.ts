@@ -19,8 +19,6 @@ export const hero = {
   line: 'Giorgio Bufalino. Product leader with 7+ years owning product end to end.',
   portrait: img('portrait'),
   portraitAlt: 'Giorgio Bufalino',
-  // Giorgio's insider joke, said by the hero portrait when the visitor starts scrolling
-  aside: '...but everyone calls me Giorgio',
 };
 
 export const about = {

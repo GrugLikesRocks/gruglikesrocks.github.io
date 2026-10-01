@@ -1,23 +1,8 @@
-import { useEffect, useState } from 'react';
 import FadeIn from '../components/FadeIn';
 import ContactButton from '../components/ContactButton';
-import SpeechBubble from '../components/SpeechBubble';
 import { hero, nav } from '../data';
 
 export default function Hero() {
-  // his running joke pops out of his mouth when the visitor scrolls down, and tucks away again
-  // back at the very top, so it replays
-  const [said, setSaid] = useState(false);
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 24) setSaid(true);
-      else if (window.scrollY < 4) setSaid(false);
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
     <section className="hero-h relative flex flex-col" style={{ overflowX: 'clip' }}>
       <FadeIn as="nav" aria-label="Main" delay={0} y={-20} className="relative z-20 flex justify-between px-4 pt-6 min-[380px]:px-6 md:px-10 md:pt-8">
@@ -70,9 +55,6 @@ export default function Hero() {
               draggable={false}
               className="block h-auto w-full select-none"
             />
-            {/* tail tips placed against the portrait: beside the mouth from 640px up, over the head on a phone */}
-            <SpeechBubble text={hero.aside} show={said} variant="side" className="bottom-[57%] left-[66%] hidden w-[47%] sm:block" />
-            <SpeechBubble text={hero.aside} show={said} variant="above" className="bottom-[94%] left-[-6%] w-[92%] sm:hidden" />
         </FadeIn>
       </div>
     </section>
