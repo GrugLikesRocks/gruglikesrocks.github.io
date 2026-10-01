@@ -177,7 +177,7 @@ export const experience = {
       role: 'CEO & Product Owner',
       org: "Grug's Lair",
       when: 'Nov 2022 to Sep 2026',
-      text: 'Sole PM across every studio title, from discovery through to live ops. Shipped Blob Arena on iOS and Android to 2.1M in-game transactions. Founded the studio, raised pre-seed from VCs and led an 11 person team for 4 years.',
+      text: 'Sole PM across every studio title, from discovery through to live ops. Shipped Blob Arena on iOS and Android, with 2.1M in-game transactions across its onchain and mobile builds. Founded the studio, raised pre-seed from VCs and led an 11 person team for 4 years.',
     },
     {
       role: 'Head of Research, Product & Project Manager',
@@ -188,7 +188,7 @@ export const experience = {
     {
       role: 'Head of Product',
       org: 'Volunteer Space',
-      when: 'Jul 2017 to Mar 2018',
+      when: 'Jul 2017 to Jan 2019',
       text: 'Shared responsibility for product direction and the business model on a volunteer management and recruitment platform. Designed the marketplace flows for discovery, matching and activation.',
     },
     {
@@ -212,7 +212,7 @@ export const skills = {
   groups: [
     {
       name: 'Product',
-      items: ['Product strategy and roadmapping', 'Feature specs and GDDs', 'User stories', 'Backlog management', 'Sprint planning and prioritisation', 'KPI definition and tracking', 'GTM planning', 'User research and feedback loops', 'Agile delivery'],
+      items: ['Product strategy and roadmapping', 'Feature specs and GDDs', 'User stories', 'Backlog management', 'Sprint planning and prioritisation', 'KPI definition and tracking', 'GTM planning', 'User research and feedback loops', 'PRDs', 'A/B testing', 'Agile delivery', 'Scrum and Kanban'],
     },
     {
       name: 'Strategy and leadership',
@@ -220,7 +220,7 @@ export const skills = {
     },
     {
       name: 'Engineering',
-      items: ['Building 0 to 1 products', 'AI and prompt engineering', 'Building with Claude and Codex', 'Rapid prototyping', 'TypeScript', 'React', 'Node and Express', 'Postgres', 'REST APIs', 'Stripe payments', 'Git and GitHub', 'Vercel deployment', 'Unity and C# foundations', 'Unreal Engine 4 and C++ familiarity'],
+      items: ['Building 0 to 1 products', 'AI and prompt engineering', 'Building with Claude and Codex', 'Rapid prototyping', 'TypeScript', 'React', 'Node and Express', 'Postgres and SQL', 'REST APIs', 'Stripe payments', 'Git and GitHub', 'Vercel deployment', 'Unity and C# foundations', 'Unreal Engine 4 and C++ familiarity'],
     },
     {
       name: 'Data and blockchain',
