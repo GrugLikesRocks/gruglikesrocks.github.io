@@ -47,7 +47,7 @@ export const services = {
   items: [
     {
       name: 'Product',
-      text: 'Strategy, roadmaps, specs and backlog. I run discovery with users, set the KPIs and take a product from first idea through launch and the updates after it.',
+      text: 'Strategy, roadmaps, specs and backlog. I run discovery with users, set the KPIs and take a product from first idea through launch and the updates after it. I brought AI-assisted workflows into the studio to cut build time and cost.',
     },
     {
       name: 'Strategy and leadership',
@@ -55,7 +55,7 @@ export const services = {
     },
     {
       name: 'Engineering',
-      text: 'Technical enough to build what I spec and talk implementation with any engineering team. TypeScript, React, Node, Postgres and APIs, Python for data work, plus payments and deploys on Vercel.',
+      text: 'AI-assisted engineering is how I build. I prototype and ship with AI coding tools, write the prompts that drive them and review what they produce. TypeScript, React, Node, Postgres and APIs, Python for data work, plus payments and deploys on Vercel.',
     },
     {
       name: 'Data and blockchain',
